@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Automation Framework - Help Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .example {
+            background: #f9f9f9;
+            border-left: 4px solid #0078d7;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        table th {
+            background-color: #0078d7;
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background: #0078d7;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Automation Framework - Help Page</h1>
+    </header>
+    <div class="container">
+        <h2>About This Project</h2>
+        <p>This Web Automation Framework is designed to automate browser interactions, execute test scripts, and generate detailed reports. It supports various keywords for performing specific actions, such as opening a browser, interacting with elements, and validating test results.</p>
+
+        <h2>Command-Line Arguments</h2>
+        <ul>
+            <li><code>--start</code>: Start the execution of test scripts.</li>
+            <li><code>--start-parallel</code>: Start parallel execution of test scripts.</li>
+            <li><code>--version</code>: Display the version information of the framework.</li>
+            <li><code>--encrypt-file</code>: Encrypt a specified file.</li>
+            <li><code>--output-file</code>: Specify the output file name (used with <code>--encrypt-file</code>).</li>
+            <li><code>--help-html</code>: Open this help page in the default browser.</li>
+        </ul>
+
+        <h2>Keywords and Their Usage</h2>
+        <p>The following keywords are supported by the framework. Each keyword performs a specific action during test execution.</p>
+
+        <h3>1. <code>open_browser</code></h3>
+        <p>Opens a browser (e.g., Chrome or Edge) for test execution.</p>
+        <p>Put the keyword <code>open_browser</code> in the Keyword column and specify the browser name (e.g., chrome) in the Input3 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>open_browser</td>
+                        <td></td>
+                        <td></td>
+                        <td>chrome</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>2. <code>enter_url</code></h3>
+        <p>Enters a URL into the browser's address bar.</p>
+        <p>Put the keyword <code>enter_url</code> in the Keyword column and give the input URL in the Input3 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>enter_url</td>
+                        <td></td>
+                        <td></td>
+                        <td>https://example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>3. <code>click</code></h3>
+        <p>Clicks on an element identified by a locator from the object repository.</p>
+        <p>Put the keyword <code>click</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>click</td>
+                        <td></td>
+                        <td>login_proceed_button_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>4. <code>type</code></h3>
+        <p>Types text into an input field identified by a locator from the object repository.</p>
+        <p>Put the keyword <code>type</code> in the Keyword column, specify the locator in the Input2 column, and the text to type in the Input3 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>type</td>
+                        <td></td>
+                        <td>login_uname_textbox_xpath</td>
+                        <td>test_user</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>5. <code>drag_drop</code></h3>
+        <p>Performs a drag-and-drop operation between two elements identified by locators from the object repository.</p>
+        <p>Put the keyword <code>drag_drop</code> in the Keyword column, specify the source locator in the Input1 column, and the target locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>drag_drop</td>
+                        <td>htatras1_dragable_css</td>
+                        <td>htatras_droppable_css</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>6. <code>wait_for_seconds</code></h3>
+        <p>Pauses the execution for a specified number of seconds.</p>
+        <p>Put the keyword <code>wait_for_seconds</code> in the Keyword column and specify the number of seconds in the Input3 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>wait_for_seconds</td>
+                        <td></td>
+                        <td></td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>7. <code>verify_displayed_text</code></h3>
+        <p>Verifies that a specific text is displayed on the page.</p>
+        <p>Put the keyword <code>verify_displayed_text</code> in the Keyword column, specify the locator in the Input2 column, and the expected text in the Input3 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>verify_displayed_text</td>
+                        <td></td>
+                        <td>demoqa.elements.heading</td>
+                        <td>Welcome, User!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>8. <code>switch_to_iframe</code></h3>
+        <p>Switches the context to an iframe identified by a locator from the object repository.</p>
+        <p>Put the keyword <code>switch_to_iframe</code> in the Keyword column and specify the iframe locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>switch_to_iframe</td>
+                        <td></td>
+                        <td>checkbox_iframe_css</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>9. <code>switch_to_default_content</code></h3>
+        <p>Switches the context back to the default content from an iframe.</p>
+        <p>Put the keyword <code>switch_to_default_content</code> in the Keyword column. No additional inputs are required.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>switch_to_default_content</code> (no additional inputs required).
+        </div>
+
+        <h3>10. <code>select_file</code></h3>
+        <p>Selects a file to upload using a file input element identified by a locator from the object repository.</p>
+        <p>Put the keyword <code>select_file</code> in the Keyword column, specify the locator in the Input2 column, and the file path in the Input3 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>select_file</td>
+                        <td></td>
+                        <td>file_input_xpath</td>
+                        <td>C:\path\to\file.txt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>11. <code>check_element_enabled</code></h3>
+        <p>Checks if an element identified by a locator is enabled.</p>
+        <p>Put the keyword <code>check_element_enabled</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>check_element_enabled</td>
+                        <td></td>
+                        <td>submit_button_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>12. <code>check_element_disabled</code></h3>
+        <p>Checks if an element identified by a locator is disabled.</p>
+        <p>Put the keyword <code>check_element_disabled</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>check_element_disabled</td>
+                        <td></td>
+                        <td>submit_button_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>13. <code>check_element_displayed</code></h3>
+        <p>Checks if an element identified by a locator is displayed on the page.</p>
+        <p>Put the keyword <code>check_element_displayed</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>check_element_displayed</td>
+                        <td></td>
+                        <td>header_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>14. <code>check_radio_chk_selected</code></h3>
+        <p>Checks if a radio button or checkbox identified by a locator is selected.</p>
+        <p>Put the keyword <code>check_radio_chk_selected</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>check_radio_chk_selected</td>
+                        <td></td>
+                        <td>radio_button_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>15. <code>check_radio_chk_not_selected</code></h3>
+        <p>Checks if a radio button or checkbox identified by a locator is not selected.</p>
+        <p>Put the keyword <code>check_radio_chk_not_selected</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>check_radio_chk_not_selected</td>
+                        <td></td>
+                        <td>radio_button_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>16. <code>hover_mouse</code></h3>
+        <p>Moves the mouse pointer over an element identified by a locator.</p>
+        <p>Put the keyword <code>hover_mouse</code> in the Keyword column and specify the locator in the Input2 column.</p>
+        <div class="example">
+            <strong>Example:</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Input1</th>
+                        <th>Input2</th>
+                        <th>Input3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>hover_mouse</td>
+                        <td></td>
+                        <td>menu_item_xpath</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Configuration Parameters (start.properties)</h2>
+        <p>The <code>start.properties</code> file contains various configuration parameters that control the behavior of the framework. Below is a detailed description of each parameter:</p>
+
+        <h3>1. [Misc]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Purpose</th>
+                    <th>Values</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>delete_test_results_images_recordings_folders_before_start</code></td>
+                    <td>Deletes the folders <code>test_results</code>, <code>images</code>, and <code>recordings</code> before starting execution.</td>
+                    <td><code>yes</code>, <code>no</code></td>
+                    <td><code>yes</code></td>
+                </tr>
+                <tr>
+                    <td><code>screenshot_strategy</code></td>
+                    <td>Determines when screenshots are taken during execution.</td>
+                    <td><code>never</code>, <code>always</code>, <code>on-error</code></td>
+                    <td><code>always</code></td>
+                </tr>
+                <tr>
+                    <td><code>highlight_elements</code></td>
+                    <td>Highlights elements during execution to visually indicate interactions.</td>
+                    <td><code>yes</code>, <code>no</code></td>
+                    <td><code>no</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2. [SGrid]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Purpose</th>
+                    <th>Values</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>run_in_selenium_grid</code></td>
+                    <td>Enables or disables execution in a Selenium Grid environment.</td>
+                    <td><code>yes</code>, <code>no</code></td>
+                    <td><code>no</code></td>
+                </tr>
+                <tr>
+                    <td><code>grid_url</code></td>
+                    <td>Specifies the URL of the Selenium Grid hub.</td>
+                    <td>Example: <code>http://localhost:31820/wd/hub</code></td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3. [Appium]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Purpose</th>
+                    <th>Values</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>run_in_appium_grid</code></td>
+                    <td>Enables or disables execution in an Appium Grid environment.</td>
+                    <td><code>yes</code>, <code>no</code></td>
+                    <td><code>no</code></td>
+                </tr>
+                <tr>
+                    <td><code>appium_url</code></td>
+                    <td>Specifies the URL of the Appium server.</td>
+                    <td>Example: <code>http://192.168.1.8:4723/wd/hub</code></td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4. [Logging]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Purpose</th>
+                    <th>Values</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>LogLevel</code></td>
+                    <td>Sets the logging level for the framework.</td>
+                    <td><code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code>, <code>critical</code></td>
+                    <td><code>debug</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>5. [Browser_Settings]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Purpose</th>
+                    <th>Values</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>InPrivate</code></td>
+                    <td>Runs the browser in private/incognito mode.</td>
+                    <td><code>yes</code>, <code>no</code></td>
+                    <td><code>yes</code></td>
+                </tr>
+                <tr>
+                    <td><code>Headless</code></td>
+                    <td>Runs the browser in headless mode (without a visible UI).</td>
+                    <td><code>yes</code>, <code>no</code></td>
+                    <td><code>yes</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>6. [Parallel]</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Purpose</th>
+                    <th>Values</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>NoThreads</code></td>
+                    <td>Specifies the number of threads to use for parallel execution.</td>
+                    <td>Any positive integer</td>
+                    <td><code>4</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Additional Information</h2>
+        <p>For more details, refer to the documentation or contact the project maintainer.</p>
+    </div>
+    <footer>
+        <p>&copy; 2025 Web Automation Framework. All rights reserved.</p>
+    </footer>
+</body>
+</html>

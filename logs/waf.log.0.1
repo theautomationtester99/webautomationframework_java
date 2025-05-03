@@ -1,0 +1,28 @@
+May 02, 2025 1:22:15 PM com.waf.PdfTsReporting main
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:22:16 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:22:16 PM WafLogger
+SEVERE: java.io.FileNotFoundException: D:\allprojects\java-projects\webautomationframework\resources\logo.png (The system cannot find the path specified)
+May 02, 2025 1:22:16 PM com.waf.PdfTsReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 1:22:16 PM com.waf.PdfTsReporting generateHtml
+SEVERE: java.nio.file.NoSuchFileException: D:\allprojects\java-projects\webautomationframework\resources\encrypted_jinjava_ts_file.jinjav
+May 02, 2025 1:22:16 PM com.waf.PdfTsReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 1:22:16 PM com.waf.PdfTsReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 1:22:16 PM com.waf.PdfTsReporting generatePdf
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:22:24 PM WafLogger
+SEVERE: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-14525071771069462491\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-14525071771069462491\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-14525071771069462491\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-14525071771069462491\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-14525071771069462491\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}

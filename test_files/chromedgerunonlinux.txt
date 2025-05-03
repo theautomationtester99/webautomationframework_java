@@ -1,0 +1,2 @@
+google-chrome --no-sandbox --disable-dev-shm-usage
+microsoft-edge --no-sandbox --disable-dev-shm-usage

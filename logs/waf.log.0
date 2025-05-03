@@ -1,0 +1,1122 @@
+Apr 30, 2025 10:27:48 AM WafLogger
+INFO: This is an INFO message.
+Apr 30, 2025 10:27:48 AM com.waf.LoggerConfig main
+WARNING: This is a WARNING message.
+May 01, 2025 1:33:46 PM WafLogger
+INFO: This is an INFO message.
+May 01, 2025 3:33:32 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 3:33:32 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 3:33:32 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 3:37:35 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 3:37:35 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 3:37:35 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 3:37:35 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 3:37:35 PM com.waf.PdfReporting generatePdf
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 3:39:15 PM WafLogger
+INFO: java.lang.NullPointerException: Cannot invoke "com.microsoft.playwright.options.Margin.setTop(String)" because "margin" is null
+May 01, 2025 3:41:28 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 3:41:28 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 3:41:28 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 3:41:28 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 3:41:28 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 3:41:35 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 3:44:51 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 3:44:52 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 3:44:52 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 3:44:52 PM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 01, 2025 3:44:52 PM com.waf.PdfReporting generatePdf
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 3:45:00 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 4:26:51 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 4:26:51 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 4:26:51 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 4:26:51 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 4:26:51 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 4:26:59 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 4:34:02 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 4:34:02 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 4:34:02 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 4:34:02 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 4:34:02 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 4:34:09 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 4:57:14 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 4:57:14 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 4:57:14 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 4:57:14 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 4:57:14 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 4:57:22 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:06:54 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:06:54 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:06:54 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:06:54 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:06:54 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:07:02 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:08:40 PM com.waf.PdfReporting encodeLogo
+INFO: Encoding the logo png file
+May 01, 2025 5:08:40 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:08:41 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:08:41 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:08:41 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:08:49 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:10:50 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:10:50 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:10:51 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:10:51 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:10:51 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:10:57 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:13:17 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:13:17 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:13:18 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:13:18 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:13:18 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:13:25 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:16:04 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:16:04 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:16:04 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:16:04 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:16:04 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:16:11 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:21:13 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:21:13 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:21:13 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 5:21:13 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:21:13 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:21:20 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:23:01 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:23:01 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:23:01 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 5:23:01 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:23:01 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:23:08 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:25:23 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:25:23 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:25:23 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:25:23 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:25:23 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:25:30 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:26:32 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:26:32 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:26:32 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 5:26:32 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:26:32 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:26:38 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:27:39 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:27:39 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:27:39 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 5:27:39 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:27:39 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:27:46 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:28:38 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:28:38 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:28:38 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 5:28:38 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:28:38 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:28:45 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:32:01 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:32:01 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:32:01 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:32:01 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:32:01 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:32:09 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:32:47 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:32:47 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:32:48 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:32:48 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:32:48 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:32:55 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:35:00 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:35:00 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:35:01 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 5:35:01 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:35:01 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:35:08 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:38:26 PM com.waf.PdfReporting
+INFO: Encoding the logo png file
+May 01, 2025 5:38:26 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 5:38:27 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:38:27 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:38:27 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:38:35 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 5:41:38 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 5:41:38 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 5:41:39 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 5:41:39 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 5:41:39 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 5:41:46 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 6:18:08 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 6:18:08 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 6:18:08 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 6:18:08 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 6:18:08 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 6:18:17 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 6:47:53 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 6:47:53 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 6:47:54 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 6:47:54 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 6:47:54 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 6:48:05 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 6:48:40 PM com.waf.PdfReporting encodeLogo
+INFO: Encoding the logo png file
+May 01, 2025 6:48:40 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 6:48:41 PM WafLogger
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Cannot find method isMap with 0 parameters in class java.lang.String
+May 01, 2025 6:48:41 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 6:48:41 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 6:48:41 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 6:48:51 PM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-35679236005502923\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-35679236005502923\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-35679236005502923\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-35679236005502923\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-35679236005502923\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:12:45 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:12:45 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:12:46 PM WafLogger
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Cannot find method isMap with 0 parameters in class java.lang.String
+May 01, 2025 7:12:46 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:12:46 PM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 01, 2025 7:12:46 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:12:53 PM com.waf.PdfReporting generatePdf
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-6572566059165213799\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-6572566059165213799\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-6572566059165213799\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-6572566059165213799\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-6572566059165213799\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:16:22 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:16:22 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:16:22 PM WafLogger
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Syntax error in '{% comment %}': Unknown tag: comment
+May 01, 2025 7:16:22 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:16:22 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:16:22 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:16:32 PM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-16336352797406146215\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-16336352797406146215\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-16336352797406146215\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-16336352797406146215\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-16336352797406146215\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:16:55 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:16:55 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:16:55 PM WafLogger
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Syntax error in '{% endif %}': Mismatched end tag, expected: endfor
+May 01, 2025 7:16:55 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:16:55 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:16:55 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:17:01 PM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-18243609745750442854\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-18243609745750442854\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-18243609745750442854\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-18243609745750442854\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-18243609745750442854\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:17:57 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:17:57 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:17:57 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:17:57 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:17:57 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:18:03 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:20:12 PM com.waf.PdfReporting
+INFO: Encoding the logo png file
+May 01, 2025 7:20:12 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:20:13 PM com.waf.PdfReporting
+INFO: Creating the PDF report header template
+May 01, 2025 7:20:13 PM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 01, 2025 7:20:13 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:20:20 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:22:59 PM com.waf.PdfReporting encodeLogo
+INFO: Encoding the logo png file
+May 01, 2025 7:22:59 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:23:00 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:23:00 PM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 01, 2025 7:23:00 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:23:06 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:23:33 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:23:33 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:23:34 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:23:34 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:23:34 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:23:40 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:24:42 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:24:42 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:24:42 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:24:42 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:24:42 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:24:49 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:28:58 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:28:58 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:28:59 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:28:59 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:28:59 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:29:05 PM com.waf.PdfReporting generatePdf
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:29:50 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:29:50 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:29:50 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:29:50 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:29:50 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:29:57 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:38:16 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:38:16 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:38:16 PM com.waf.PdfReporting generateHtml
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Cannot find method isMap with 0 parameters in class java.lang.String
+May 01, 2025 7:38:16 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:38:16 PM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 01, 2025 7:38:16 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:38:23 PM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-16799496650465450325\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-16799496650465450325\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-16799496650465450325\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-16799496650465450325\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-16799496650465450325\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:45:21 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:45:21 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:45:22 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:45:22 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:45:22 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:45:28 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:46:24 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:46:24 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:46:24 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:46:24 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:46:24 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:46:30 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:47:18 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:47:18 PM WafLogger
+INFO: Decrypting the PDF report template
+May 01, 2025 7:47:19 PM com.waf.PdfReporting generateHtml
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Cannot find method isMap with 0 parameters in class java.lang.String
+May 01, 2025 7:47:19 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:47:19 PM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 01, 2025 7:47:19 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:47:25 PM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-12828016860923707546\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-12828016860923707546\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-12828016860923707546\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-12828016860923707546\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-12828016860923707546\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:48:02 PM com.waf.PdfReporting
+INFO: Encoding the logo png file
+May 01, 2025 7:48:02 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:48:02 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:48:02 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:48:02 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:48:09 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 01, 2025 7:50:25 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:50:25 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:50:26 PM WafLogger
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Cannot find method isMap with 0 parameters in class java.lang.String
+May 01, 2025 7:50:26 PM WafLogger
+INFO: Creating the PDF report header template
+May 01, 2025 7:50:26 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:50:26 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:50:33 PM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-14785174027330487554\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-14785174027330487554\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-14785174027330487554\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-14785174027330487554\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-14785174027330487554\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 01, 2025 7:51:09 PM WafLogger
+INFO: Encoding the logo png file
+May 01, 2025 7:51:09 PM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 01, 2025 7:51:09 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 01, 2025 7:51:09 PM WafLogger
+INFO: Creating the PDF report footer template
+May 01, 2025 7:51:09 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 01, 2025 7:51:15 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 8:29:40 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 8:29:40 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 8:29:40 AM WafLogger
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Syntax error in '{% endfor %}': Mismatched end tag, expected: endif
+May 02, 2025 8:29:40 AM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 8:29:40 AM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 8:29:40 AM com.waf.PdfReporting generatePdf
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 8:31:09 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 8:31:09 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 8:31:10 AM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 8:31:10 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 8:31:10 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 8:31:16 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 8:47:01 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 8:47:01 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 8:47:02 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 8:47:02 AM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 8:47:02 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 8:47:13 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 8:50:25 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 8:50:25 AM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 8:50:26 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 8:50:26 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 8:50:26 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 8:50:34 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 8:53:42 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 8:53:42 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 8:53:42 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 8:53:42 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 8:53:42 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 8:53:50 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 8:55:03 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 8:55:03 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 8:55:04 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 8:55:04 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 8:55:04 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 8:55:11 AM com.waf.PdfReporting generatePdf
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 9:08:45 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 9:08:45 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 9:08:46 AM com.waf.PdfReporting generateHtml
+SEVERE: com.hubspot.jinjava.interpret.FatalTemplateErrorsException: Cannot find method capitalize with 0 parameters in class java.lang.String
+May 02, 2025 9:08:46 AM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 9:08:46 AM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 9:08:46 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 9:08:53 AM WafLogger
+INFO: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-4602855596202726685\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-4602855596202726685\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-4602855596202726685\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-4602855596202726685\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-4602855596202726685\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 02, 2025 9:12:46 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 9:12:46 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 9:12:47 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 9:12:47 AM com.waf.PdfReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 9:12:47 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 9:12:54 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 9:16:04 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 9:16:04 AM com.waf.PdfReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 9:16:04 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 9:16:04 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 9:16:04 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 9:16:11 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 9:18:29 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 9:18:30 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 9:18:30 AM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 9:18:30 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 9:18:30 AM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 9:18:37 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 9:20:27 AM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 9:20:27 AM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 9:20:28 AM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 9:20:28 AM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 9:20:28 AM com.waf.PdfReporting
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 9:20:35 AM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 1:19:50 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:19:51 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:19:51 PM WafLogger
+SEVERE: java.io.FileNotFoundException: D:\allprojects\java-projects\webautomationframework\resources\logo.png (The system cannot find the path specified)
+May 02, 2025 1:19:51 PM com.waf.PdfTsReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 1:19:51 PM com.waf.PdfTsReporting generateHtml
+SEVERE: java.nio.file.NoSuchFileException: D:\allprojects\java-projects\webautomationframework\resources\encrypted_ts_file.jinja2
+May 02, 2025 1:19:51 PM com.waf.PdfTsReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 1:19:51 PM com.waf.PdfTsReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 1:19:51 PM com.waf.PdfTsReporting generatePdf
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:20:00 PM WafLogger
+SEVERE: com.microsoft.playwright.PlaywrightException: Error {
+  message='html: expected string, got undefined
+  name='Error
+  stack='Error: html: expected string, got undefined
+    at tString (C:\Users\vinay\AppData\Local\Temp\playwright-java-8694260820596896732\package\lib\protocol\validatorPrimitives.js:59:9)
+    at C:\Users\vinay\AppData\Local\Temp\playwright-java-8694260820596896732\package\lib\protocol\validatorPrimitives.js:108:21
+    at DispatcherConnection.dispatch (C:\Users\vinay\AppData\Local\Temp\playwright-java-8694260820596896732\package\lib\server\dispatchers\dispatcher.js:268:21)
+    at transport.onmessage (C:\Users\vinay\AppData\Local\Temp\playwright-java-8694260820596896732\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\vinay\AppData\Local\Temp\playwright-java-8694260820596896732\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:476:21)
+}
+May 02, 2025 1:27:31 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:27:32 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:27:32 PM com.waf.PdfTsReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 1:27:33 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 1:27:33 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 1:27:33 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:27:39 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 1:36:12 PM com.waf.PdfTsReporting main
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:36:13 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:36:13 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 1:36:14 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 1:36:14 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 1:36:14 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:36:22 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 1:44:19 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:44:20 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:44:20 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 1:44:21 PM com.waf.PdfTsReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 1:44:21 PM com.waf.PdfTsReporting createFooterTemplate
+INFO: Creating the PDF report footer template
+May 02, 2025 1:44:21 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:44:28 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 1:49:42 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:49:44 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:49:44 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 1:49:44 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 1:49:44 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 1:49:44 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:49:52 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 1:52:11 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:52:12 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:52:12 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 1:52:12 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 1:52:12 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 1:52:12 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:52:20 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 1:53:36 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 1:53:37 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 1:53:37 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 1:53:37 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 1:53:37 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 1:53:37 PM com.waf.PdfTsReporting
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 1:53:44 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:24:12 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:24:13 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:24:13 PM com.waf.PdfTsReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 2:24:14 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 2:24:14 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:24:14 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:24:21 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:25:44 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:25:45 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:25:45 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 2:25:45 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 2:25:45 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:25:45 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:25:53 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:27:31 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:27:32 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:27:32 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 2:27:32 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 2:27:32 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:27:32 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:27:40 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:37:50 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:37:53 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:37:53 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 2:37:53 PM com.waf.PdfTsReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 2:37:53 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:37:53 PM com.waf.PdfTsReporting generatePdf
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:38:01 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:41:53 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:41:54 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:41:54 PM com.waf.PdfTsReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 2:41:55 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 2:41:55 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:41:55 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:42:03 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:43:03 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:43:04 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:43:04 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 2:43:05 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 2:43:05 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:43:05 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:43:12 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 2:43:57 PM WafLogger
+INFO: Output.xlsx exists and starting to create test summary PDF report.
+May 02, 2025 2:43:59 PM WafLogger
+INFO: Encoding the logo PNG file
+May 02, 2025 2:43:59 PM com.waf.PdfTsReporting generateHtml
+INFO: Decrypting the PDF report template
+May 02, 2025 2:43:59 PM WafLogger
+INFO: Creating the PDF report header template
+May 02, 2025 2:43:59 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 2:43:59 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 2:44:07 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 02, 2025 5:33:09 PM WafLogger
+INFO: Encoding the logo png file
+May 02, 2025 5:33:09 PM WafLogger
+INFO: Decrypting the PDF report template
+May 02, 2025 5:33:09 PM com.waf.PdfReporting createHeaderTemplate
+INFO: Creating the PDF report header template
+May 02, 2025 5:33:09 PM WafLogger
+INFO: Creating the PDF report footer template
+May 02, 2025 5:33:09 PM WafLogger
+INFO: Starting creation of PDF report from template with populated data
+May 02, 2025 5:33:21 PM WafLogger
+INFO: Completed creation of PDF report from template with populated data
+May 03, 2025 11:41:38 AM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 11:41:38 AM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:11:14 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:11:14 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:12:21 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:12:21 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:12:21 PM WafLogger
+INFO: Version: 3.0
+May 03, 2025 12:28:59 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:29:21 PM com.waf.Runner main
+INFO: Execution Started ----------------.
+May 03, 2025 12:29:21 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:29:21 PM WafLogger
+INFO: Version: 3.0
+May 03, 2025 12:29:51 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:29:51 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:29:51 PM WafLogger
+SEVERE: Error parsing arguments: Unrecognized option: --aaa
+May 03, 2025 12:30:07 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:30:07 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:30:07 PM WafLogger
+SEVERE: Only one of '--start', '--start-parallel', '--version', '--encrypt-file', '--encrypt-str', '--delete-tr-google-drive', or '--help-html' can be used at a time.
+May 03, 2025 12:30:25 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:30:25 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:30:25 PM com.waf.Runner main
+SEVERE: Error parsing arguments: Missing argument for option: encrypt-file
+May 03, 2025 12:31:25 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:31:25 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:31:47 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:31:47 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:37:33 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:37:33 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:37:33 PM com.waf.Runner main
+INFO: Version: 3.0
+May 03, 2025 12:37:49 PM com.waf.Runner
+INFO: Execution Started ----------------.
+May 03, 2025 12:37:49 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:37:49 PM WafLogger
+SEVERE: Error parsing arguments: Missing argument for option: encrypt-file
+May 03, 2025 12:38:05 PM com.waf.Runner
+INFO: Execution Started ----------------.
+May 03, 2025 12:38:05 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:38:05 PM WafLogger
+SEVERE: Both '--encrypt-file' and '--output-file' options must be provided together.
+May 03, 2025 12:38:24 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:38:24 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:38:24 PM com.waf.Runner main
+SEVERE: Both '--encrypt-file' and '--output-file' options must be provided together.
+May 03, 2025 12:41:07 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:41:07 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:41:07 PM WafLogger
+SEVERE: Error parsing arguments: Unrecognized option: --output-str
+May 03, 2025 12:41:19 PM com.waf.Runner main
+INFO: Execution Started ----------------.
+May 03, 2025 12:41:19 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:41:19 PM com.waf.Runner main
+SEVERE: Error parsing arguments: Missing argument for option: encrypt-str
+May 03, 2025 12:41:28 PM com.waf.Runner main
+INFO: Execution Started ----------------.
+May 03, 2025 12:41:28 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:41:28 PM WafLogger
+SEVERE: Error parsing arguments: Missing argument for option: encrypt-str
+May 03, 2025 12:41:37 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 12:41:37 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 12:41:37 PM WafLogger
+INFO: Encrypted string: QnuRARdHJgmWQqofKsy17kJKTiCl5t52SXvAo8YE1+c=
+May 03, 2025 1:05:01 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 1:05:01 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:05:02 PM WafLogger
+SEVERE: Unexpected error occurred: src
+May 03, 2025 1:05:23 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 1:05:23 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:05:24 PM WafLogger
+INFO: File encrypted successfully.
+May 03, 2025 1:06:07 PM com.waf.Runner main
+INFO: Execution Started ----------------.
+May 03, 2025 1:06:07 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:06:07 PM WafLogger
+INFO: Displaying help documentation in browser...
+May 03, 2025 1:06:07 PM WafLogger
+SEVERE: Error creating or opening the temporary help file: D:\allprojects\java-projects\webautomationframework\resources\enc_help_doc.enc
+May 03, 2025 1:07:01 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 1:07:01 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:07:01 PM WafLogger
+INFO: Displaying help documentation in browser...
+May 03, 2025 1:07:01 PM WafLogger
+SEVERE: Error creating or opening the temporary help file: D:\allprojects\java-projects\webautomationframework\resources\enc_help_doc.enc
+May 03, 2025 1:08:18 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 1:08:18 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:08:18 PM WafLogger
+INFO: Displaying help documentation in browser...
+May 03, 2025 1:08:18 PM WafLogger
+INFO: Temporary file created at: C:\Users\vinay\AppData\Local\Temp\help_doc18063541389327713972.html
+May 03, 2025 1:08:18 PM com.waf.Utils openHelpHtml
+INFO: Please close the browser manually when you're done.
+May 03, 2025 1:15:16 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 1:15:45 PM WafLogger
+INFO: Execution Started ----------------.
+May 03, 2025 1:15:45 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:15:45 PM com.waf.Runner main
+INFO: Displaying help documentation in browser...
+May 03, 2025 1:15:45 PM WafLogger
+INFO: Temporary file created at: C:\Users\vinay\AppData\Local\Temp\help_doc4593976710024230760.html
+May 03, 2025 1:15:45 PM WafLogger
+INFO: Please close the browser manually when you're done.
+May 03, 2025 1:16:43 PM com.waf.Runner
+INFO: Execution Started ----------------.
+May 03, 2025 1:16:43 PM com.waf.Runner main
+INFO: Parsing the input arguments.
+May 03, 2025 1:16:43 PM com.waf.Runner main
+INFO: Displaying help documentation in browser...
+May 03, 2025 1:16:44 PM WafLogger
+INFO: Temporary file created at: C:\Users\vinay\AppData\Local\Temp\help_doc3396053431822340133.html
+May 03, 2025 1:16:44 PM com.waf.Utils openHelpHtml
+INFO: Please close the browser manually when you're done.

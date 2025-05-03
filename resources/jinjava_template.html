@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #fee0d2 */
+        }
+
+        header {
+            display: flex;
+            height: auto;
+            justify-content: space-between;
+            align-items: center;
+            /* background-color: #f8f8f8; */
+            border-bottom: 2px solid #413a97;
+        }
+
+        #logo {
+            /* margin-right: auto;             */
+            max-height: 110px;
+        }
+
+        #browsimg {
+            /* margin-right: auto;             */
+            max-width: 50px;
+        }
+
+        #osimg {
+            /* margin-right: auto;             */
+            max-width: 40px;
+        }
+
+        #imga {
+            margin-top: 10px;
+            margin-right: 20px;
+            max-width: 650px;
+        }
+
+        #tcid {
+            /* margin: auto; */
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .testsummaryrow {
+            display: flex;
+            /* border: 1px solid #413a97; */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .testdescp,
+        .testenvp,
+        .teststatusp,
+        .bubblep {
+            background-color: #a1d99b;
+        }
+
+        .testdescf,
+        .testenvf,
+        .teststatusf,
+        .bubblef {
+            background-color: #fc9272;
+        }
+
+        .testdescp,
+        .testdescf {
+            flex: 2;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 6px;
+        }
+
+        .bubblep,
+        .bubblef {
+            flex: 2;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 6px;
+            white-space: normal;
+            /* Allows text to wrap */
+            word-wrap: break-word;
+            /* Breaks long words if necessary */
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .testenvp,
+        .testenvf {
+            flex: 0.5;
+            padding: 10px 0 10px 0;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            word-wrap: break-all
+        }
+
+        .teststatusp {
+            flex: 0.5;
+            padding: 40px 5px 0 5px;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: #31a354
+        }
+
+        .teststatusf {
+            flex: 0.5;
+            padding: 40px 5px 0 5px;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: #de2d26
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Ensures single border lines between cells */
+            margin-left: 0.7%;
+            border: 1px solid #070707;
+            /* Defines a single border for the table */
+            table-layout: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #070707;
+            /* Applies single border to each cell */
+            padding: 5px;
+            text-align: left;
+            white-space: normal;
+            /* Allows text to wrap */
+            word-wrap: break-word;
+            /* Breaks long words if necessary */
+            overflow-wrap: break-word;
+        }
+
+        .fixedwidth {
+            max-width: 150px;
+            /* Set the desired maximum width */
+            word-wrap: break-word;
+            /* Ensures long words wrap */
+            overflow-wrap: break-word;
+        }
+
+        .red-cell {
+            background-color: #de2d26;
+        }
+
+        table td:nth-child(1) {
+            max-width: 10px;
+            /* Set the desired maximum width */
+        }
+
+        th {
+            background-color: #f2f2f2;
+            /* Adds a background color to header cells */
+        }
+
+        .merged-row {
+            text-align: center;
+            /* Center-aligns text in merged rows */
+            /* background-color: #f2f2f2;  */
+        }
+
+        @media print {
+            table {
+                max-width: 100%;
+                /* Prevent table from exceeding PDF dimensions */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="testsummaryrow">
+        {% if "passed" in overallStatusText.toLowerCase() %}
+        <div class="testdescp">
+            <div><b>Test Description:</b></div>
+            <div>{% for line in testDescription.split('\n') %}
+                {{ line }}<br>
+            {% endfor %}</div>
+        </div>
+        <div class="testenvp">
+            <div><b>Browser Details:</b></div>
+            <div>
+                <img id="browsimg" src="{{ browserImgSrc }}" alt="{{ browserImgAlt }}">
+                <img id="osimg" src="{{ osImgSrc }}" alt="{{ osImgAlt }}">
+                {% if grid_img_src %}
+                <img id="osimg" src="{{ grid_img_src }}">
+                {% endif %}
+            </div>
+            <div><b>Version Details:</b></div>
+            <div>{{ browserVersion }}</div>
+            <br>
+            <div><b>Executed Date:</b></div>
+            <div>{{ executedDate }}</div>
+        </div>
+        <div class="teststatusp">
+            <div>{{ overallStatusText }}</div>
+        </div>
+        {% else %}
+        <div class="testdescf">
+            <div><b>Test Description:</b></div>
+            <div>{% for line in testDescription.split('\n') %}
+                {{ line }}<br>
+            {% endfor %}</div>
+        </div>
+        <div class="testenvf">
+            <div><b>Browser Details:</b></div>
+            <div>
+                <img id="browsimg" src="{{ browserImgSrc }}" alt="{{ browserImgAlt }}">
+                <img id="osimg" src="{{ osImgSrc }}" alt="{{ osImgAlt }}">
+                {% if grid_img_src %}
+                <img id="osimg" src="{{ grid_img_src }}">
+                {% endif %}
+            </div>
+            <div><b>Version Details:</b></div>
+            <div>{{ browserVersion }}</div>
+            <br>
+            <div><b>Executed Date:</b></div>
+            <div>{{ executedDate }}</div>
+        </div>
+        <div class="teststatusf">
+            <div>{{ overallStatusText }}</div>
+        </div>
+        {% endif %}
+    </div>
+    {% if table_data.size() > 1 %}
+    <div class="testsummaryrow">
+        {% for retry_key, retry_data in tableData.items() %}
+        <div class="{{ retry_data.rstatus.toLowerCase() == 'fail' ? 'bubblef' : 'bubblep' }}">
+            <h4>{{ retry_key.replace('retry_', 'attempt ') | capitalize() }}</h4>
+            {% if retry_data.rstatus %}
+            <p><b>Status:</b> {{ retry_data.rstatus }}</p>
+            {% endif %}
+            {% if retry_data.rerror %}
+            <p><b>Error:</b> {{ retry_data.rerror }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if tableData.size() > 1 %}
+    {% for retry_key, retry_data in tableData.items() %}
+    <h3>{{ retry_key.replace('retry_', 'attempt ') | capitalize() }}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>Step</th>
+                <th>Result</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, val in retry_data.items() %}
+            {% if val is mapping %}
+            {% for ke, value in val.items() %}
+            <tr>
+                <td rowspan="{{ value.rowspan }}">{{ value.sno }}</td>
+                <td class="fixedwidth">{{ value.step.replace('\n', '<br>') }}</td>
+                <td>{{ value.result.replace('\n', '<br>') }}</td>
+                <td class="{{ value.overallStepStatus.toLowerCase().contains('fail') ? 'red-cell' : '' }}">
+                    {{ value.overallStepStatus }}
+                </td>
+            </tr>
+            {% if value.subSteps %}
+            {% for key1, value1 in value.subSteps.items() %}
+            <tr>
+                <td class="fixedwidth">{{ value1.subStep }}</td>
+                <td>
+                    {% if value1.subStepMessage %}
+                    <span>{{ value1.subStepMessage.replace('\n', '<br>') }}</span><br>
+                    {% endif %}
+                    {% if value1.imageSrc %}
+                    <img id="imga" src="{{ value1.imageSrc }}" alt="{{ value1.imageAlt }}">
+                    {% endif %}
+                </td>
+                <td class="{{ value1.subStepStatus.toLowerCase().contains('fail') ? 'red-cell' : '' }}">
+                    {{ value1.subStepStatus }}
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+    {% else %}
+    {% for retry_data in tableData %}
+    <table>
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>Step</th>
+                <th>Result</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, val in retry_data.items() %}
+            {% if val is mapping %}
+            {% for ke, value in val.items() %}
+            <tr>
+                <td rowspan="{{ value.rowspan }}">{{ value.sno }}</td>
+                <td class="fixedwidth">{{ value.step.replace('\n', '<br>') }}</td>
+                <td>{{ value.result.replace('\n', '<br>') }}</td>
+                <td class="{{ value.overallStepStatus.toLowerCase().contains('fail') ? 'red-cell' : '' }}">
+                    {{ value.overallStepStatus }}
+                </td>
+            </tr>
+            {% if value.subSteps %}
+            {% for key1, value1 in value.subSteps.items() %}
+            <tr>
+                <td class="fixedwidth">{{ value1.subStep }}</td>
+                <td>
+                    {% if value1.subStepMessage %}
+                    <span>{{ value1.subStepMessage.replace('\n', '<br>') }}</span><br>
+                    {% endif %}
+                    {% if value1.imageSrc %}
+                    <img id="imga" src="{{ value1.imageSrc }}" alt="{{ value1.imageAlt }}">
+                    {% endif %}
+                </td>
+                <td class="{{ value1.subStepStatus.toLowerCase().contains('fail') ? 'red-cell' : '' }}">
+                    {{ value1.subStepStatus }}
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+    {% endif %}
+</body>
+
+</html>

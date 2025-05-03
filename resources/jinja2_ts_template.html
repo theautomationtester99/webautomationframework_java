@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #fee0d2 */
+        }
+        header {
+            display: flex;
+            height: auto;
+            justify-content: space-between;
+            align-items:center;
+            /* background-color: #f8f8f8; */
+            border-bottom: 2px solid #413a97;
+        }
+        #logo {
+            /* margin-right: auto;             */
+            max-height:110px;
+        }
+        #browsimg {
+            /* margin-right: auto;             */
+            max-width:50px;
+        }
+        #imga {
+            margin-top: 10px;
+            margin-right: 20px;
+            max-width:650px;
+        }
+        #tcid {
+            /* margin: auto; */
+            margin-left: auto;
+            margin-right: 0;
+        }
+        .testsummaryrow {
+            display: flex;
+            /* border: 1px solid #413a97; */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .testdescp, .testenvp, .teststatusp {
+            background-color: #a1d99b;
+        }
+        .testdescf, .testenvf, .teststatusf {
+            background-color: #fc9272;
+        }
+        .testdescp, .testdescf {
+            flex: 2;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 6px;
+        }
+        .testenvp, .testenvf {
+            flex: 1;
+            padding: 10px 0 10px 0;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            word-wrap: break-all
+        }
+        .teststatusp {
+            flex: 0.5;
+            padding: 40px 5px 0 5px;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: #31a354
+        }
+        .teststatusf {
+            flex: 0.5;
+            padding: 40px 5px 0 5px;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: #de2d26
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Ensures single border lines between cells */
+            margin-left: 0.7%;
+            border: 1px solid #070707; /* Defines a single border for the table */
+            table-layout: auto;
+        }
+        .fixedwidth {
+            max-width: 150px; /* Set the desired maximum width */
+            word-wrap: break-word; /* Ensures long words wrap */
+            overflow-wrap: break-word;
+        }
+        th, td {
+            border: 1px solid #070707; /* Applies single border to each cell */
+            padding: 5px;
+            text-align: left;
+            white-space: normal; /* Allows text to wrap */
+            word-wrap: break-word; /* Breaks long words if necessary */
+        }
+        .red-cell {
+            background-color: #de2d26;
+        }
+        th {
+            background-color: #f2f2f2; /* Adds a background color to header cells */
+        }
+        .merged-row {
+            text-align: center; /* Center-aligns text in merged rows */
+            /* background-color: #f2f2f2;  */
+        }
+        @media print {
+            table {
+            max-width: 100%; /* Prevent table from exceeding PDF dimensions */
+            }
+        }
+        .browser-title {
+            font-size: larger;
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    {% set chrome_matches = [] %}
+    {% for value in data %}
+        {% if "chrome" in value.Browser|lower %}
+            {% if chrome_matches.append(1) %}{% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if chrome_matches|length > 0 %}
+<div class="browser-title"><p>CHROME</p></div>
+
+ <table>
+    <thead>
+        <tr>
+            <th>Sno</th>
+            <th>TC ID</th>
+            <th>Test Description</th>
+            <th>Status</th>
+            <th>Browser</th>
+            <th>Executed Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set sno = [] %}
+        {% for value in data %}
+            {% if "chrome" in value.Browser|lower %}
+                {% if sno.append(1) %}{% endif %}
+        <tr>
+            <td>{{ sno|length }}</td>
+            <td class="fixedwidth">{{ value.tc_id }}</td>
+            <td>{{ value.tc_description.replace('\n', '<br>') | safe }}</td>
+            {% if "failed" in value.Status|lower %}
+            <td class="red-cell">{{ value.Status }}</td>
+            {% else %}
+            <td>{{ value.Status }}</td>
+            {% endif %}
+            <td>{{ value.Browser }}</td>
+            <td>{{ value['Executed Date'] }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+    {% set edge_matches = [] %}
+    {% for value in data %}
+        {% if "edge" in value.Browser|lower %}
+            {% if edge_matches.append(1) %}{% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if edge_matches|length > 0 %}
+<div class="browser-title"><p>EDGE</p></div>
+
+ <table>
+    <thead>
+        <tr>
+            <th>Sno</th>
+            <th>TC ID</th>
+            <th>Test Description</th>
+            <th>Status</th>
+            <th>Browser</th>
+            <th>Executed Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set sno = [] %}
+        {% for value in data %}
+        {% if "edge" in value.Browser|lower %}
+        {% if sno.append(1) %}{% endif %}
+        <tr>
+            <td>{{ sno|length }}</td>
+            <td class="fixedwidth">{{ value.tc_id }}</td>
+            <td>{{ value.tc_description.replace('\n', '<br>') | safe }}</td>
+            {% if "failed" in value.Status|lower %}
+            <td class="red-cell">{{ value.Status }}</td>
+            {% else %}
+            <td>{{ value.Status }}</td>
+            {% endif %}
+            <td>{{ value.Browser }}</td>
+            <td>{{ value['Executed Date'] }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+</body>
+</html>
