@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%highlight{%d{yyyy-MM-dd HH:mm:ss,SSS} [%pid] [%t] %-5level %c{1}.(%F:%L) | %msg%n%throwable}{FATAL=bright white, ERROR=bright red, WARN=yellow, INFO=magenta, DEBUG=green, TRACE=cyan}</Pattern>
+                <disableAnsi>false</disableAnsi>
+            </PatternLayout>
+        </Console>
+
+        <RollingRandomAccessFile name="LogToRollingRandomAccessFile" fileName="logs/app.log"
+            filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d [%pid] [%t] %-5level %c{1}.(%F:%L) | %msg%n%throwable</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.waf" level="debug" additivity="false">
+            <AppenderRef ref="LogToConsole" level="${env:LOG_LEVEL:-info}"/>
+            <AppenderRef ref="LogToRollingRandomAccessFile" level="debug"/>
+        </Logger>
+        <Root level="warn">
+            <AppenderRef ref="LogToConsole" />
+            <AppenderRef ref="LogToRollingRandomAccessFile" />
+        </Root>
+    </Loggers>
+</Configuration>

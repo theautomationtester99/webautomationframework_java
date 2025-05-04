@@ -1,8 +1,10 @@
 package com.waf;
 
 import java.util.*;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.waf.report.RetryData;
@@ -12,14 +14,12 @@ import com.waf.report.TestStep;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-
 import tech.tablesaw.api.Table;
 import tech.tablesaw.io.xlsx.XlsxReadOptions;
 
 public class PdfReportManager {
     // LoggerConfig instance for logging
-    private Logger logger;
+    private final Logger logger;
     private Utils utils;
 
     protected String tcId;
@@ -44,9 +44,9 @@ public class PdfReportManager {
     protected String executedDate;
     protected String overallStatusText;
 
-    public PdfReportManager(Logger logger) {
-        this.logger = logger;
-        this.utils = Utils.getInstance(logger);
+    public PdfReportManager() {
+        this.logger = LogManager.getLogger(PdfReportManager.class);
+        this.utils = Utils.getInstance();
         this.tcId = "";
         this.allStepsList = new ArrayList<>();
         this.stepNo = 0;
@@ -212,7 +212,7 @@ public class PdfReportManager {
         String testId = tcId + "-" + runningOnHostName + "-" + browserImgAlt + "-" + osImgAlt;
         String fileName = tcId + "_" + browserImgAlt + "_" + overallStatusText + "_" + utils.getDateString();
 
-        PdfReporting pdf = new PdfReporting(this.logger, logoPath, templatePath, testReportMap, testId, fileName);
+        PdfReporting pdf = new PdfReporting(logoPath, templatePath, testReportMap, testId, fileName);
 
         pdf.generatePdf();
     }
@@ -250,7 +250,6 @@ public class PdfReportManager {
                 System.out.println(tableData);
 
                 PdfTsReporting tsPdf = new PdfTsReporting(
-                        logger,
                         baseDir.resolve("src/main/resources/logo.png").toString(),
                         baseDir.resolve("src/main/resources/encrypted_jinjava_ts_file.jinjav").toString(),
                         finalTableData,
@@ -258,7 +257,7 @@ public class PdfReportManager {
 
                 tsPdf.generatePdf();
             } catch (Exception e) {
-                logger.severe("Error generating test summary PDF: " + e.getMessage());
+                logger.error("Error generating test summary PDF: " + e.getMessage());
             }
         }
     }

@@ -15,10 +15,12 @@ import org.openqa.selenium.Dimension;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -28,7 +30,7 @@ public class DriverManager {
      * settings.
      */
 
-    private Logger logger;
+    private final Logger logger;
     private String tempDir;
     protected WebDriver driver;
     private boolean isInPrivate;
@@ -38,12 +40,12 @@ public class DriverManager {
     private String appiumUrl;
     protected String gridOsInfo;
 
-    public DriverManager(Logger logger, String tempDir) {
+    public DriverManager(String tempDir) {
         /**
          * Initializes a new instance of the DriverManager class with configuration
          * settings.
          */
-        this.logger = logger;
+        this.logger = LogManager.getLogger(DriverManager.class);
         this.tempDir = tempDir;
         this.isInPrivate = isBrowserInPrivate();
         this.isHeadless = isBrowserHeadless();
@@ -53,12 +55,12 @@ public class DriverManager {
         this.gridOsInfo = "";
     }
 
-    public DriverManager(Logger logger) {
+    public DriverManager() {
         /**
          * Initializes a new instance of the DriverManager class with configuration
          * settings.
          */
-        this.logger = logger;
+        this.logger = LogManager.getLogger(DriverManager.class);
         this.tempDir = "";
         this.isInPrivate = isBrowserInPrivate();
         this.isHeadless = isBrowserHeadless();

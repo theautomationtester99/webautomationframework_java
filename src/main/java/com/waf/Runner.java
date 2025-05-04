@@ -1,6 +1,8 @@
 package com.waf;
 
 import org.apache.commons.cli.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.waf.config.Config;
 
@@ -8,20 +10,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Logger;
 
 public class Runner {
     public static void main(String[] args) {
-        Logger logger = null;
+        final Logger logger = LogManager.getLogger(Runner.class);
         try {
             Path baseDir = Paths.get(System.getProperty("user.dir")).toAbsolutePath();
             Lock lock = new ReentrantLock();
 
-            LoggerConfig loggerConfig = new LoggerConfig("");
-            loggerConfig.startListener();
-            logger = loggerConfig.setupLogger();
-
-            Utils utils = Utils.getInstance(logger);
+            Utils utils = Utils.getInstance();
 
             logger.info("Execution Started ----------------.");
             logger.info("Parsing the input arguments.");
@@ -45,7 +42,7 @@ public class Runner {
             try {
                 cmd = parser.parse(options, args);
             } catch (ParseException e) {
-                logger.severe("Error parsing arguments: " + e.getMessage());
+                logger.error("Error parsing arguments: " + e.getMessage());
                 System.exit(1);
                 return;
             }
@@ -60,7 +57,7 @@ public class Runner {
                     (cmd.hasOption("encrypt-str") ? 1 : 0);
 
             if (activeArgs > 1) {
-                logger.severe(
+                logger.error(
                         "Only one of '--start', '--start-parallel', '--version', '--encrypt-file', '--encrypt-str', '--delete-tr-google-drive', or '--help-html' can be used at a time.");
                 System.exit(1);
             }
@@ -71,15 +68,15 @@ public class Runner {
             // Start execution
             if (cmd.hasOption("start") && parallelExecution) {
                 logger.info("Parallel Execution is enabled in config. So starting parallel test execution...");
-                ExecutionManager.startExecution(logger, utils, lock, parallelExecution);
+                ExecutionManager.startExecution(utils, lock, parallelExecution);
             } else if (cmd.hasOption("start")) {
                 logger.info("Starting test execution...");
-                ExecutionManager.startExecution(logger, utils, lock, false);
+                ExecutionManager.startExecution(utils, lock, false);
             }
-            
+
             if (cmd.hasOption("start-parallel")) {
                 logger.info("Starting test execution...");
-                ExecutionManager.startExecution(logger, utils, lock, cmd.hasOption("start-parallel"));
+                ExecutionManager.startExecution(utils, lock, cmd.hasOption("start-parallel"));
             }
 
             if (cmd.hasOption("version")) {
@@ -95,7 +92,7 @@ public class Runner {
 
             if (cmd.hasOption("encrypt-file") || cmd.hasOption("output-file")) {
                 if (!(cmd.hasOption("encrypt-file") && cmd.hasOption("output-file"))) {
-                    logger.severe("Both '--encrypt-file' and '--output-file' options must be provided together.");
+                    logger.error("Both '--encrypt-file' and '--output-file' options must be provided together.");
                     System.exit(1);
                 }
 
@@ -103,12 +100,12 @@ public class Runner {
                 String outputFile = cmd.getOptionValue("output-file");
 
                 if (inputFile == null || inputFile.trim().isEmpty()) {
-                    logger.severe("Invalid input file provided for encryption.");
+                    logger.error("Invalid input file provided for encryption.");
                     System.exit(1);
                 }
 
                 if (outputFile == null || outputFile.trim().isEmpty()) {
-                    logger.severe("Invalid output file name specified.");
+                    logger.error("Invalid output file name specified.");
                     System.exit(1);
                 }
 
@@ -122,7 +119,7 @@ public class Runner {
 
                 // Check if the input string is null, empty, or just spaces
                 if (inputStr == null || inputStr.trim().isEmpty()) {
-                    logger.severe("Invalid input string provided for encryption.");
+                    logger.error("Invalid input string provided for encryption.");
                     System.exit(1);
                 }
 
@@ -130,10 +127,9 @@ public class Runner {
                 logger.info("Encrypted string: " + encryptedStr);
                 System.exit(0);
             }
-            loggerConfig.stopListener();
 
         } catch (Exception e) {
-            logger.severe("Unexpected error occurred: " + e.getMessage());
+            logger.error("Unexpected error occurred: " + e.getMessage());
             e.printStackTrace();
             System.exit(1);
         }

@@ -2,7 +2,9 @@ package com.waf;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Hello world!
@@ -10,22 +12,11 @@ import java.util.logging.Logger;
  */
 public class TestRunner {
     public static void main(String[] args) {
-        LoggerConfig loggerConfig = null;
-        try {
-            loggerConfig = new LoggerConfig("");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            loggerConfig.startListener();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        Logger logger = Logger.getLogger("WafLogger");
+        Logger logger = LogManager.getLogger(TestRunner.class);
 
         // Provide the path to the file to be tested
-        Utils utils = Utils.getInstance(logger);
+        Utils utils = Utils.getInstance();
         String filePath = "D:\\allprojects\\web_automation_htmltopdf\\test_scripts\\QS002_tesQScrip1t.xlsx";
         // String filePath = "D:\\allprojects\\web_automation_htmltopdf\\.gitignore";
         // String filePath =
@@ -52,6 +43,5 @@ public class TestRunner {
         } else {
             System.out.println("Invalid date");
         }
-        loggerConfig.stopListener();
     }
 }

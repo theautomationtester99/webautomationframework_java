@@ -3,8 +3,9 @@ package com.waf;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 import com.deque.html.axecore.results.Results;
@@ -29,17 +30,17 @@ public class KeywordsManager extends DriverFunctions {
     private String seGridB64;
     private String tempDir;
 
-    public KeywordsManager(Logger logger, String tempDir, int retryCount) {
-        super(logger, tempDir);
+    public KeywordsManager(String tempDir, int retryCount) {
+        super(tempDir);
         this.screenshotStrategy = getScreenshotStrategy();
         this.highlightEnabled = getHighlightElementStrategy();
         this.screenshotNo = 0;
         this.screenshotFirstStr = "";
-        this.logger = logger;
+        this.logger = LogManager.getLogger(KeywordsManager.class);
         this.retryCount = retryCount;
-        this.repoM = new PdfReportManager(this.logger);
+        this.repoM = new PdfReportManager();
         this.repoM.currentRetry = (this.retryCount);
-        this.utils = Utils.getInstance(logger);
+        this.utils = Utils.getInstance();
         this.chromeLogoSrcB64 = Constants.CHROME_LOGO_SRC_B64;
         this.edgeLogoSrcB64 = Constants.EDGE_LOGO_SRC_B64;
         this.linuxLogoSrcB64 = Constants.LINUX_LOGO_SRC_B64;
@@ -58,7 +59,7 @@ public class KeywordsManager extends DriverFunctions {
         String strategy = Config.SCREENSHOT_STRATEGY.toLowerCase();
         if (!strategy.equalsIgnoreCase("always") && !strategy.equalsIgnoreCase("on-error")
                 && !strategy.equalsIgnoreCase("never")) {
-            this.logger.warning(
+            this.logger.warn(
                     "Invalid screenshot strategy '" + strategy + "' found in configuration. Defaulting to 'always'.");
             strategy = "always";
         }
@@ -77,7 +78,7 @@ public class KeywordsManager extends DriverFunctions {
         try {
             switchToDefaultContent();
         } catch (Exception e) {
-            this.logger.severe("An error occurred: " + e.getMessage());
+            this.logger.error("An error occurred: " + e.getMessage());
             throw e;
         }
     }
@@ -107,7 +108,7 @@ public class KeywordsManager extends DriverFunctions {
             }
 
         } catch (Exception e) {
-            this.logger.severe("Failed to switch to iframe '" + elementName + "': " + e.getMessage());
+            this.logger.error("Failed to switch to iframe '" + elementName + "': " + e.getMessage());
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
                 this.screenshotNo++;
@@ -161,7 +162,7 @@ public class KeywordsManager extends DriverFunctions {
             Thread.sleep(howSeconds * 1000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            this.logger.severe("Error while waiting: " + e.getMessage());
+            this.logger.error("Error while waiting: " + e.getMessage());
         }
     }
 
@@ -170,7 +171,7 @@ public class KeywordsManager extends DriverFunctions {
             this.logger.info("Scrolling page " + upOrDown + " for 1000 pixels");
             webScroll(upOrDown);
         } else {
-            this.logger.warning("Invalid scroll direction: " + upOrDown);
+            this.logger.warn("Invalid scroll direction: " + upOrDown);
         }
     }
 
@@ -248,7 +249,7 @@ public class KeywordsManager extends DriverFunctions {
                 }
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred while launching browser: " + e.getMessage());
+            this.logger.error("An error occurred while launching browser: " + e.getMessage());
             if (isHeadless || isRunningGrid) {
                 this.repoM.addReportData(Map.of(
                         "subStep", "Open Browser",
@@ -285,11 +286,11 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public boolean geIsElementLoaded(String locator, String locatorType) {
-        this.logger.fine("Checking if element is loaded.");
+        this.logger.info("Checking if element is loaded.");
         try {
             return isElementPresent(locator, locatorType);
         } catch (Exception e) {
-            this.logger.fine("An error occurred: " + e.getMessage());
+            this.logger.info("An error occurred: " + e.getMessage());
             return false;
         }
     }
@@ -303,7 +304,7 @@ public class KeywordsManager extends DriverFunctions {
             List<Rule> violations = results.getViolations();
 
             if (!violations.isEmpty()) {
-                this.logger.severe("Accessibility check failed with " + violations.size() + " violations.");
+                this.logger.error("Accessibility check failed with " + violations.size() + " violations.");
                 StringBuilder allViolations = new StringBuilder("\n");
 
                 for (Rule violation : violations) {
@@ -312,10 +313,10 @@ public class KeywordsManager extends DriverFunctions {
                     String impact = violation.getImpact();
                     String helpUrl = violation.getHelpUrl();
 
-                    this.logger.severe("Violation: " + id);
-                    this.logger.severe("Description: " + description);
-                    this.logger.severe("Impact: " + impact);
-                    this.logger.severe("Help URL: " + helpUrl);
+                    this.logger.error("Violation: " + id);
+                    this.logger.error("Description: " + description);
+                    this.logger.error("Impact: " + impact);
+                    this.logger.error("Help URL: " + helpUrl);
 
                     allViolations.append("\nViolation: ").append(id)
                             .append("\nDescription: ").append(description)
@@ -337,7 +338,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during accessibility check: " + e.getMessage());
+            this.logger.error("An error occurred during accessibility check: " + e.getMessage());
             this.repoM.addReportData(Map.of(
                     "subStep", "Check if the page is accessibility compliant",
                     "subStepMessage", "Error Occurred: " + e.getMessage(),
@@ -348,7 +349,7 @@ public class KeywordsManager extends DriverFunctions {
 
     public void geDragAndDrop(String sourceLocator, String sourceLocatorType, String targetLocator,
             String targetLocatorType, String sourceElementName, String targetElementName) {
-        this.logger.fine("Performing drag-and-drop from '" + sourceElementName + "' to '" + targetElementName + "'.");
+        this.logger.info("Performing drag-and-drop from '" + sourceElementName + "' to '" + targetElementName + "'.");
         try {
             dragAndDrop(sourceLocator, sourceLocatorType, targetLocator, targetLocatorType);
 
@@ -370,7 +371,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during drag-and-drop: " + e.getMessage());
+            this.logger.error("An error occurred during drag-and-drop: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -395,7 +396,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geMouseHover(String locator, String locatorType, String elementName) {
-        this.logger.fine("Performing mouse hover on '" + elementName + "'.");
+        this.logger.info("Performing mouse hover on '" + elementName + "'.");
         try {
             if (this.highlightEnabled) {
                 highlightElement(1, "blue", 2, locator, locatorType);
@@ -420,7 +421,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during mouse hover: " + e.getMessage());
+            this.logger.error("An error occurred during mouse hover: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -445,7 +446,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geIsElementEnabled(String locator, String locatorType, String elementName) {
-        this.logger.fine("Checking if element '" + elementName + "' is enabled.");
+        this.logger.info("Checking if element '" + elementName + "' is enabled.");
         try {
             if (this.highlightEnabled) {
                 highlightElement(1, "blue", 2, locator, locatorType);
@@ -462,7 +463,7 @@ public class KeywordsManager extends DriverFunctions {
                             this.screenshotFirstStr + "_" + this.utils.formatNumberZeroPad4Char(this.screenshotNo)),
                     "imageAlt", this.repoM.browserImgAlt));
         } catch (Exception e) {
-            this.logger.severe("An error occurred while checking element status: " + e.getMessage());
+            this.logger.error("An error occurred while checking element status: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -478,7 +479,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geIsChkRadioElementSelected(String locator, String locatorType, String elementName) {
-        this.logger.fine("Checking if element '" + elementName + "' is selected.");
+        this.logger.info("Checking if element '" + elementName + "' is selected.");
         try {
             if (this.highlightEnabled) {
                 highlightElement(1, "blue", 2, locator, locatorType);
@@ -496,7 +497,7 @@ public class KeywordsManager extends DriverFunctions {
                             this.screenshotFirstStr + "_" + this.utils.formatNumberZeroPad4Char(this.screenshotNo)),
                     "imageAlt", this.repoM.browserImgAlt));
         } catch (Exception e) {
-            this.logger.severe("An error occurred while checking element selection: " + e.getMessage());
+            this.logger.error("An error occurred while checking element selection: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -512,7 +513,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geIsChkRadioElementNotSelected(String locator, String locatorType, String elementName) {
-        this.logger.fine("Checking if element '" + elementName + "' is NOT selected.");
+        this.logger.info("Checking if element '" + elementName + "' is NOT selected.");
         try {
             if (this.highlightEnabled) {
                 highlightElement(1, "blue", 2, locator, locatorType);
@@ -530,7 +531,7 @@ public class KeywordsManager extends DriverFunctions {
                             this.screenshotFirstStr + "_" + this.utils.formatNumberZeroPad4Char(this.screenshotNo)),
                     "imageAlt", this.repoM.browserImgAlt));
         } catch (Exception e) {
-            this.logger.severe("An error occurred while checking selection status: " + e.getMessage());
+            this.logger.error("An error occurred while checking selection status: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -546,7 +547,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geIsElementDisabled(String locator, String locatorType, String elementName) {
-        this.logger.fine("Checking if element '" + elementName + "' is disabled.");
+        this.logger.info("Checking if element '" + elementName + "' is disabled.");
         try {
             if (this.highlightEnabled) {
                 highlightElement(1, "blue", 2, locator, locatorType);
@@ -564,7 +565,7 @@ public class KeywordsManager extends DriverFunctions {
                             this.screenshotFirstStr + "_" + this.utils.formatNumberZeroPad4Char(this.screenshotNo)),
                     "imageAlt", this.repoM.browserImgAlt));
         } catch (Exception e) {
-            this.logger.severe("An error occurred while checking disabled status: " + e.getMessage());
+            this.logger.error("An error occurred while checking disabled status: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -580,7 +581,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geIsElementDisplayed(String locator, String locatorType, String elementName) {
-        this.logger.fine("Checking if element '" + elementName + "' is displayed.");
+        this.logger.info("Checking if element '" + elementName + "' is displayed.");
         try {
             boolean isDisplayed = isElementPresent(locator, locatorType);
 
@@ -595,7 +596,7 @@ public class KeywordsManager extends DriverFunctions {
                             this.screenshotFirstStr + "_" + this.utils.formatNumberZeroPad4Char(this.screenshotNo)),
                     "imageAlt", this.repoM.browserImgAlt));
         } catch (Exception e) {
-            this.logger.severe("An error occurred while checking display status: " + e.getMessage());
+            this.logger.error("An error occurred while checking display status: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -611,11 +612,11 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geEnterUrl(String url) {
-        this.logger.fine("Opening URL: " + url);
+        this.logger.info("Opening URL: " + url);
         try {
             openUrl(url);
             geWaitForSeconds(2);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -634,7 +635,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred while entering URL: " + e.getMessage());
+            this.logger.error("An error occurred while entering URL: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -658,7 +659,7 @@ public class KeywordsManager extends DriverFunctions {
     }
 
     public void geType(String locator, String locatorType, String textToType, String elementName) {
-        this.logger.fine("Typing text: " + textToType);
+        this.logger.info("Typing text: " + textToType);
         try {
             if (this.highlightEnabled) {
                 highlightElement(1, "blue", 2, locator, locatorType);
@@ -666,7 +667,7 @@ public class KeywordsManager extends DriverFunctions {
             elementClick(locator, locatorType);
             sendKeys(textToType, locator, locatorType);
             geWaitForSeconds(1);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -685,7 +686,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred while typing text: " + e.getMessage());
+            this.logger.error("An error occurred while typing text: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -727,7 +728,7 @@ public class KeywordsManager extends DriverFunctions {
                             this.screenshotFirstStr + "_" + this.utils.formatNumberZeroPad4Char(this.screenshotNo)),
                     "imageAlt", this.repoM.browserImgAlt));
         } catch (Exception e) {
-            this.logger.severe("An error occurred while verifying displayed text: " + e.getMessage());
+            this.logger.error("An error occurred while verifying displayed text: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -761,7 +762,7 @@ public class KeywordsManager extends DriverFunctions {
                 }
 
                 if (System.currentTimeMillis() - startTime > timeout) {
-                    this.logger.warning("Download tracking timed out.");
+                    this.logger.warn("Download tracking timed out.");
                     break;
                 }
 
@@ -769,7 +770,7 @@ public class KeywordsManager extends DriverFunctions {
 
                     Thread.sleep(5000);
                 } catch (Exception e) {
-                    this.logger.severe(e.toString());
+                    this.logger.error(e.toString());
                 }
             }
 
@@ -789,7 +790,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Fail"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred while verifying file download: " + e.getMessage());
+            this.logger.error("An error occurred while verifying file download: " + e.getMessage());
 
             this.screenshotNo++;
             this.repoM.addReportData(Map.of(
@@ -810,7 +811,7 @@ public class KeywordsManager extends DriverFunctions {
             }
             elementJsClick(locator, locatorType);
             geWaitForSeconds(2);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             // Handle screenshot strategy
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
@@ -830,7 +831,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during JavaScript click: " + e.getMessage());
+            this.logger.error("An error occurred during JavaScript click: " + e.getMessage());
 
             // Handle screenshot strategy for errors
             if (this.screenshotStrategy.equalsIgnoreCase("always")
@@ -862,7 +863,7 @@ public class KeywordsManager extends DriverFunctions {
             }
             elementClick(locator, locatorType);
             geWaitForSeconds(2);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             // Handle screenshot strategy
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
@@ -882,7 +883,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during click: " + e.getMessage());
+            this.logger.error("An error occurred during click: " + e.getMessage());
 
             // Handle screenshot strategy for errors
             if (this.screenshotStrategy.equalsIgnoreCase("always")
@@ -914,7 +915,7 @@ public class KeywordsManager extends DriverFunctions {
             }
             dropdownSelectElement(locator, locatorType, value, "value");
             geWaitForSeconds(2);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -933,7 +934,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during dropdown selection by value: " + e.getMessage());
+            this.logger.error("An error occurred during dropdown selection by value: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -964,7 +965,7 @@ public class KeywordsManager extends DriverFunctions {
             }
             dropdownSelectElement(locator, locatorType, String.valueOf(index), "index");
             geWaitForSeconds(2);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -983,7 +984,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during dropdown selection by index: " + e.getMessage());
+            this.logger.error("An error occurred during dropdown selection by index: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -1014,7 +1015,7 @@ public class KeywordsManager extends DriverFunctions {
             }
             dropdownSelectElement(locator, locatorType, text, "text");
             geWaitForSeconds(2);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -1033,7 +1034,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during dropdown selection by visible text: " + e.getMessage());
+            this.logger.error("An error occurred during dropdown selection by visible text: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -1063,7 +1064,7 @@ public class KeywordsManager extends DriverFunctions {
             fileNameToSelect(filePaths);
             waitForElement(locator, locatorType);
             scrollIntoView(locator, locatorType);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -1082,7 +1083,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during file selection: " + e.getMessage());
+            this.logger.error("An error occurred during file selection: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -1110,7 +1111,7 @@ public class KeywordsManager extends DriverFunctions {
             scrollIntoView(locator, locatorType);
             fileNameToUpload(filePaths, locator, locatorType);
             geWaitForSeconds(1);
-            this.logger.fine("Populating the step result details in the PDF report.");
+            this.logger.info("Populating the step result details in the PDF report.");
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")) {
                 this.screenshotNo++;
@@ -1129,7 +1130,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during file upload: " + e.getMessage());
+            this.logger.error("An error occurred during file upload: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {
@@ -1215,7 +1216,7 @@ public class KeywordsManager extends DriverFunctions {
                         params.get("locator_dt_lst_type"));
                 for (WebElement dt : dateElements) {
                     String dispDay = dt.getText();
-                    String dayAttributeValue = dt.getAttribute("aria-label");
+                    String dayAttributeValue = dt.getDomAttribute("aria-label");
                     String dispDayTwoDig = String.format("%02d", Integer.parseInt(dispDay));
 
                     if (dispDayTwoDig.equals(day) && dayAttributeValue.toLowerCase().contains(mon.toLowerCase())) {
@@ -1242,7 +1243,7 @@ public class KeywordsManager extends DriverFunctions {
                         "subStepStatus", "Pass"));
             }
         } catch (Exception e) {
-            this.logger.severe("An error occurred during date selection: " + e.getMessage());
+            this.logger.error("An error occurred during date selection: " + e.getMessage());
 
             if (this.screenshotStrategy.equalsIgnoreCase("always")
                     || this.screenshotStrategy.equalsIgnoreCase("on-error")) {

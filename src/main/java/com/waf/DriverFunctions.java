@@ -13,10 +13,11 @@ import java.io.File;
 import java.time.Duration;
 import java.util.Base64;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -27,18 +28,18 @@ import org.openqa.selenium.support.ui.Select;
 public class DriverFunctions extends DriverManager {
 
     private Utils utils;
-    private Logger logger;
+    private final Logger logger;
 
-    public DriverFunctions(Logger logger, String tempDir) {
-        super(logger, tempDir);
-        this.utils = Utils.getInstance(logger);
-        this.logger = logger;
+    public DriverFunctions(String tempDir) {
+        super(tempDir);
+        this.utils = Utils.getInstance();
+        this.logger = LogManager.getLogger(DriverFunctions.class);
     }
 
-    public DriverFunctions(Logger logger) {
-        super(logger);
-        this.utils = Utils.getInstance(logger);
-        this.logger = logger;
+    public DriverFunctions() {
+        super();
+        this.utils = Utils.getInstance();
+        this.logger = LogManager.getLogger(DriverFunctions.class);
     }
 
     public void closeBrowser() {
@@ -80,7 +81,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Scrolling to element with locator: " + locator + " locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error if scrolling fails and rethrow the exception
-            logger.severe("Cannot send data on the element with locator: " + locator + " locatorType: " + locatorType);
+            logger.error("Cannot send data on the element with locator: " + locator + " locatorType: " + locatorType);
             throw e;
         }
     }
@@ -99,7 +100,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Scrolling to element with locator: " + locator + " locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error if scrolling fails and rethrow the exception
-            logger.severe("Cannot send data on the element with locator: " + locator + " locatorType: " + locatorType);
+            logger.error("Cannot send data on the element with locator: " + locator + " locatorType: " + locatorType);
             throw e;
         }
     }
@@ -112,7 +113,7 @@ public class DriverFunctions extends DriverManager {
                 return utils.takeScreenshotFullSrcTag(fileStr); // Assuming similar functionality exists in Utils class
             }
         } catch (Exception e) {
-            logger.severe("### Exception Occurred when taking screenshot: " + e.getMessage());
+            logger.error("### Exception Occurred when taking screenshot: " + e.getMessage());
             return "";
         }
     }
@@ -180,7 +181,7 @@ public class DriverFunctions extends DriverManager {
             return "data:image/png;base64," + base64Image;
 
         } catch (Exception e) {
-            logger.severe("### Exception Occurred when taking screenshot with Base64 watermark: " + e.getMessage());
+            logger.error("### Exception Occurred when taking screenshot with Base64 watermark: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -192,7 +193,7 @@ public class DriverFunctions extends DriverManager {
             return driver.getTitle();
         } catch (Exception e) {
             // Log an error if unable to fetch the title
-            logger.severe("### Exception Occurred when getting page title: " + e.getMessage());
+            logger.error("### Exception Occurred when getting page title: " + e.getMessage());
             throw e;
         }
     }
@@ -220,14 +221,14 @@ public class DriverFunctions extends DriverManager {
                     break;
 
                 default:
-                    logger.warning("Selector type not supported: " + selectorType); // Log unsupported selector type
+                    logger.warn("Selector type not supported: " + selectorType); // Log unsupported selector type
                     throw new IllegalArgumentException("Unsupported selector type: " + selectorType);
             }
 
             logger.info("Element selected with selector: " + selector + " and selectorType: " + selectorType);
         } catch (Exception e) {
             // Log and rethrow exception if selection fails
-            logger.severe("Element not selected with selector: " + selector + " and selectorType: " + selectorType
+            logger.error("Element not selected with selector: " + selector + " and selectorType: " + selectorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -243,7 +244,7 @@ public class DriverFunctions extends DriverManager {
             return optionsCount;
         } catch (Exception e) {
             // Log error if element not found and rethrow exception
-            logger.severe("Element not found with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Element not found with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -254,15 +255,13 @@ public class DriverFunctions extends DriverManager {
             // Locate the dropdown element
             WebElement element = getElement(locator, locatorType);
             Select dropdown = new Select(element); // Create a Select instance
-            String selectedOptionValue = dropdown.getFirstSelectedOption().getAttribute("value"); // Get the value
-                                                                                                  // attribute of the
-                                                                                                  // selected option
+            String selectedOptionValue = dropdown.getFirstSelectedOption().getDomAttribute("value"); 
             logger.info("Return the selected option value of dropdown list with locator: " + locator
                     + " and locatorType: " + locatorType);
             return selectedOptionValue;
         } catch (Exception e) {
             // Log error if unable to retrieve the selected option value
-            logger.severe("Cannot return the selected option value of dropdown list with locator: " + locator
+            logger.error("Cannot return the selected option value of dropdown list with locator: " + locator
                     + " and locatorType: " + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -280,7 +279,7 @@ public class DriverFunctions extends DriverManager {
             return selectedOptionText;
         } catch (Exception e) {
             // Log error if unable to retrieve the selected option
-            logger.severe("Cannot return the selected option of dropdown list with locator: " + locator
+            logger.error("Cannot return the selected option of dropdown list with locator: " + locator
                     + " and locatorType: " + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -295,7 +294,7 @@ public class DriverFunctions extends DriverManager {
             return isSelected;
         } catch (Exception e) {
             // Log error if the element is not found
-            logger.severe("Element not found with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Element not found with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -313,7 +312,7 @@ public class DriverFunctions extends DriverManager {
             return elements;
         } catch (Exception e) {
             // Log error if the elements could not be found
-            logger.severe("Element list not found with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Element list not found with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -326,14 +325,14 @@ public class DriverFunctions extends DriverManager {
             if (locator != null && !locator.isEmpty()) {
                 element = getElement(locator, locatorType);
             } else {
-                throw new ElementNotVisibleException(locator);
+                throw new ElementNotInteractableException(locator);
             }
             // Perform the click action
             element.click();
             logger.info("Clicked on element with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error and rethrow exception if the click fails
-            logger.severe("Cannot click on the element with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Cannot click on the element with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -352,7 +351,7 @@ public class DriverFunctions extends DriverManager {
                     + locatorType);
         } catch (Exception e) {
             // Log error and rethrow exception if the JavaScript click fails
-            logger.severe("Cannot click on the element using JavaScript with locator: " + locator + " and locatorType: "
+            logger.error("Cannot click on the element using JavaScript with locator: " + locator + " and locatorType: "
                     + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -365,7 +364,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Clicked on element using JavaScript");
         } catch (Exception e) {
             // Log error and rethrow exception if the JavaScript click fails
-            logger.severe("Cannot click on the element using JavaScript - Error: " + e.getMessage());
+            logger.error("Cannot click on the element using JavaScript - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -384,7 +383,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Hovered over element with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error and rethrow exception if hover fails
-            logger.severe("Cannot hover over the element with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Cannot hover over the element with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -404,7 +403,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Sent data to element with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error and rethrow exception if send keys fails
-            logger.severe("Cannot send data to the element with locator: " + locator + " and locatorType: "
+            logger.error("Cannot send data to the element with locator: " + locator + " and locatorType: "
                     + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -421,7 +420,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Cleared data of element with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error and rethrow exception if clear fails
-            logger.severe("Cannot clear data of the element with locator: " + locator + " and locatorType: "
+            logger.error("Cannot clear data of the element with locator: " + locator + " and locatorType: "
                     + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -442,7 +441,7 @@ public class DriverFunctions extends DriverManager {
 
             // If the text is empty, retrieve innerText attribute
             if (text.isEmpty()) {
-                text = element.getAttribute("innerText");
+                text = element.getDomAttribute("innerText");
             }
 
             // If text exists, log it
@@ -454,7 +453,7 @@ public class DriverFunctions extends DriverManager {
             return text;
         } catch (Exception e) {
             // Log error and rethrow exception if text retrieval fails
-            logger.severe("Failed to get text on element " + elementName + " - Error: " + e.getMessage());
+            logger.error("Failed to get text on element " + elementName + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -474,7 +473,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Switched to iframe with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error if unable to switch to iframe
-            logger.severe("Unable to switch to iframe with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Unable to switch to iframe with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -487,7 +486,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Switched to default content.");
         } catch (Exception e) {
             // Log error if unable to switch to default content
-            logger.severe("Unable to switch to default content - Error: " + e.getMessage());
+            logger.error("Unable to switch to default content - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -504,12 +503,12 @@ public class DriverFunctions extends DriverManager {
                 logger.info("Element found with locator: " + locator + " and locatorType: " + locatorType);
                 return true;
             } else {
-                logger.warning("Element not found with locator: " + locator + " and locatorType: " + locatorType);
+                logger.warn("Element not found with locator: " + locator + " and locatorType: " + locatorType);
                 return false;
             }
         } catch (Exception e) {
             // Log error if unable to check element presence
-            logger.severe("Element not found with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Element not found with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             return false;
         }
@@ -523,7 +522,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Style applied to element: " + style);
         } catch (Exception e) {
             // Log error if unable to apply style
-            logger.severe("Unable to apply style to element - Error: " + e.getMessage());
+            logger.error("Unable to apply style to element - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -540,7 +539,7 @@ public class DriverFunctions extends DriverManager {
             }
 
             // Retrieve the original style of the element
-            String originalStyle = element.getAttribute("style");
+            String originalStyle = element.getDomAttribute("style");
 
             // Apply the highlight style
             applyStyle("border: " + border + "px solid " + color + ";", element);
@@ -551,7 +550,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Highlighted element with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Log error if unable to highlight element
-            logger.severe("Cannot highlight element with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Cannot highlight element with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -573,7 +572,7 @@ public class DriverFunctions extends DriverManager {
                     " and targetLocatorType: " + targetLocatorType);
         } catch (Exception e) {
             // Log error if the drag-and-drop action fails
-            logger.severe("Failed to perform drag-and-drop from source with locator: " + sourceLocator +
+            logger.error("Failed to perform drag-and-drop from source with locator: " + sourceLocator +
                     " and sourceLocatorType: " + sourceLocatorType + " to target with locator: " + targetLocator +
                     " and targetLocatorType: " + targetLocatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
@@ -591,13 +590,13 @@ public class DriverFunctions extends DriverManager {
                 logger.info("Element is displayed with locator: " + locator + " and locatorType: " + locatorType);
                 return true;
             } else {
-                logger.warning(
+                logger.warn(
                         "Element is not displayed with locator: " + locator + " and locatorType: " + locatorType);
                 return false;
             }
         } catch (Exception e) {
             // Log error if the display check fails
-            logger.severe("Element is not displayed with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Element is not displayed with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             return false;
         }
@@ -615,17 +614,17 @@ public class DriverFunctions extends DriverManager {
                 logger.info("Element with locator: " + locator + " and locatorType: " + locatorType + " is enabled.");
                 return true;
             } else if (element != null) {
-                logger.warning(
+                logger.warn(
                         "Element with locator: " + locator + " and locatorType: " + locatorType + " is disabled.");
                 return false;
             } else {
-                logger.warning(
+                logger.warn(
                         "Element is not displayed with locator: " + locator + " and locatorType: " + locatorType);
                 return false;
             }
         } catch (Exception e) {
             // Log error if the enable check fails
-            logger.severe("Element is not displayed with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Element is not displayed with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             return false;
         }
@@ -646,12 +645,12 @@ public class DriverFunctions extends DriverManager {
                         "Element with locator: " + locator + " and locatorType: " + locatorType + " is NOT selected.");
                 return false;
             } else {
-                logger.warning(
+                logger.warn(
                         "Element is not displayed with locator: " + locator + " and locatorType: " + locatorType);
                 return false;
             }
         } catch (Exception e) {
-            logger.severe("Error checking if element is selected with locator: " + locator + " and locatorType: "
+            logger.error("Error checking if element is selected with locator: " + locator + " and locatorType: "
                     + locatorType + " - Error: " + e.getMessage());
             return false;
         }
@@ -672,7 +671,7 @@ public class DriverFunctions extends DriverManager {
                 return false;
             }
         } catch (Exception e) {
-            logger.severe("Error checking element presence with locator: " + locator + " and locatorType: "
+            logger.error("Error checking element presence with locator: " + locator + " and locatorType: "
                     + locatorType + " - Error: " + e.getMessage());
             return false;
         }
@@ -687,8 +686,8 @@ public class DriverFunctions extends DriverManager {
             // Define explicit wait with custom timeout and polling frequency
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
             wait.pollingEvery(Duration.ofMillis((long) (pollFrequency * 1000)));
-            wait.ignoring(NoSuchElementException.class).ignoring(ElementNotVisibleException.class)
-                    .ignoring(ElementNotSelectableException.class);
+            wait.ignoring(NoSuchElementException.class).ignoring(ElementNotInteractableException.class)
+                    .ignoring(ElementNotInteractableException.class);
 
             // Retrieve the By object for the locator
             By byType = getByType(locatorType.toLowerCase());
@@ -699,7 +698,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Element appeared on the web page.");
             return element;
         } catch (Exception e) {
-            logger.severe("Element not appeared on the web page with locator: " + locator + " and locatorType: "
+            logger.error("Element not appeared on the web page with locator: " + locator + " and locatorType: "
                     + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -716,10 +715,10 @@ public class DriverFunctions extends DriverManager {
                 ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 1500);");
                 logger.info("Scrolled down the webpage.");
             } else {
-                logger.warning("Invalid scroll direction provided: " + direction);
+                logger.warn("Invalid scroll direction provided: " + direction);
             }
         } catch (Exception e) {
-            logger.severe("Failed to scroll the webpage in direction: " + direction + " - Error: " + e.getMessage());
+            logger.error("Failed to scroll the webpage in direction: " + direction + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -731,7 +730,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Current URL retrieved: " + currentUrl);
             return currentUrl;
         } catch (Exception e) {
-            logger.severe("Failed to retrieve the current URL - Error: " + e.getMessage());
+            logger.error("Failed to retrieve the current URL - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -742,7 +741,7 @@ public class DriverFunctions extends DriverManager {
             ((JavascriptExecutor) driver).executeScript("window.history.go(-1);");
             logger.info("Navigated back in the browser's history.");
         } catch (Exception e) {
-            logger.severe("Failed to navigate back in the browser's history - Error: " + e.getMessage());
+            logger.error("Failed to navigate back in the browser's history - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -753,11 +752,11 @@ public class DriverFunctions extends DriverManager {
                 element = getElement(locator, locatorType);
             }
             // Retrieve the value of the specified attribute
-            String attributeValue = element.getAttribute(attribute);
+            String attributeValue = element.getDomAttribute(attribute);
             logger.info("Attribute value retrieved: " + attributeValue);
             return attributeValue;
         } catch (Exception e) {
-            logger.severe("Failed to get attribute '" + attribute + "' for element with locator: " + locator +
+            logger.error("Failed to get attribute '" + attribute + "' for element with locator: " + locator +
                     " and locatorType: " + locatorType + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -769,7 +768,7 @@ public class DriverFunctions extends DriverManager {
             driver.navigate().refresh();
             logger.info("Refreshed the current webpage.");
         } catch (Exception e) {
-            logger.severe("Failed to refresh the current webpage - Error: " + e.getMessage());
+            logger.error("Failed to refresh the current webpage - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -781,7 +780,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("Paused execution for " + secToWait + " seconds.");
         } catch (InterruptedException e) {
             // Handle InterruptedException
-            logger.severe("Failed to pause execution for " + secToWait + " seconds - Error: " + e.getMessage());
+            logger.error("Failed to pause execution for " + secToWait + " seconds - Error: " + e.getMessage());
             Thread.currentThread().interrupt(); // Restore interrupted status
         }
     }
@@ -809,7 +808,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("File name selected: " + fileName);
         } catch (Exception e) {
             // Handle exceptions
-            logger.severe("Failed to select file name: " + fileName + " - Error: " + e.getMessage());
+            logger.error("Failed to select file name: " + fileName + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -829,7 +828,7 @@ public class DriverFunctions extends DriverManager {
             logger.info("File uploaded with locator: " + locator + " and locatorType: " + locatorType);
         } catch (Exception e) {
             // Handle exceptions
-            logger.severe("Failed to upload file with locator: " + locator + " and locatorType: " + locatorType
+            logger.error("Failed to upload file with locator: " + locator + " and locatorType: " + locatorType
                     + " - Error: " + e.getMessage());
             throw new RuntimeException(e);
         }

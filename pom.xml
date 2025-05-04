@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.waf</groupId>
-  <artifactId>webautomationframework</artifactId>
+  <artifactId>webautomationframework_java</artifactId>
   <version>1.0</version>
 
   <properties>
@@ -20,7 +20,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.1.2</version>
+      <version>4.31.0</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.hubspot.jinjava/jinjava -->
@@ -127,7 +127,7 @@
     <dependency>
       <groupId>org.openpnp</groupId>
       <artifactId>opencv</artifactId>
-      <version>3.2.0-0</version>
+      <version>4.9.0-0</version>
     </dependency>
 
     <dependency>
@@ -140,6 +140,26 @@
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20210307</version>
+    </dependency>
+
+    <!-- Log4j API -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.24.2</version>
+    </dependency>
+
+    <!-- Log4j Core (needed for configuration and appenders) -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.24.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.fusesource.jansi</groupId>
+      <artifactId>jansi</artifactId>
+      <version>2.4.0</version>
     </dependency>
 
     <!-- JUnit for testing -->
@@ -161,9 +181,28 @@
       </plugin>
 
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${user.home}/.m2/repository</directory>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
+        <configuration>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
+        </configuration>
         <executions>
           <execution>
             <goals>

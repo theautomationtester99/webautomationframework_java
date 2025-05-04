@@ -1,6 +1,8 @@
 package com.waf;
 
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.microsoft.playwright.*;
 
 public class SMBrowserDownloader extends DriverFunctions {
@@ -20,11 +22,11 @@ public class SMBrowserDownloader extends DriverFunctions {
      * - winLogoSrcB64: Base64 encoded string for Windows logo image.
      */
 
-    private Logger logger;
+    private final Logger logger;
 
-    public SMBrowserDownloader(Logger logger) {
-        super(logger);
-        this.logger = logger;
+    public SMBrowserDownloader() {
+        super();
+        this.logger = LogManager.getLogger(SMBrowserDownloader.class);
     }
 
     public void setupSmBrowsers(String browserName) {
@@ -40,7 +42,7 @@ public class SMBrowserDownloader extends DriverFunctions {
             logger.info("Launching " + browserName + " .......");
             launchBrowser(browserName);
         } catch (Exception e) {
-            logger.severe("An error occurred: " + e.getMessage());
+            logger.error("An error occurred: " + e.getMessage());
             throw e;
         }
     }
@@ -54,7 +56,7 @@ public class SMBrowserDownloader extends DriverFunctions {
         try {
             closeBrowser();
         } catch (Exception e) {
-            logger.severe("An error occurred: " + e.getMessage());
+            logger.error("An error occurred: " + e.getMessage());
             throw e;
         }
     }
@@ -71,7 +73,7 @@ public class SMBrowserDownloader extends DriverFunctions {
             browser.close();
             logger.info("Playwright browser closed successfully!");
         } catch (Exception e) {
-            logger.severe("Failed to launch Playwright browser: " + e.getMessage());
+            logger.error("Failed to launch Playwright browser: " + e.getMessage());
         }
     }
 }

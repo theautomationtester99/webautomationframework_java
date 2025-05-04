@@ -14,12 +14,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
@@ -28,11 +26,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.TreeMap;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.zip.ZipFile;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -40,7 +35,8 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 
 import java.awt.Rectangle;
@@ -59,7 +55,7 @@ import com.waf.config.Config;
 public class Utils {
     private static Utils instance = null;
 
-    private Logger logger;
+    private final Logger logger;
     private String dateStr;
     private String timeStr;
     private String testResultsFolder;
@@ -69,8 +65,8 @@ public class Utils {
     private String baseFolder;
     private static final String DEFAULT_KEY = "VVxjC-BkcMff4vxqD0RhZcCsf2T9OVotNm-Y4vwAyhM=";
 
-    private Utils(Logger logger) {
-        this.logger = logger;
+    private Utils() {
+        this.logger = LogManager.getLogger(Utils.class);
         this.dateStr = getDateString();
         this.timeStr = getTimeString();
         this.hostname = sanitizeString(getHostname());
@@ -81,9 +77,9 @@ public class Utils {
         this.imagesFolder = this.testResultsFolder + File.separator + "images";
     }
 
-    public static Utils getInstance(Logger logger) {
+    public static Utils getInstance() {
         if (instance == null) {
-            instance = new Utils(logger);
+            instance = new Utils();
         }
         return instance;
     }
@@ -665,12 +661,11 @@ public class Utils {
     }
 
     public String getAbsPathFolderMatchingStringWithinFolder(File rootFolder, String searchFolderName) {
-        File[] files = rootFolder.listFiles();
-        if (files != null) {
-            for (File file : files) {
-                if (file.isDirectory() && file.getName().equalsIgnoreCase(searchFolderName)) {
-                    return file.getAbsolutePath();
-                }
+        List<String> folderPaths = getListAbsPathsOfDirAndSubDir(rootFolder); // Get all directories
+        for (String folderPath : folderPaths) {
+            File folder = new File(folderPath);
+            if (folder.getName().equalsIgnoreCase(searchFolderName)) {
+                return folder.getAbsolutePath();
             }
         }
         return "";
@@ -899,14 +894,16 @@ public class Utils {
     }
 
     public String formatElapsedTime(double elapsedTime) {
-        // Calculate milliseconds
-        int milliseconds = (int) ((elapsedTime - (int) elapsedTime) * 1000);
-
+        // Convert milliseconds to seconds
+        int totalMilliseconds = (int) elapsedTime;
+        int milliseconds = totalMilliseconds % 1000;
+        int totalSeconds = totalMilliseconds / 1000;
+    
         // Calculate seconds, minutes, and hours
-        int seconds = (int) elapsedTime % 60;
-        int minutes = ((int) elapsedTime / 60) % 60;
-        int hours = (int) elapsedTime / 3600;
-
+        int seconds = totalSeconds % 60;
+        int minutes = (totalSeconds / 60) % 60;
+        int hours = totalSeconds / 3600;
+    
         // Return formatted time
         return hours + "hrs:" + minutes + "min:" + seconds + "sec:" + milliseconds + "ms";
     }
@@ -940,10 +937,14 @@ public class Utils {
             workbook.close();
             System.out.println("Converted: " + xlsxFilePath);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
             // Delete the CSV file after conversion
             Files.deleteIfExists(Paths.get(csvFilePath));
             System.out.println("Deleted: " + csvFilePath);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -972,7 +973,7 @@ public class Utils {
             logger.info("Please close the browser manually when you're done.");
 
         } catch (Exception e) {
-            logger.severe("Error creating or opening the temporary help file: " + e.getMessage());
+            logger.error("Error creating or opening the temporary help file: " + e.getMessage());
         }
     }
 

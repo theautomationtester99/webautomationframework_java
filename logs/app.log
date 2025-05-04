@@ -1,0 +1,561 @@
+2025-05-04 14:01:31,839 [13736] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:01:31,843 [13736] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:01:31,848 [13736] [com.waf.Runner.main()] INFO  Runner.(Runner.java:73) | Starting test execution...
+2025-05-04 14:01:31,856 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:49) | Setting up test execution...
+2025-05-04 14:01:31,974 [13736] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-04 14:01:31,975 [13736] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:01:34,933 [13736] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | ChromeDriver is ready!
+2025-05-04 14:01:34,935 [13736] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:01:35,732 [13736] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:01:35,733 [13736] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-04 14:01:35,733 [13736] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:01:37,907 [13736] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:218) | EdgeDriver is ready!
+2025-05-04 14:01:37,908 [13736] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:01:39,230 [13736] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:01:46,338 [13736] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-04 14:01:46,403 [13736] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-04 14:01:46,489 [13736] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:197) | No process found with PID: 15244
+2025-05-04 14:01:46,491 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:155) | PID file cleared successfully.
+2025-05-04 14:01:46,493 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:140) | Saved PID: 13736
+2025-05-04 14:01:46,494 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:69) | Starting standard execution.
+2025-05-04 14:01:46,494 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:81) | Loading 'start.properties' file.
+2025-05-04 14:01:46,494 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:90) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-04 14:01:46,494 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:94) | Deleting the test_results and recordings folders.
+2025-05-04 14:01:46,504 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:99) | Creating the test_results and recordings folders.
+2025-05-04 14:01:46,514 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:102) | Starting analysis of the contents of the test_scripts folders.
+2025-05-04 14:01:46,516 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:244) | Gathering all files present in the test_scripts folder.
+2025-05-04 14:01:46,587 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-04 14:01:46,587 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:01:46,587 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:01:46,589 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:01:46,590 [13736] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:01:46,590 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:01:46,591 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: chrome
+2025-05-04 14:01:46,591 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:01:46,596 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:01:46,596 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:01:47,363 [13736] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:01:47,388 [13736] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:01:47,808 [13736] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:01:47,809 [13736] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:01:48,268 [13736] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:01:48,268 [13736] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:01:48,485 [13736] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:01:48,485 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:01:48,485 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:01:48,485 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:01:48,486 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:01:48,486 [13736] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:01:48,486 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:01:48,486 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: edge
+2025-05-04 14:01:48,486 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:01:48,487 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:01:48,487 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:01:48,610 [13736] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:01:48,612 [13736] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:01:48,690 [13736] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:01:48,691 [13736] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped], [D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:01:48,751 [13736] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:01:48,752 [13736] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:01:49,075 [13736] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:01:49,075 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS004_demoqa_testscript.xlsx
+2025-05-04 14:01:49,076 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS006_demoqa_testscript.xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:01:49,077 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-04 14:01:49,078 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:01:49,078 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-04 14:01:49,078 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:01:49,078 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS004_demoqa_testscript.xlsx
+2025-05-04 14:01:49,078 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS006_demoqa_testscript.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-04 14:01:49,079 [13736] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-04 14:01:49,082 [13736] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:278) | 0hrs:0min:2sec:563ms
+2025-05-04 14:01:49,082 [13736] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:221) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-04 14:08:34,782 [1292] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:08:34,794 [1292] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:08:34,801 [1292] [com.waf.Runner.main()] INFO  Runner.(Runner.java:73) | Starting test execution...
+2025-05-04 14:08:34,831 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:49) | Setting up test execution...
+2025-05-04 14:08:34,983 [1292] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-04 14:08:34,984 [1292] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:08:37,977 [1292] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | ChromeDriver is ready!
+2025-05-04 14:08:37,978 [1292] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:08:38,752 [1292] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:08:38,754 [1292] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-04 14:08:38,755 [1292] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:08:42,108 [1292] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:218) | EdgeDriver is ready!
+2025-05-04 14:08:42,109 [1292] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:08:43,219 [1292] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:08:50,786 [1292] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-04 14:08:50,874 [1292] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-04 14:08:50,954 [1292] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:197) | No process found with PID: 13736
+2025-05-04 14:08:50,956 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:155) | PID file cleared successfully.
+2025-05-04 14:08:50,959 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:140) | Saved PID: 1292
+2025-05-04 14:08:50,960 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:69) | Starting standard execution.
+2025-05-04 14:08:50,961 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:81) | Loading 'start.properties' file.
+2025-05-04 14:08:50,961 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:90) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-04 14:08:50,961 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:94) | Deleting the test_results and recordings folders.
+2025-05-04 14:08:51,030 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:99) | Creating the test_results and recordings folders.
+2025-05-04 14:08:51,044 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:102) | Starting analysis of the contents of the test_scripts folders.
+2025-05-04 14:08:51,047 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:244) | Gathering all files present in the test_scripts folder.
+2025-05-04 14:08:51,117 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-04 14:08:51,117 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:08:51,118 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:08:51,120 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:08:51,120 [1292] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:08:51,121 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:08:51,121 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: chrome
+2025-05-04 14:08:51,121 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:08:51,126 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:08:51,127 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:08:51,950 [1292] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:08:51,981 [1292] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:08:52,416 [1292] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:08:52,417 [1292] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:08:52,897 [1292] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:08:52,897 [1292] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:08:53,112 [1292] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:08:53,113 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:08:53,114 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:08:53,115 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:08:53,117 [1292] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:08:53,117 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:08:53,118 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:08:53,119 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: edge
+2025-05-04 14:08:53,119 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:08:53,119 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:08:53,120 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:08:53,282 [1292] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:08:53,289 [1292] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:08:53,391 [1292] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:08:53,391 [1292] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped], [D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:08:53,436 [1292] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:08:53,436 [1292] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:08:53,710 [1292] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:08:53,711 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:08:53,712 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:08:53,713 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-04 14:08:53,713 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:08:53,714 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-04 14:08:53,714 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:08:53,714 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-04 14:08:53,715 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:08:53,715 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS004_demoqa_testscript.xlsx
+2025-05-04 14:08:53,715 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:08:53,715 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS006_demoqa_testscript.xlsx
+2025-05-04 14:08:53,716 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:08:53,716 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-04 14:08:53,716 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-04 14:08:53,717 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-04 14:08:53,717 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:08:53,717 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-04 14:08:53,718 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:08:53,718 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-04 14:08:53,718 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:08:53,719 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS004_demoqa_testscript.xlsx
+2025-05-04 14:08:53,719 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:08:53,720 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS006_demoqa_testscript.xlsx
+2025-05-04 14:08:53,721 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:08:53,721 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:08:53,722 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-04 14:08:53,722 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-04 14:08:53,722 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-04 14:08:53,723 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-04 14:08:53,723 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-04 14:08:53,723 [1292] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-04 14:08:53,727 [1292] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:278) | 0hrs:0min:2sec:676ms
+2025-05-04 14:08:53,727 [1292] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:221) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-04 14:09:39,000 [25048] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:09:39,005 [25048] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:09:39,010 [25048] [com.waf.Runner.main()] INFO  Runner.(Runner.java:73) | Starting test execution...
+2025-05-04 14:09:39,015 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:49) | Setting up test execution...
+2025-05-04 14:09:39,052 [25048] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-04 14:09:39,053 [25048] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:09:42,312 [25048] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | ChromeDriver is ready!
+2025-05-04 14:09:42,312 [25048] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:09:43,014 [25048] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:09:43,015 [25048] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-04 14:09:43,015 [25048] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:09:45,056 [25048] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:218) | EdgeDriver is ready!
+2025-05-04 14:09:45,056 [25048] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:09:46,374 [25048] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:09:53,355 [25048] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-04 14:09:53,438 [25048] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-04 14:09:53,544 [25048] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:197) | No process found with PID: 1292
+2025-05-04 14:09:53,545 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:155) | PID file cleared successfully.
+2025-05-04 14:09:53,546 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:140) | Saved PID: 25048
+2025-05-04 14:09:53,547 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:69) | Starting standard execution.
+2025-05-04 14:09:53,547 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:81) | Loading 'start.properties' file.
+2025-05-04 14:09:53,547 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:90) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-04 14:09:53,547 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:94) | Deleting the test_results and recordings folders.
+2025-05-04 14:09:53,569 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:99) | Creating the test_results and recordings folders.
+2025-05-04 14:09:53,578 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:102) | Starting analysis of the contents of the test_scripts folders.
+2025-05-04 14:09:53,580 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:244) | Gathering all files present in the test_scripts folder.
+2025-05-04 14:09:53,652 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-04 14:09:53,653 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:09:53,653 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:09:53,655 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:09:53,655 [25048] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:09:53,655 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:09:53,655 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: chrome
+2025-05-04 14:09:53,655 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:09:53,658 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:09:53,658 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:09:54,256 [25048] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:09:54,276 [25048] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:09:54,696 [25048] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:09:54,696 [25048] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:09:55,013 [25048] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:09:55,014 [25048] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:09:55,279 [25048] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:09:55,279 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:09:55,280 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:09:55,280 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:09:55,281 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:09:55,281 [25048] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:09:55,281 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:09:55,282 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: edge
+2025-05-04 14:09:55,282 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:09:55,282 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:09:55,283 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:09:55,426 [25048] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:09:55,429 [25048] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:09:55,530 [25048] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:09:55,530 [25048] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped], [D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:09:55,594 [25048] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:09:55,595 [25048] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:09:55,884 [25048] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:09:55,885 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS004_demoqa_testscript.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS006_demoqa_testscript.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-04 14:09:55,886 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS004_demoqa_testscript.xlsx
+2025-05-04 14:09:55,887 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS006_demoqa_testscript.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-04 14:09:55,888 [25048] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-04 14:09:55,891 [25048] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:278) | 0hrs:0min:2sec:308ms
+2025-05-04 14:09:55,891 [25048] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:221) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-04 14:14:34,880 [14264] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:14:34,883 [14264] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:14:34,891 [14264] [com.waf.Runner.main()] INFO  Runner.(Runner.java:83) | Version: 3.0
+2025-05-04 14:14:50,843 [15552] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:14:50,849 [15552] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:14:50,859 [15552] [com.waf.Runner.main()] INFO  Runner.(Runner.java:73) | Starting test execution...
+2025-05-04 14:14:50,867 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:49) | Setting up test execution...
+2025-05-04 14:14:50,927 [15552] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-04 14:14:50,928 [15552] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:14:53,821 [15552] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | ChromeDriver is ready!
+2025-05-04 14:14:53,822 [15552] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:14:54,513 [15552] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:14:54,514 [15552] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-04 14:14:54,516 [15552] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:14:56,665 [15552] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:218) | EdgeDriver is ready!
+2025-05-04 14:14:56,665 [15552] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:14:58,029 [15552] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:15:05,193 [15552] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-04 14:15:05,277 [15552] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-04 14:15:05,356 [15552] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:197) | No process found with PID: 25048
+2025-05-04 14:15:05,357 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:155) | PID file cleared successfully.
+2025-05-04 14:15:05,359 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:140) | Saved PID: 15552
+2025-05-04 14:15:05,361 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:69) | Starting standard execution.
+2025-05-04 14:15:05,362 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:81) | Loading 'start.properties' file.
+2025-05-04 14:15:05,362 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:90) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-04 14:15:05,363 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:94) | Deleting the test_results and recordings folders.
+2025-05-04 14:15:05,371 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:99) | Creating the test_results and recordings folders.
+2025-05-04 14:15:05,382 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:102) | Starting analysis of the contents of the test_scripts folders.
+2025-05-04 14:15:05,384 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:244) | Gathering all files present in the test_scripts folder.
+2025-05-04 14:15:05,455 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-04 14:15:05,456 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:05,457 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:15:05,458 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:15:05,458 [15552] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:15:05,459 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:05,461 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: chrome
+2025-05-04 14:15:05,462 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:15:05,468 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:05,469 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:06,117 [15552] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:15:06,147 [15552] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:15:06,589 [15552] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:15:06,590 [15552] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:15:06,939 [15552] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:15:06,939 [15552] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:15:07,068 [15552] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:15:07,069 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:15:07,069 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:07,070 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:15:07,071 [15552] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:15:07,070 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:15:07,071 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:07,071 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: edge
+2025-05-04 14:15:07,072 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:15:07,072 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:07,072 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:07,134 [15552] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:15:07,137 [15552] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:15:07,293 [15552] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:15:07,294 [15552] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped], [D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:15:07,336 [15552] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:15:07,336 [15552] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:15:07,538 [15552] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:15:07,539 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:15:07,540 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:07,541 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-04 14:15:07,541 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:15:07,543 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-04 14:15:07,543 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:15:07,544 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-04 14:15:07,544 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:15:07,544 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:07,545 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:07,545 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:07,545 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:07,546 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-04 14:15:07,546 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-04 14:15:07,546 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-04 14:15:07,547 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:15:07,547 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-04 14:15:07,547 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:15:07,548 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-04 14:15:07,548 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:15:07,548 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:07,549 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:07,549 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:07,549 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:07,550 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:07,550 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-04 14:15:07,550 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-04 14:15:07,551 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-04 14:15:07,551 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-04 14:15:07,551 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-04 14:15:07,551 [15552] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-04 14:15:07,554 [15552] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:278) | 0hrs:0min:2sec:168ms
+2025-05-04 14:15:07,554 [15552] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:221) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-04 14:15:28,554 [7608] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:15:28,557 [7608] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:15:28,561 [7608] [com.waf.Runner.main()] INFO  Runner.(Runner.java:73) | Starting test execution...
+2025-05-04 14:15:28,566 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:49) | Setting up test execution...
+2025-05-04 14:15:28,603 [7608] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-04 14:15:28,605 [7608] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:15:31,357 [7608] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | ChromeDriver is ready!
+2025-05-04 14:15:31,357 [7608] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:15:32,150 [7608] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:15:32,150 [7608] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-04 14:15:32,150 [7608] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:15:34,237 [7608] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:218) | EdgeDriver is ready!
+2025-05-04 14:15:34,237 [7608] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:15:35,553 [7608] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:15:42,006 [7608] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-04 14:15:42,093 [7608] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-04 14:15:42,169 [7608] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:197) | No process found with PID: 15552
+2025-05-04 14:15:42,169 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:155) | PID file cleared successfully.
+2025-05-04 14:15:42,170 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:140) | Saved PID: 7608
+2025-05-04 14:15:42,170 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:69) | Starting standard execution.
+2025-05-04 14:15:42,170 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:81) | Loading 'start.properties' file.
+2025-05-04 14:15:42,170 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:90) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-04 14:15:42,170 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:94) | Deleting the test_results and recordings folders.
+2025-05-04 14:15:42,179 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:99) | Creating the test_results and recordings folders.
+2025-05-04 14:15:42,187 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:102) | Starting analysis of the contents of the test_scripts folders.
+2025-05-04 14:15:42,188 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:244) | Gathering all files present in the test_scripts folder.
+2025-05-04 14:15:42,240 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-04 14:15:42,240 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:42,240 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:15:42,242 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:15:42,242 [7608] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:15:42,242 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:42,242 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: chrome
+2025-05-04 14:15:42,242 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:15:42,248 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:42,248 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:15:42,878 [7608] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:15:42,901 [7608] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:15:43,308 [7608] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:15:43,308 [7608] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:15:43,670 [7608] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:15:43,671 [7608] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:15:43,971 [7608] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:15:43,971 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:15:43,971 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:43,971 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:15:43,972 [7608] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:15:43,972 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:15:43,972 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:43,972 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: edge
+2025-05-04 14:15:43,973 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:15:43,973 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:43,973 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:15:44,016 [7608] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:15:44,018 [7608] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:15:44,090 [7608] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:15:44,090 [7608] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped], [D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:15:44,137 [7608] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:15:44,138 [7608] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:15:44,524 [7608] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:15:44,525 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:15:44,525 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:44,525 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-04 14:15:44,525 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-04 14:15:44,526 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:15:44,527 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-04 14:15:44,528 [7608] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-04 14:15:44,530 [7608] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:278) | 0hrs:0min:2sec:340ms
+2025-05-04 14:15:44,530 [7608] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:221) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-04 14:15:56,503 [16396] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-04 14:15:56,506 [16396] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-04 14:15:56,509 [16396] [com.waf.Runner.main()] INFO  Runner.(Runner.java:73) | Starting test execution...
+2025-05-04 14:15:56,513 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:49) | Setting up test execution...
+2025-05-04 14:15:56,541 [16396] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-04 14:15:56,542 [16396] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:15:59,087 [16396] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | ChromeDriver is ready!
+2025-05-04 14:15:59,087 [16396] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:15:59,822 [16396] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:15:59,822 [16396] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-04 14:15:59,822 [16396] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:107) | Temporary download directory: 
+2025-05-04 14:16:01,858 [16396] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:218) | EdgeDriver is ready!
+2025-05-04 14:16:01,858 [16396] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-04 14:16:03,161 [16396] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-04 14:16:09,487 [16396] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-04 14:16:09,561 [16396] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-04 14:16:09,627 [16396] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:197) | No process found with PID: 7608
+2025-05-04 14:16:09,628 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:155) | PID file cleared successfully.
+2025-05-04 14:16:09,628 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:140) | Saved PID: 16396
+2025-05-04 14:16:09,629 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:69) | Starting standard execution.
+2025-05-04 14:16:09,629 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:81) | Loading 'start.properties' file.
+2025-05-04 14:16:09,629 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:90) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-04 14:16:09,629 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:94) | Deleting the test_results and recordings folders.
+2025-05-04 14:16:09,637 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:99) | Creating the test_results and recordings folders.
+2025-05-04 14:16:09,644 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:102) | Starting analysis of the contents of the test_scripts folders.
+2025-05-04 14:16:09,646 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:244) | Gathering all files present in the test_scripts folder.
+2025-05-04 14:16:09,697 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-04 14:16:09,697 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:16:09,697 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:16:09,698 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:16:09,698 [16396] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:16:09,698 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:16:09,699 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: chrome
+2025-05-04 14:16:09,699 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:16:09,700 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:16:09,700 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx
+2025-05-04 14:16:10,156 [16396] [Thread-13] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:16:10,171 [16396] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:16:10,552 [16396] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:16:10,552 [16396] [Thread-13] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:16:10,879 [16396] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:16:10,879 [16396] [Thread-13] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:16:11,269 [16396] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:16:11,269 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:16:11,269 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:16:11,269 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:16:11,271 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:317) | Starting test script execution...
+2025-05-04 14:16:11,271 [16396] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1179) | Starting screen recording...
+2025-05-04 14:16:11,271 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:318) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:16:11,272 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:319) | Launch browser parameter: edge
+2025-05-04 14:16:11,272 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:331) | Initializing Excel Report Manager...
+2025-05-04 14:16:11,272 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:335) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:16:11,272 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:949) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-04 14:16:11,365 [16396] [Thread-15] INFO  ExecutionManager.(ExecutionManager.java:964) | Reading test script data from Excel.
+2025-05-04 14:16:11,367 [16396] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1012) | Mandatory keyword missing: tc_id
+2025-05-04 14:16:11,474 [16396] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:147) | Writing skipped tc report csv file
+2025-05-04 14:16:11,474 [16396] [Thread-15] WARN  ExcelReportManager.(ExcelReportManager.java:148) | [[D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS002_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped], [D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx, The 1th keyword must be 'tc_id', Skipped]]
+2025-05-04 14:16:11,567 [16396] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:1000) | Error processing Excel file: The 1th keyword must be 'tc_id'
+2025-05-04 14:16:11,568 [16396] [Thread-15] ERROR ExecutionManager.(ExecutionManager.java:390) | Error during test execution: Error processing test script file.
+2025-05-04 14:16:12,000 [16396] [Thread-16] INFO  ExecutionManager.(ExecutionManager.java:1210) | Finished recording.
+2025-05-04 14:16:12,000 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:306) | Execution and recording completed successfully.
+2025-05-04 14:16:12,001 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:16:12,001 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-04 14:16:12,001 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:16:12,001 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-04 14:16:12,001 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:16:12,002 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-04 14:16:12,002 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:16:12,002 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS004_demoqa_testscript.xlsx
+2025-05-04 14:16:12,002 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:16:12,002 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS006_demoqa_testscript.xlsx
+2025-05-04 14:16:12,003 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:16:12,003 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-04 14:16:12,003 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-04 14:16:12,003 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-04 14:16:12,003 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS001_testscript.xlsx
+2025-05-04 14:16:12,004 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-04 14:16:12,004 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS002_testscript.xlsx
+2025-05-04 14:16:12,004 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-04 14:16:12,004 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS003_testscript.xlsx
+2025-05-04 14:16:12,004 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS004_demoqa_testscript.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS006_demoqa_testscript.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:261) | Valid test script found: QS006_demoqa_testscript.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-04 14:16:12,005 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-04 14:16:12,006 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-04 14:16:12,006 [16396] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:258) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-04 14:16:12,009 [16396] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:278) | 0hrs:0min:2sec:360ms
+2025-05-04 14:16:12,009 [16396] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:221) | Checking if output.xlsx file exists before creating the test summary PDF report.

@@ -7,8 +7,10 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.hubspot.jinjava.Jinjava;
 import com.microsoft.playwright.*;
@@ -18,7 +20,7 @@ import tech.tablesaw.api.Table;
 import tech.tablesaw.io.xlsx.XlsxReadOptions;
 
 public class PdfTsReporting {
-    private Logger logger;
+    private final Logger logger;
     private Utils utils;
     private String logoPath;
     private String base64Logo;
@@ -27,10 +29,10 @@ public class PdfTsReporting {
     private String footerTemplate;
     private String documentNamePdf;
 
-    public PdfTsReporting(Logger logger, String logoPath, String encryptedTemplateFilePath, Map<String, Object> data,
+    public PdfTsReporting(String logoPath, String encryptedTemplateFilePath, Map<String, Object> data,
             String documentName) {
-        this.logger = logger;
-        this.utils = Utils.getInstance(logger);
+        this.logger = LogManager.getLogger(PdfTsReporting.class);
+        this.utils = Utils.getInstance();
         this.logoPath = logoPath;
         this.base64Logo = encodeLogo();
         this.htmlContent = generateHtml(encryptedTemplateFilePath, data);
@@ -45,7 +47,7 @@ public class PdfTsReporting {
             byte[] imageBytes = imageFile.readAllBytes();
             return Base64.getEncoder().encodeToString(imageBytes);
         } catch (IOException e) {
-            logger.severe(e.toString());
+            logger.error(e.toString());
             return null;
         }
     }
@@ -81,7 +83,7 @@ public class PdfTsReporting {
 
             return jinjava.render(decryptedTemplate, data);
         } catch (Exception e) {
-            logger.severe(e.toString());
+            logger.error(e.toString());
             return null;
         }
     }
@@ -112,28 +114,16 @@ public class PdfTsReporting {
             logger.info("Completed creation of PDF report from template with populated data");
             browser.close();
         } catch (Exception e) {
-            logger.severe(e.toString());
+            logger.error(e.toString());
         }
     }
 
     public static void main(String[] args) throws IOException {
-        // Initialize logger
-        LoggerConfig loggerConfig = new LoggerConfig("");
-        loggerConfig.startListener();
-
-        // Call setupLogger to configure the logger
-        Logger logger = loggerConfig.setupLogger();
-        Utils utils = Utils.getInstance(logger);
+        Utils utils = Utils.getInstance();
 
         // Define file paths
-        String logoPath = "D:\\\\allprojects\\\\java-projects\\\\webautomationframework\\\\src\\\\main\\\\resources\\\\logo.png"; // Update
-                                                                                                                                  // with
-                                                                                                                                  // actual
-                                                                                                                                  // path
-        String encryptedTemplateFilePath = "D:\\\\allprojects\\\\java-projects\\\\webautomationframework\\\\src\\\\main\\\\resources\\\\encrypted_jinjava_td_file.jinjav"; // Update
-                                                                                                                                                                           // with
-                                                                                                                                                                           // actual
-                                                                                                                                                                           // path
+        String logoPath = "D:\\\\allprojects\\\\java-projects\\\\webautomationframework\\\\src\\\\main\\\\resources\\\\logo.png";
+        String encryptedTemplateFilePath = "D:\\\\allprojects\\\\java-projects\\\\webautomationframework\\\\src\\\\main\\\\resources\\\\encrypted_jinjava_td_file.jinjav";
         String documentName = "TestSummaryReport";
 
         Path baseDir = Paths.get(System.getProperty("user.dir"));
@@ -142,7 +132,7 @@ public class PdfTsReporting {
                 .get("D:\\allprojects\\java-projects\\webautomationframework\\test_results\\output.xlsx");
 
         if (utils.checkIfFileExists(summaryResultsFile.toString())) {
-            logger.info("Output.xlsx exists and starting to create test summary PDF report.");
+            
 
             try {
                 Table table = Table.read().usingOptions(XlsxReadOptions.builder(summaryResultsFile.toFile()).build());
@@ -168,7 +158,6 @@ public class PdfTsReporting {
                 System.out.println(tableData);
 
                 PdfTsReporting tsPdf = new PdfTsReporting(
-                        logger,
                         baseDir.resolve("src/main/resources/logo.png").toString(),
                         baseDir.resolve("src/main/resources/encrypted_jinjava_ts_file.jinjav").toString(),
                         finalTableData,
@@ -176,10 +165,9 @@ public class PdfTsReporting {
 
                 tsPdf.generatePdf();
             } catch (Exception e) {
-                logger.severe("Error generating test summary PDF: " + e.getMessage());
+                
             }
         }
         System.out.println("PDF report generated successfully!");
-        loggerConfig.stopListener();
     }
 }

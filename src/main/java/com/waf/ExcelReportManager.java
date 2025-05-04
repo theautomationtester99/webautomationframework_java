@@ -1,7 +1,6 @@
 package com.waf;
 
 import tech.tablesaw.api.*;
-import tech.tablesaw.api.Table;
 import tech.tablesaw.columns.Column;
 import tech.tablesaw.io.xlsx.XlsxReadOptions;
 import tech.tablesaw.io.xlsx.XlsxReader;
@@ -11,7 +10,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ExcelReportManager {
     private Logger logger;
@@ -21,10 +22,10 @@ public class ExcelReportManager {
     private List<List<String>> allSkippedTestResultsList;
     private String resultFolder;
 
-    public ExcelReportManager(Logger logger, Lock lock) {
-        this.logger = logger;
+    public ExcelReportManager(Lock lock) {
+        this.logger = LogManager.getLogger(ExcelReportManager.class);
         this.lock = lock;
-        this.utils = Utils.getInstance(logger);
+        this.utils = Utils.getInstance();
         this.resultFolder = utils.getTestResultsFolder();
     }
 
@@ -51,7 +52,7 @@ public class ExcelReportManager {
                     allTestResultsList.add(testResult);
                     exportToExcel();
                 } catch (Exception e) {
-                    logger.severe("Error reading Excel file: " + e.getMessage());
+                    logger.error("Error reading Excel file: " + e.getMessage());
                 }
             } else {
                 allTestResultsList.add(testResult);
@@ -66,13 +67,13 @@ public class ExcelReportManager {
         lock.lock();
         try {
             File outputFile = new File(Paths.get(resultFolder, "skipped_tc_report.xlsx").toString());
+            this.allSkippedTestResultsList = new ArrayList<>();
             if (utils.checkIfFileExists(outputFile.getAbsolutePath())) {
                 try {
                     XlsxReader reader = new XlsxReader();
                     XlsxReadOptions options = XlsxReadOptions.builder(outputFile.getAbsolutePath()).build();
                     Table table = reader.read(options);
 
-                    allSkippedTestResultsList = new ArrayList<>();
                     for (Row row : table) {
                         List<String> rowData = new ArrayList<>();
                         for (Column<?> col : table.columns()) {
@@ -81,13 +82,13 @@ public class ExcelReportManager {
                         allSkippedTestResultsList.add(rowData);
                     }
 
-                    allSkippedTestResultsList.add(testResult);
+                    this.allSkippedTestResultsList.add(testResult);
                     exportToExcelSkippedTC();
                 } catch (Exception e) {
-                    logger.severe("Error reading Excel file: " + e.getMessage());
+                    logger.error("Error reading Excel file: " + e.getMessage());
                 }
             } else {
-                allSkippedTestResultsList.add(testResult);
+                this.allSkippedTestResultsList.add(testResult);
                 exportToExcelSkippedTC();
             }
         } finally {
@@ -96,6 +97,7 @@ public class ExcelReportManager {
     }
 
     public void exportToExcel() {
+        lock.lock();
         try {
             Table table = Table.create("Test Results")
                     .addColumns(
@@ -119,11 +121,14 @@ public class ExcelReportManager {
             this.utils.convertCsvToXlsx(Paths.get(resultFolder, "output.csv").toString(),
                     Paths.get(resultFolder, "output.xlsx").toString());
         } catch (Exception e) {
-            logger.severe("Error exporting to Excel: " + e.getMessage());
+            logger.error("Error exporting to Excel: " + e.getMessage());
+        } finally {
+            lock.unlock();
         }
     }
 
     public void exportToExcelSkippedTC() {
+        lock.lock();
         try {
             Table table = Table.create("Skipped Test Cases")
                     .addColumns(
@@ -139,11 +144,16 @@ public class ExcelReportManager {
                 table.stringColumn("Status").set(rowIndex, row.get(2));
             }
 
+            logger.warn("Writing skipped tc report csv file");
+            logger.warn(allSkippedTestResultsList.toString());
+
             table.write().csv(Paths.get(resultFolder, "skipped_tc_report.csv").toString());
             this.utils.convertCsvToXlsx(Paths.get(resultFolder, "skipped_tc_report.csv").toString(),
                     Paths.get(resultFolder, "skipped_tc_report.xlsx").toString());
         } catch (Exception e) {
-            logger.severe("Error exporting to Excel: " + e.getMessage());
+            logger.error("Error exporting to Excel: " + e.getMessage());
+        } finally {
+            lock.unlock();
         }
     }
 }
