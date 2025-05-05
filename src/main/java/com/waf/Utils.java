@@ -143,7 +143,7 @@ public class Utils {
                     }
                 }
             } catch (Exception e) {
-                System.err.println("Error handling process: " + e.getMessage());
+                logger.error("Error handling process: " + e.getMessage());
                 e.printStackTrace();
             }
         });
@@ -160,9 +160,9 @@ public class Utils {
             ftp.connect(host, port);
             ftp.login(username, password);
             ftp.enterLocalPassiveMode();
-            // System.out.println("Connected to FTP server: " + host + ":" + port);
+            logger.warn("Connected to FTP server: " + host + ":" + port);
         } catch (IOException e) {
-            System.err.println("Failed to connect to FTP server: " + e.getMessage());
+            logger.error("Failed to connect to FTP server: " + e.getMessage());
         }
         return ftp;
     }
@@ -172,27 +172,27 @@ public class Utils {
      */
     public void ensureRemoteDirExists(FTPClient ftp, String remoteDir) {
         try {
-            ftp.changeWorkingDirectory(remoteDir);
-            // System.out.println("Changed to remote directory: " + remoteDir);
-        } catch (IOException e) {
-            try {
+            if (!ftp.changeWorkingDirectory(remoteDir)) { // Check if directory exists
                 String[] parts = remoteDir.split("/");
                 String currentPath = "";
                 for (String part : parts) {
                     if (!part.isEmpty()) { // Skip empty parts
                         currentPath += "/" + part;
-                        try {
-                            ftp.changeWorkingDirectory(currentPath); // Check if the directory exists
-                        } catch (IOException ex) {
-                            ftp.makeDirectory(currentPath); // Create directory if it doesn't exist
-                            // System.out.println("Created remote directory: " + currentPath);
+                        if (!ftp.changeWorkingDirectory(currentPath)) { // Explicit check
+                            if (ftp.makeDirectory(currentPath)) { // Create directory
+                                logger.warn("Created remote directory: " + currentPath);
+                            } else {
+                                logger.error("Failed to create remote directory: " + currentPath);
+                                return; // Exit if directory creation fails
+                            }
                         }
                     }
                 }
-                ftp.changeWorkingDirectory(remoteDir);
-            } catch (IOException ex) {
-                System.err.println("Failed to ensure remote directory exists: " + ex.getMessage());
+                ftp.changeWorkingDirectory(remoteDir); // Final change to target directory
             }
+            logger.warn("Changed to remote directory: " + remoteDir);
+        } catch (IOException ex) {
+            logger.error("Failed to ensure remote directory exists: " + ex.getMessage());
         }
     }
 
@@ -203,24 +203,24 @@ public class Utils {
         try {
             File file = new File(localFile);
             if (!file.exists()) {
-                System.err.println("Local file does not exist: " + localFile);
+                logger.error("Local file does not exist: " + localFile);
                 return;
             }
 
             if (ftp.listFiles(remoteFile).length > 0) {
-                // System.out.println("File exists on server, skipping upload: " + remoteFile);
+                logger.warn("File exists on server, skipping upload: " + remoteFile);
             } else {
                 FileInputStream inputStream = new FileInputStream(file);
                 ftp.setFileType(FTP.BINARY_FILE_TYPE);
                 if (ftp.storeFile(remoteFile, inputStream)) {
                     // System.out.println("Uploaded file: " + remoteFile);
                 } else {
-                    System.err.println("Failed to upload file: " + remoteFile);
+                    logger.error("Failed to upload file: " + remoteFile);
                 }
                 inputStream.close();
             }
         } catch (IOException e) {
-            System.err.println("Error uploading file: " + e.getMessage());
+            logger.error("Error uploading file: " + e.getMessage());
         }
     }
 
@@ -240,7 +240,7 @@ public class Utils {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Error uploading directory: " + e.getMessage());
+            logger.error("Error uploading directory: " + e.getMessage());
         }
     }
 
@@ -249,7 +249,7 @@ public class Utils {
      */
     public void uploadFolderToFTP() {
         String host = Config.FTP_HOST;
-        int port = 21;
+        int port = Integer.parseInt(Config.FTP_PORT);
         String username = Config.FTP_USER;
         String password = Config.FTP_PASSWORD;
         String localFolder = this.baseFolder;
@@ -262,7 +262,7 @@ public class Utils {
                 ftp.disconnect();
                 // System.out.println("FTP connection closed.");
             } catch (IOException e) {
-                System.err.println("Error closing FTP connection: " + e.getMessage());
+                logger.error("Error closing FTP connection: " + e.getMessage());
             }
         }
     }
@@ -280,13 +280,13 @@ public class Utils {
                 if (dir.delete()) {
                     // System.out.println(directory + " has been removed.");
                 } else {
-                    System.err.println("Failed to remove directory: " + directory);
+                    logger.error("Failed to remove directory: " + directory);
                 }
             } else {
                 // System.out.println(directory + " is not empty and was not removed.");
             }
         } else {
-            System.err.println(directory + " does not exist or is not a directory.");
+            logger.error(directory + " does not exist or is not a directory.");
         }
     }
 
@@ -309,7 +309,7 @@ public class Utils {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Error while checking for temporary files: " + e.getMessage());
+            logger.error("Error while checking for temporary files: " + e.getMessage());
         }
         return false;
     }
@@ -319,7 +319,7 @@ public class Utils {
      */
     public List<String> getMatchingFilesInDir(String tempDir, String partialFilename) {
         if (partialFilename == null || partialFilename.isEmpty()) {
-            System.err.println("Partial filename is blank.");
+            logger.error("Partial filename is blank.");
             return new ArrayList<>();
         }
         List<String> matchingFiles = new ArrayList<>();
@@ -336,7 +336,7 @@ public class Utils {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Error while checking file existence: " + e.getMessage());
+            logger.error("Error while checking file existence: " + e.getMessage());
         }
         return matchingFiles;
     }
@@ -346,7 +346,7 @@ public class Utils {
      */
     public boolean doFileExistInDir(String tempDir, String exactFilename) {
         if (exactFilename == null || exactFilename.isEmpty()) {
-            System.err.println("Filename is blank.");
+            logger.error("Filename is blank.");
             return false;
         }
         try {
@@ -362,7 +362,7 @@ public class Utils {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Error while checking file existence: " + e.getMessage());
+            logger.error("Error while checking file existence: " + e.getMessage());
         }
         return false;
     }
@@ -382,7 +382,7 @@ public class Utils {
         File[] files = folder.listFiles((dir, name) -> name.endsWith(".pdf"));
 
         if (files == null) {
-            System.err.println("No PDF files found in folder: " + folderPath);
+            logger.error("No PDF files found in folder: " + folderPath);
             return;
         }
 
@@ -473,7 +473,7 @@ public class Utils {
             pdfMerger.mergeDocuments(null);
             // System.out.println("Merged PDF saved at: " + outputFile);
         } catch (IOException e) {
-            System.err.println("Error during PDF merge: " + e.getMessage());
+            logger.error("Error during PDF merge: " + e.getMessage());
         }
     }
 
@@ -490,10 +490,10 @@ public class Utils {
             if (file.delete()) {
                 // System.out.println("File " + filePath + " has been deleted.");
             } else {
-                System.err.println("Failed to delete file: " + filePath);
+                logger.error("Failed to delete file: " + filePath);
             }
         } else {
-            System.err.println("File " + filePath + " does not exist.");
+            logger.error("File " + filePath + " does not exist.");
         }
     }
 
@@ -507,7 +507,7 @@ public class Utils {
             // System.out.println("Folder and its contents have been removed: " +
             // folderPath);
         } else {
-            System.err.println("Folder " + folderPath + " does not exist or is not a directory.");
+            logger.error("Folder " + folderPath + " does not exist or is not a directory.");
         }
     }
 
@@ -543,7 +543,7 @@ public class Utils {
             // System.out.println("All subfolders within " + folderPath + " have been
             // removed successfully.");
         } else {
-            System.err.println("Folder " + folderPath + " does not exist or is not a directory.");
+            logger.error("Folder " + folderPath + " does not exist or is not a directory.");
         }
     }
 
@@ -575,7 +575,7 @@ public class Utils {
             if (folder.mkdirs()) {
                 // System.out.println("Created folder: " + folderPath);
             } else {
-                System.err.println("Failed to create folder: " + folderPath);
+                logger.error("Failed to create folder: " + folderPath);
             }
         }
     }
@@ -781,10 +781,10 @@ public class Utils {
             return true;
 
         } catch (NumberFormatException e) {
-            System.err.println("Invalid number format: " + e.getMessage());
+            logger.error("Invalid number format: " + e.getMessage());
             return false;
         } catch (DateTimeParseException e) {
-            System.err.println("Invalid date format: " + e.getMessage());
+            logger.error("Invalid date format: " + e.getMessage());
             return false;
         }
     }
@@ -1023,7 +1023,7 @@ public class Utils {
             Files.createDirectories(path);
             // System.out.println("Directories created successfully: " + directoryPath);
         } catch (IOException e) {
-            System.err.println("Failed to create directories: " + e.getMessage());
+            logger.error("Failed to create directories: " + e.getMessage());
         }
     }
 }

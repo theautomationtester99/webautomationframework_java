@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: waf2st-deployment
+  namespace: selenium
+spec:
+  replicas: 1  # Number of Pod replicas
+  selector:
+    matchLabels:
+      app: waf2st-app
+  template:
+    metadata:
+      labels:
+        app: waf2st-app
+    spec:
+      containers:
+      - name: waf2st-container
+        image: waf2st
+        imagePullPolicy: Never
+        env:
+        - name: PARALLEL_EXECUTION
+          value: "no"
+        - name: NO_THREADS
+          value: "2"
+        - name: FTP_UPLOAD
+          value: "yes"
+        - name: FTP_HOST
+          value: "ftp-service"
+        - name: LOG_LEVEL
+          value: "warning"
+        - name: HEADLESS
+          value: "no"
+        - name: RUN_IN_SELENIUM_GRID
+          value: "no"
+        - name: GRID_URL
+          value: "http://selenium-hub:4444/wd/hub"

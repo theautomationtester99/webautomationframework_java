@@ -1,0 +1,102 @@
+# in the selenium code ensure driver maximize is commented otherwise crontab can't launch browser ui
+
+# Use Python 3.12 as the base image
+FROM python:3.12-slim as build-stage
+
+# Install Git
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+# Clone project repository and install dependencies
+ARG CACHEBUST=0
+RUN echo $CACHEBUST && git clone https://github.com/theautomationtester99/web_automation_htmltopdf.git /workspace
+WORKDIR /workspace
+RUN pip install --no-cache-dir -r /workspace/requirements.txt
+
+# Build the project
+RUN python setup.py build
+
+# Move build folder to /root and set permissions
+RUN cp -r /workspace/build /root/
+
+FROM debian:bookworm-slim
+
+COPY --from=build-stage /root/build /waf
+
+# Install essential dependencies
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+    xvfb \
+    x11-apps \
+    tightvncserver \
+    lxde \
+    dbus-x11 \
+    xfonts-base \
+    net-tools \
+    cron \
+    dos2unix \
+    wget \
+    libc6 \
+    build-essential \
+    gawk \
+    bison \
+    make \
+    ftp
+
+# Set environment variables
+ENV DELETE_TEST_RESULTS_IMAGES_RECORDINGS_FOLDERS_BEFORE_START=yes
+ENV SCREENSHOT_STRATEGY=always
+ENV HIGHLIGHT_ELEMENTS=no
+ENV MAX_RETRIES=0
+ENV UPLOAD_TEST_RESULTS=no
+ENV SEND_TEST_RESULTS_EMAIL=no
+ENV SENDER_EMAIL=theautomationtester99@gmail.com
+ENV SENDER_EMAIL_PASSWORD=gAAAAABoAjriMu91TSpf6VycE89O8wv2gpUMx4MkmxAtvFn-Auz4g5RhnPUZJ13FRHkvoM_JnpWau3GoHgcumOmp14Aecg7AKKVORICG87IPFKFX4I6r2xY=
+ENV RECIPIENT_EMAILS=theautomationtester@hotmail.com,theautomationtester99@gmail.com
+ENV RUN_IN_SELENIUM_GRID=no
+ENV GRID_URL=http://localhost
+ENV RUN_IN_APPIUM_GRID=no
+ENV APPIUM_URL=http://localhost/wd/hub
+ENV LOG_LEVEL=DEBUG
+ENV INPRIVATE=no
+ENV HEADLESS=yes
+ENV NO_THREADS=4
+ENV FTP_UPLOAD=yes
+ENV FTP_HOST=ffcae376c26f
+ENV FTP_USER=user1
+ENV FTP_PASSWORD=password1
+ENV FTP_USER_HOME=/home/user1
+
+# Set the working directory
+WORKDIR /waf
+
+# Install Chromium for Pyppeteer (for root user)
+RUN mkdir -p /root/.local/share/pyppeteer/local-chromium/1181205
+RUN wget -O /tmp/chromium.zip https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1181205/chrome-linux.zip
+RUN unzip /tmp/chromium.zip -d /root/.local/share/pyppeteer/local-chromium/1181205
+RUN rm /tmp/chromium.zip
+
+# Configure TightVNC server
+RUN mkdir -p ~/.vnc && \
+    echo "#!/bin/sh\nunset SESSION_MANAGER\nexport \$(dbus-launch)\nexec startlxde &" > ~/.vnc/xstartup && \
+    chmod +x ~/.vnc/xstartup && \
+    echo "password" | vncpasswd -f > ~/.vnc/passwd && \
+    chmod 600 ~/.vnc/passwd
+
+# Expose VNC port
+EXPOSE 5901
+
+ENV USER=root
+ENV DISPLAY=:0
+
+# Set up and start Xvfb for the virtual display
+RUN Xvfb :0 -screen 0 1024x768x24 &
+
+COPY entrypoint_root.sh /root/entrypoint.sh
+RUN dos2unix /root/entrypoint.sh && \
+    chmod +x /root/entrypoint.sh
+
+RUN echo '*/15 * * * * DISPLAY=:0 . /root/env_vars.sh; /waf/runner --start >> /proc/1/fd/1 2>> /proc/1/fd/2' | crontab -
+
+RUN service cron restart
+
+# Start TightVNC
+CMD ["bash", "-c", "Xvfb :0 -screen 0 1024x768x24 & tightvncserver :1 -geometry 1024x768 -depth 24 && service cron restart && /root/entrypoint.sh && tail -f /dev/null"]

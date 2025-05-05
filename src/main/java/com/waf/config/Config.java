@@ -28,6 +28,7 @@ public class Config {
     public static final String PARALLEL_EXECUTION = Optional.ofNullable(System.getenv("PARALLEL_EXECUTION")).orElse("yes");
     public static final String FTP_UPLOAD = Optional.ofNullable(System.getenv("FTP_UPLOAD")).orElse("yes");
     public static final String FTP_HOST = Optional.ofNullable(System.getenv("FTP_HOST")).orElse("localhost");
+    public static final String FTP_PORT = Optional.ofNullable(System.getenv("FTP_PORT")).orElse("31914");
     public static final String FTP_USER = Optional.ofNullable(System.getenv("FTP_USER")).orElse("user1");
     public static final String FTP_PASSWORD = Optional.ofNullable(System.getenv("FTP_PASSWORD")).orElse("password1");
     public static final String FTP_USER_HOME = Optional.ofNullable(System.getenv("FTP_USER_HOME")).orElse("/home/user1");
