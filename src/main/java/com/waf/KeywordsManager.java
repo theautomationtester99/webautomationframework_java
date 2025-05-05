@@ -190,6 +190,7 @@ public class KeywordsManager extends DriverFunctions {
                 osName = gridOsInfo;
                 hostName = "selenium grid";
                 this.repoM.gridImgSrc = (this.seGridB64);
+                this.repoM.gridImgAlt = hostName;
             } else {
                 this.logger.info("Capturing OS details for local execution.");
                 osName = this.utils.detectOS();

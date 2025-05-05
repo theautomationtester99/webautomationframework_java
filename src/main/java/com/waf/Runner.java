@@ -64,19 +64,30 @@ public class Runner {
 
             // Determine if parallel execution is enabled via environment variable
             boolean parallelExecution = "yes".equalsIgnoreCase(Config.PARALLEL_EXECUTION);
+            boolean headless = "yes".equalsIgnoreCase(Config.HEADLESS);
+            boolean runInSeleniumGrid = "yes".equalsIgnoreCase(Config.RUN_IN_SELENIUM_GRID);
 
             // Start execution
             if (cmd.hasOption("start") && parallelExecution) {
                 logger.info("Parallel Execution is enabled in config. So starting parallel test execution...");
-                ExecutionManager.startExecution(utils, lock, parallelExecution);
+                if (runInSeleniumGrid || headless) {
+                    logger.info("Starting test execution...");
+                    ExecutionManager.startExecution(utils, lock, true);
+                } else {
+                    logger.error("To perform parallel execution, headless should be set to YES");
+                }
             } else if (cmd.hasOption("start")) {
                 logger.info("Starting test execution...");
                 ExecutionManager.startExecution(utils, lock, false);
             }
 
             if (cmd.hasOption("start-parallel")) {
-                logger.info("Starting test execution...");
-                ExecutionManager.startExecution(utils, lock, cmd.hasOption("start-parallel"));
+                if (runInSeleniumGrid || headless) {
+                    logger.info("Starting test execution...");
+                    ExecutionManager.startExecution(utils, lock, cmd.hasOption("start-parallel"));
+                } else {
+                    logger.error("To perform parallel execution, headless should be set to YES");
+                }
             }
 
             if (cmd.hasOption("version")) {

@@ -20,16 +20,16 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.locks.Lock;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.ss.format.CellFormatType;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -67,7 +67,8 @@ public class ExecutionManager {
 
             if (isParallel) {
                 logger.warn("Parallel execution is enabled. Initializing parallel execution.");
-                // Implement logic for parallel execution setup
+                checkBeforeStart(utils);
+                startExecutionMultiThreaded(lock,utils,objectRepoReader,prm);
             } else {
                 logger.info("Starting standard execution.");
                 checkBeforeStart(utils);
@@ -235,14 +236,78 @@ public class ExecutionManager {
         }
     }
 
+    public static void startExecutionMultiThreaded(Lock lock, Utils utils, ConfigReader objectRepoReader,
+            PdfReportManager prm) {
+        long startTime = System.currentTimeMillis();
+        boolean runInGrid = "yes".equalsIgnoreCase(Config.RUN_IN_SELENIUM_GRID);
+
+        logger.info("Gathering all files present in the test_scripts folder.");
+        Path scriptDir = Path.of(System.getProperty("user.dir"), "test_scripts");
+        List<String> filePaths = utils.getAbsoluteFilePathsInDir(Paths.get(scriptDir.toString()).toFile());
+        Pattern pattern = Pattern.compile("^qs[a-zA-Z0-9_]*_testscript\\.xlsx$", Pattern.CASE_INSENSITIVE);
+
+        // Limit the number of threads between 1 and 4
+        int threadCount = Config.NO_THREADS;
+        if (Config.NO_THREADS > 4) {
+            logger.info("Max threads can be only 4. Defaulting to 4");
+            threadCount = 4;
+        }
+        ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
+
+        // Store futures to track completion
+        List<Future<?>> futures = new ArrayList<>();
+
+        for (String filePath : filePaths) {
+            futures.add(executorService.submit(() -> {
+                File file = new File(filePath);
+                String fileName = file.getName();
+                String parentDir = file.getParentFile().getName().toLowerCase();
+
+                logger.info("Processing file: " + filePath);
+                if (fileName.endsWith("testscript.xlsx") && pattern.matcher(fileName).matches()) {
+                    logger.info("Valid test script found: " + fileName);
+
+                    if ("chrome".equals(parentDir) && !runInGrid) {
+                        startRunnerProcess(filePath, lock, objectRepoReader, utils, "chrome");
+                    } else if ("edge".equals(parentDir) && !runInGrid) {
+                        startRunnerProcess(filePath, lock, objectRepoReader, utils, "edge");
+                    } else if ("test_scripts".equals(parentDir) && !runInGrid) {
+                        startRunnerProcess(filePath, lock, objectRepoReader, utils, "");
+                    } else if ("grid_edge".equals(parentDir) && runInGrid) {
+                        startRunnerProcess(filePath, lock, objectRepoReader, utils, "edge");
+                    } else if ("grid_chrome".equals(parentDir) && runInGrid) {
+                        startRunnerProcess(filePath, lock, objectRepoReader, utils, "chrome");
+                    }
+                }
+            }));
+        }
+
+        // Ensure all threads finish execution before proceeding
+        for (Future<?> future : futures) {
+            try {
+                future.get(); // Wait for the task to complete
+            } catch (Exception e) {
+                logger.error("Error in thread execution", e);
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        executorService.shutdown();
+
+        long elapsedTime = System.currentTimeMillis() - startTime;
+        logger.warn(utils.formatElapsedTime(elapsedTime));
+
+        prm.generateTestSummaryPdf();
+        prm.generateSkipTestSummaryPdf();
+        utils.mergePdfsInParts();
+        utils.uploadFolderToFTP();
+    }
+
     public static void startExecutionSingle(Lock lock, Utils utils, ConfigReader objectRepoReader,
             PdfReportManager prm) {
         long startTime = System.currentTimeMillis();
 
         boolean runInGrid = "yes".equalsIgnoreCase(Config.RUN_IN_SELENIUM_GRID);
-        boolean runHeadless = "yes".equalsIgnoreCase(Config.HEADLESS);
-        boolean runInAppium = "yes".equalsIgnoreCase(Config.RUN_IN_APPIUM_GRID);
-        boolean uploadTr = "yes".equalsIgnoreCase(Config.UPLOAD_TEST_RESULTS);
 
         logger.info("Gathering all files present in the test_scripts folder.");
         Path scriptDir = Path.of(System.getProperty("user.dir"), "test_scripts");
@@ -284,9 +349,9 @@ public class ExecutionManager {
         prm.generateSkipTestSummaryPdf();
         utils.mergePdfsInParts();
         // utils.sendEmailWithAttachment();
-        if (uploadTr) {
-            utils.uploadFolderToFTP();
-        }
+
+        utils.uploadFolderToFTP();
+
     }
 
     public static void startRunnerProcess(String filePath, Lock lock, ConfigReader objectRepoReader,
@@ -299,11 +364,12 @@ public class ExecutionManager {
 
             boolean runHeadless = "yes".equalsIgnoreCase(Config.HEADLESS);
             boolean runInSeleniumGrid = "yes".equalsIgnoreCase(Config.RUN_IN_SELENIUM_GRID);
+            boolean runInParallel = "yes".equalsIgnoreCase(Config.PARALLEL_EXECUTION);
 
             Thread recordingThread = new Thread(() -> {
             });
 
-            if (!(runHeadless || runInSeleniumGrid)) {
+            if (!(runHeadless || runInSeleniumGrid || runInParallel)) {
 
                 // Start recording process
                 recordingThread = startRecordingThread(executionThread,

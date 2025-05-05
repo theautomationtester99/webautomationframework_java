@@ -248,21 +248,24 @@ public class Utils {
      * Main function to upload a folder to the FTP server.
      */
     public void uploadFolderToFTP() {
-        String host = Config.FTP_HOST;
-        int port = Integer.parseInt(Config.FTP_PORT);
-        String username = Config.FTP_USER;
-        String password = Config.FTP_PASSWORD;
-        String localFolder = this.baseFolder;
-        String remoteFolder = Config.FTP_USER_HOME;
-        FTPClient ftp = connectToFTP(host, port, username, password);
-        if (ftp != null && ftp.isConnected()) {
-            try {
-                uploadDirectory(ftp, localFolder, remoteFolder);
-                ftp.logout();
-                ftp.disconnect();
-                // System.out.println("FTP connection closed.");
-            } catch (IOException e) {
-                logger.error("Error closing FTP connection: " + e.getMessage());
+        boolean uploadTr = "yes".equalsIgnoreCase(Config.UPLOAD_TEST_RESULTS);
+        if (uploadTr) {
+            String host = Config.FTP_HOST;
+            int port = Integer.parseInt(Config.FTP_PORT);
+            String username = Config.FTP_USER;
+            String password = Config.FTP_PASSWORD;
+            String localFolder = this.baseFolder;
+            String remoteFolder = Config.FTP_USER_HOME;
+            FTPClient ftp = connectToFTP(host, port, username, password);
+            if (ftp != null && ftp.isConnected()) {
+                try {
+                    uploadDirectory(ftp, localFolder, remoteFolder);
+                    ftp.logout();
+                    ftp.disconnect();
+                    // System.out.println("FTP connection closed.");
+                } catch (IOException e) {
+                    logger.error("Error closing FTP connection: " + e.getMessage());
+                }
             }
         }
     }
