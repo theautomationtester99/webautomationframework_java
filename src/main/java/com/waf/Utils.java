@@ -136,7 +136,8 @@ public class Utils {
                 // Check if the process name matches any of the driver names
                 for (String driver : driverNames) {
                     if (processName.contains(driver)) {
-                        System.out.println("Terminating process: " + processName + " (PID: " + process.pid() + ")");
+                        // System.out.println("Terminating process: " + processName + " (PID: " +
+                        // process.pid() + ")");
                         process.destroy(); // Terminate the process
                         break; // Exit the loop once a match is found
                     }
@@ -159,7 +160,7 @@ public class Utils {
             ftp.connect(host, port);
             ftp.login(username, password);
             ftp.enterLocalPassiveMode();
-            System.out.println("Connected to FTP server: " + host + ":" + port);
+            // System.out.println("Connected to FTP server: " + host + ":" + port);
         } catch (IOException e) {
             System.err.println("Failed to connect to FTP server: " + e.getMessage());
         }
@@ -172,7 +173,7 @@ public class Utils {
     public void ensureRemoteDirExists(FTPClient ftp, String remoteDir) {
         try {
             ftp.changeWorkingDirectory(remoteDir);
-            System.out.println("Changed to remote directory: " + remoteDir);
+            // System.out.println("Changed to remote directory: " + remoteDir);
         } catch (IOException e) {
             try {
                 String[] parts = remoteDir.split("/");
@@ -184,7 +185,7 @@ public class Utils {
                             ftp.changeWorkingDirectory(currentPath); // Check if the directory exists
                         } catch (IOException ex) {
                             ftp.makeDirectory(currentPath); // Create directory if it doesn't exist
-                            System.out.println("Created remote directory: " + currentPath);
+                            // System.out.println("Created remote directory: " + currentPath);
                         }
                     }
                 }
@@ -207,12 +208,12 @@ public class Utils {
             }
 
             if (ftp.listFiles(remoteFile).length > 0) {
-                System.out.println("File exists on server, skipping upload: " + remoteFile);
+                // System.out.println("File exists on server, skipping upload: " + remoteFile);
             } else {
                 FileInputStream inputStream = new FileInputStream(file);
                 ftp.setFileType(FTP.BINARY_FILE_TYPE);
                 if (ftp.storeFile(remoteFile, inputStream)) {
-                    System.out.println("Uploaded file: " + remoteFile);
+                    // System.out.println("Uploaded file: " + remoteFile);
                 } else {
                     System.err.println("Failed to upload file: " + remoteFile);
                 }
@@ -259,7 +260,7 @@ public class Utils {
                 uploadDirectory(ftp, localFolder, remoteFolder);
                 ftp.logout();
                 ftp.disconnect();
-                System.out.println("FTP connection closed.");
+                // System.out.println("FTP connection closed.");
             } catch (IOException e) {
                 System.err.println("Error closing FTP connection: " + e.getMessage());
             }
@@ -277,12 +278,12 @@ public class Utils {
             // Check if the directory is empty
             if (dir.listFiles() == null || dir.listFiles().length == 0) {
                 if (dir.delete()) {
-                    System.out.println(directory + " has been removed.");
+                    // System.out.println(directory + " has been removed.");
                 } else {
                     System.err.println("Failed to remove directory: " + directory);
                 }
             } else {
-                System.out.println(directory + " is not empty and was not removed.");
+                // System.out.println(directory + " is not empty and was not removed.");
             }
         } else {
             System.err.println(directory + " does not exist or is not a directory.");
@@ -397,8 +398,8 @@ public class Utils {
             }
         }
 
-        System.out.println("Test Summary Files: " + testSummary);
-        System.out.println("Other PDF Files: " + pdfFiles);
+        // System.out.println("Test Summary Files: " + testSummary);
+        // System.out.println("Other PDF Files: " + pdfFiles);
 
         // Group PDFs by prefix (e.g., QS001, QS002)
         Map<String, List<File>> groupedPdfs = new TreeMap<>(); // TreeMap for sorted order by keys
@@ -422,7 +423,7 @@ public class Utils {
         List<File> mergeOrder = new ArrayList<>(testSummary);
         groupedPdfs.values().forEach(mergeOrder::addAll);
 
-        System.out.println("Final Merge Order: " + mergeOrder);
+        // System.out.println("Final Merge Order: " + mergeOrder);
 
         // Total size of the PDFs
         long totalSize = mergeOrder.stream().mapToLong(File::length).sum();
@@ -430,7 +431,8 @@ public class Utils {
         long maxSize = 100L * 1024 * 1024; // 100MB threshold
 
         if (totalSize <= maxSize) {
-            System.out.println("All PDFs are within the size limit. Merging into a single file.");
+            // System.out.println("All PDFs are within the size limit. Merging into a single
+            // file.");
             mergePDFs(mergeOrder, outputFileBase + ".pdf");
         } else {
             int partNumber = 1;
@@ -454,7 +456,7 @@ public class Utils {
                 mergePDFs(currentBatch, outputFileBase + "_part" + partNumber + ".pdf");
             }
 
-            System.out.println("Merged PDFs saved in parts under: " + outputBase);
+            // System.out.println("Merged PDFs saved in parts under: " + outputBase);
         }
     }
 
@@ -469,7 +471,7 @@ public class Utils {
             }
             pdfMerger.setDestinationFileName(outputFile);
             pdfMerger.mergeDocuments(null);
-            System.out.println("Merged PDF saved at: " + outputFile);
+            // System.out.println("Merged PDF saved at: " + outputFile);
         } catch (IOException e) {
             System.err.println("Error during PDF merge: " + e.getMessage());
         }
@@ -486,7 +488,7 @@ public class Utils {
         File file = new File(filePath);
         if (file.exists() && file.isFile()) {
             if (file.delete()) {
-                System.out.println("File " + filePath + " has been deleted.");
+                // System.out.println("File " + filePath + " has been deleted.");
             } else {
                 System.err.println("Failed to delete file: " + filePath);
             }
@@ -502,7 +504,8 @@ public class Utils {
         File folder = new File(folderPath);
         if (folder.exists() && folder.isDirectory()) {
             deleteDirectoryRecursively(folder);
-            System.out.println("Folder and its contents have been removed: " + folderPath);
+            // System.out.println("Folder and its contents have been removed: " +
+            // folderPath);
         } else {
             System.err.println("Folder " + folderPath + " does not exist or is not a directory.");
         }
@@ -533,11 +536,12 @@ public class Utils {
                 for (File item : contents) {
                     if (item.isDirectory()) {
                         deleteDirectoryRecursively(item);
-                        System.out.println("Subfolder " + item.getName() + " has been removed.");
+                        // System.out.println("Subfolder " + item.getName() + " has been removed.");
                     }
                 }
             }
-            System.out.println("All subfolders within " + folderPath + " have been removed successfully.");
+            // System.out.println("All subfolders within " + folderPath + " have been
+            // removed successfully.");
         } else {
             System.err.println("Folder " + folderPath + " does not exist or is not a directory.");
         }
@@ -569,7 +573,7 @@ public class Utils {
         File folder = new File(folderPath);
         if (!folder.exists()) {
             if (folder.mkdirs()) {
-                System.out.println("Created folder: " + folderPath);
+                // System.out.println("Created folder: " + folderPath);
             } else {
                 System.err.println("Failed to create folder: " + folderPath);
             }
@@ -737,7 +741,7 @@ public class Utils {
             // Split the entered date into components
             String[] parts = enteredDate.split(" ");
             if (parts.length != 3) {
-                System.out.println("Invalid date format.");
+                // System.out.println("Invalid date format.");
                 return false;
             }
 
@@ -751,7 +755,7 @@ public class Utils {
 
             // Check if the year is within the valid range
             if (year < 2019 || year > 2025) {
-                System.out.println("Year is outside the valid range.");
+                // System.out.println("Year is outside the valid range.");
                 return false;
             }
 
@@ -761,13 +765,13 @@ public class Utils {
                 case "april", "june", "september", "november" -> 30;
                 case "february" -> (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
                 default -> {
-                    System.out.println("Invalid month name.");
+                    // System.out.println("Invalid month name.");
                     yield -1; // Indicates an invalid month
                 }
             };
 
             if (maxDaysInMonth == -1 || day < 1 || day > maxDaysInMonth) {
-                System.out.println("Invalid day for the given month.");
+                // System.out.println("Invalid day for the given month.");
                 return false;
             }
 
@@ -823,7 +827,8 @@ public class Utils {
 
         // Save the Base64-encoded encrypted content to a file
         Files.write(Paths.get(outputFile), encryptedContent.getBytes());
-        System.out.println("File encrypted successfully and saved in readable format!");
+        // System.out.println("File encrypted successfully and saved in readable
+        // format!");
 
         return encryptedContent; // Return readable encrypted content
     }
@@ -900,63 +905,63 @@ public class Utils {
         int totalMilliseconds = (int) elapsedTime;
         int milliseconds = totalMilliseconds % 1000;
         int totalSeconds = totalMilliseconds / 1000;
-    
+
         // Calculate seconds, minutes, and hours
         int seconds = totalSeconds % 60;
         int minutes = (totalSeconds / 60) % 60;
         int hours = totalSeconds / 3600;
-    
+
         // Return formatted time
         return hours + "hrs:" + minutes + "min:" + seconds + "sec:" + milliseconds + "ms";
     }
 
     public void convertCsvToXlsx(String csvFilePath, String xlsxFilePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath));
-             FileOutputStream fileOut = new FileOutputStream(xlsxFilePath)) {
-    
+                FileOutputStream fileOut = new FileOutputStream(xlsxFilePath)) {
+
             Workbook workbook = WorkbookFactory.create(true); // Create .xlsx format
             Sheet sheet = workbook.createSheet("Data");
-    
+
             String line;
             int rowIndex = 0;
             while ((line = br.readLine()) != null) {
                 Row row = sheet.createRow(rowIndex++);
-                
+
                 // Properly handle quoted fields using regex
                 String[] values = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-    
+
                 for (int colIndex = 0; colIndex < values.length; colIndex++) {
                     Cell cell = row.createCell(colIndex);
-                    
+
                     // Preserve actual new lines inside Excel cells
                     String cellValue = values[colIndex].trim().replace("\\n", "\n");
                     cell.setCellValue(cellValue);
-    
+
                     // **Set cell style to preserve multi-line text formatting**
                     CellStyle style = workbook.createCellStyle();
                     style.setWrapText(true); // Enables word wrap in Excel cells
                     cell.setCellStyle(style);
                 }
             }
-    
+
             // Auto-size columns for better visibility
             for (int i = 0; i < sheet.getRow(0).getLastCellNum(); i++) {
                 sheet.autoSizeColumn(i);
             }
-    
+
             // Write to Excel file
             workbook.write(fileOut);
             workbook.close();
-            System.out.println("Converted: " + xlsxFilePath);
-    
+            // System.out.println("Converted: " + xlsxFilePath);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
+
         try {
             // Delete CSV after conversion
             Files.deleteIfExists(Paths.get(csvFilePath));
-            System.out.println("Deleted: " + csvFilePath);
+            // System.out.println("Deleted: " + csvFilePath);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1016,7 +1021,7 @@ public class Utils {
 
         try {
             Files.createDirectories(path);
-            System.out.println("Directories created successfully: " + directoryPath);
+            // System.out.println("Directories created successfully: " + directoryPath);
         } catch (IOException e) {
             System.err.println("Failed to create directories: " + e.getMessage());
         }

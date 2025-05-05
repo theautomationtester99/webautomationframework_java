@@ -19,7 +19,7 @@ public class Config {
     public static final String RUN_IN_APPIUM_GRID = Optional.ofNullable(System.getenv("RUN_IN_APPIUM_GRID")).orElse("no");
     public static final String APPIUM_URL = Optional.ofNullable(System.getenv("APPIUM_URL")).orElse("http://192.168.1.8:4723/wd/hub");
 
-    public static final String LOG_LEVEL = Optional.ofNullable(System.getenv("LOG_LEVEL")).orElse("warning");
+    public static final String LOG_LEVEL = Optional.ofNullable(System.getenv("LOG_LEVEL")).orElse("warn");
 
     public static final String INPRIVATE = Optional.ofNullable(System.getenv("INPRIVATE")).orElse("no");
     public static final String HEADLESS = Optional.ofNullable(System.getenv("HEADLESS")).orElse("yes");

@@ -17,7 +17,7 @@
 
 //         // Save the Base64-encoded encrypted content to a file
 //         Files.write(Paths.get(outputFile), encryptedContent.getBytes());
-//         System.out.println("File encrypted successfully and saved in readable format!");
+//         //System.out.println("File encrypted successfully and saved in readable format!");
 
 //         return encryptedContent; // Return readable encrypted content
 //     }
@@ -69,17 +69,17 @@
 
 //             // Test string encryption and decryption
 //             String encryptedString = test.encryptString(testString, Test.DEFAULT_KEY);
-//             System.out.println("Encrypted String: " + encryptedString); // Readable format
+//             //System.out.println("Encrypted String: " + encryptedString); // Readable format
 
 //             String decryptedString = test.decryptString(encryptedString, Test.DEFAULT_KEY);
-//             System.out.println("Decrypted String: " + decryptedString);
+//             //System.out.println("Decrypted String: " + decryptedString);
 
 //             // Test file encryption and decryption
 //             String encryptedFileContent = test.encryptFile(inputFilePath, encryptedFilePath, Test.DEFAULT_KEY);
-//             // System.out.println("Encrypted File Content: " + encryptedFileContent);
+//             // //System.out.println("Encrypted File Content: " + encryptedFileContent);
 
 //             String decryptedFileContent = test.decryptFile(encryptedFilePath, Test.DEFAULT_KEY);
-//             // System.out.println("Decrypted File Content: " + decryptedFileContent);
+//             // //System.out.println("Decrypted File Content: " + decryptedFileContent);
 
 //         } catch (Exception e) {
 //             e.printStackTrace();
@@ -134,7 +134,8 @@ public class Test {
 
         // Save the Base64-encoded encrypted content to a file
         Files.write(Paths.get(outputFile), encryptedContent.getBytes());
-        System.out.println("File encrypted successfully and saved in readable format!");
+        // System.out.println("File encrypted successfully and saved in readable
+        // format!");
 
         return encryptedContent; // Return readable encrypted content
     }
@@ -194,10 +195,22 @@ public class Test {
 
     public static void main(String[] args) {
         try {
-            String inputFilePath = "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\jinjava_template.html"; // Create this file with some sample content
+            String inputFilePath = "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\jinjava_template.html"; // Create
+                                                                                                                                          // this
+                                                                                                                                          // file
+                                                                                                                                          // with
+                                                                                                                                          // some
+                                                                                                                                          // sample
+                                                                                                                                          // content
             String encryptedFilePath = "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\encrypted_jinjava_file.jinjav";
 
-            String inputtsFilePath = "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\jinjava_ts_template.html"; // Create this file with some sample content
+            String inputtsFilePath = "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\jinjava_ts_template.html"; // Create
+                                                                                                                                               // this
+                                                                                                                                               // file
+                                                                                                                                               // with
+                                                                                                                                               // some
+                                                                                                                                               // sample
+                                                                                                                                               // content
             String encryptedtsFilePath = "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\encrypted_jinjava_ts_file.jinjav";
 
             String testString = "Hello, this is a test string!";
@@ -205,21 +218,21 @@ public class Test {
 
             // Encrypt the string
             String encryptedString = test.encryptString(testString);
-            System.out.println("Encrypted String: " + encryptedString);
+            // System.out.println("Encrypted String: " + encryptedString);
 
             // Decrypt the string
             String decryptedString = test.decryptString(encryptedString);
-            System.out.println("Decrypted String: " + decryptedString);
+            // System.out.println("Decrypted String: " + decryptedString);
 
             // Test file encryption and decryption
             String encryptedFileContent = test.encryptFile(inputFilePath, encryptedFilePath);
-            // System.out.println("Encrypted File Content: " + encryptedFileContent);
+            // //System.out.println("Encrypted File Content: " + encryptedFileContent);
 
             String encryptedtsFileContent = test.encryptFile(inputtsFilePath, encryptedtsFilePath);
 
             String decryptedFileContent = test.decryptFile(encryptedFilePath);
             String decryptedtsFileContent = test.decryptFile(encryptedtsFilePath);
-            System.out.println("Decrypted File Content: " + decryptedtsFileContent);
+            // System.out.println("Decrypted File Content: " + decryptedtsFileContent);
         } catch (Exception e) {
             e.printStackTrace();
         }

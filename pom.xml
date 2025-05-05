@@ -11,8 +11,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>15</maven.compiler.source>
-    <maven.compiler.target>15</maven.compiler.target>
+    <maven.compiler.source>24</maven.compiler.source>
+    <maven.compiler.target>24</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -188,7 +188,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.14.0</version>
       </plugin>
 
       <plugin>
@@ -219,6 +219,12 @@
             <goals>
               <goal>java</goal>
             </goals>
+            <configuration>
+                <executable>java</executable>
+                <arguments>
+                    <argument>--enable-native-access=ALL-UNNAMED</argument>
+                </arguments>
+            </configuration>
           </execution>
         </executions>
       </plugin>

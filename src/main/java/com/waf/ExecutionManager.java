@@ -239,8 +239,8 @@ public class ExecutionManager {
             PdfReportManager prm) {
         long startTime = System.currentTimeMillis();
 
-        boolean runHeadless = "yes".equalsIgnoreCase(Config.HEADLESS);
         boolean runInGrid = "yes".equalsIgnoreCase(Config.RUN_IN_SELENIUM_GRID);
+        boolean runHeadless = "yes".equalsIgnoreCase(Config.HEADLESS);
         boolean runInAppium = "yes".equalsIgnoreCase(Config.RUN_IN_APPIUM_GRID);
         boolean uploadTr = "yes".equalsIgnoreCase(Config.UPLOAD_TEST_RESULTS);
 
@@ -249,7 +249,7 @@ public class ExecutionManager {
 
         List<String> filePaths = utils.getAbsoluteFilePathsInDir(Paths.get(scriptDir.toString()).toFile());
 
-        System.out.println(filePaths);
+        // System.out.println(filePaths);
 
         Pattern pattern = Pattern.compile("^qs[a-zA-Z0-9_]*_testscript\\.xlsx$", Pattern.CASE_INSENSITIVE);
 
@@ -297,14 +297,26 @@ public class ExecutionManager {
             Thread executionThread = startExecutionThread(filePath, lock, objectRepoReader, utils, browser);
             executionThread.start();
 
-            // Start recording process
-            Thread recordingThread = startRecordingThread(executionThread,
-                    Paths.get(filePath).getFileName().toString().replace("testscript.xlsx", ""), utils);
-            recordingThread.start();
+            boolean runHeadless = "yes".equalsIgnoreCase(Config.HEADLESS);
+            boolean runInSeleniumGrid = "yes".equalsIgnoreCase(Config.RUN_IN_SELENIUM_GRID);
+
+            Thread recordingThread = new Thread(() -> {
+            });
+
+            if (!(runHeadless || runInSeleniumGrid)) {
+
+                // Start recording process
+                recordingThread = startRecordingThread(executionThread,
+                        Paths.get(filePath).getFileName().toString().replace("testscript.xlsx", ""), utils);
+                recordingThread.start();
+
+            }
 
             // Wait for both processes to complete
             executionThread.join();
-            recordingThread.join();
+            if (!(runHeadless || runInSeleniumGrid)) {
+                recordingThread.join();
+            }
 
             logger.info("Execution and recording completed successfully.");
         } catch (Exception e) {
@@ -1014,7 +1026,8 @@ public class ExecutionManager {
                     throw new IllegalArgumentException("Invalid keyword '" + keyword + "' in the test script.");
                 }
 
-                validateKeywordSpecificRules(index, rows.get(index), testScriptFile, exReport, objectRepo, logger);
+                validateKeywordSpecificRules(index, rows.get(index), testScriptFile, exReport, objectRepo, logger,
+                        utils);
             }
 
         } catch (Exception e) {
@@ -1040,14 +1053,19 @@ public class ExecutionManager {
     }
 
     private static void validateKeywordSpecificRules(int index, List<String> rowData, String testScriptFile,
-            ExcelReportManager eReport, ConfigReader objectRepo, Logger logger) {
+            ExcelReportManager eReport, ConfigReader objectRepo, Logger logger, Utils utils) {
         String keyword = rowData.get(0).trim();
 
         logger.info("Validating keyword specific rules for " + keyword);
         logger.info("Validating keyword specific rules for " + rowData);
 
         if (List.of("upload_file", "select_file", "type", "click", "verify_displayed_text",
-                "choose_date_from_datepicker").contains(keyword)) {
+                "choose_date_from_datepicker", "check_element_enabled", "check_element_disabled",
+                "check_element_displayed", "switch_to_iframe", "check_radio_chk_selected",
+                "check_radio_chk_not_selected", "drag_drop", "hover_mouse", "js_click",
+                "select_dropdown_by_value", "select_dropdown_by_index", "select_dropdown_by_visible_text")
+                .contains(keyword)) {
+
             String locatorId = rowData.get(2).trim();
             if (locatorId.isEmpty()) {
                 logger.error("Locator ID missing at row " + (index + 2));
@@ -1056,11 +1074,49 @@ public class ExecutionManager {
                 throw new IllegalArgumentException("Locator ID missing at row " + (index + 2));
             }
 
-            if (objectRepo.getPropertyFromAnySection(locatorId, "No").equalsIgnoreCase("No")) {
-                logger.error("Locator does not exist in object repository at row " + (index + 2));
+            List<String> locatorIds = Arrays.stream(locatorId.split(";"))
+                    .map(String::trim)
+                    .filter(lid -> !lid.isEmpty())
+                    .toList();
+
+            if (locatorIds.isEmpty()) {
+                logger.error("No valid locator IDs provided at row " + (index + 2));
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                        List.of(testScriptFile, "No valid locator IDs provided at row " + (index + 2), "Skipped"));
+                throw new IllegalArgumentException("No valid locator IDs provided at row " + (index + 2));
+            }
+
+            for (String singleLocatorId : locatorIds) {
+                if (singleLocatorId.isEmpty()) {
+                    logger.error("Empty locator ID found in the list at row " + (index + 2));
+                    eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                            List.of(testScriptFile, "Empty locator ID found in the list at row " + (index + 2),
+                                    "Skipped"));
+                    throw new IllegalArgumentException("Empty locator ID found in the list at row " + (index + 2));
+                }
+
+                String locValue = objectRepo.getPropertyFromAnySection(singleLocatorId, "No");
+                if (locValue.equalsIgnoreCase("No")) {
+                    logger.error("Locator does not exist in object repository at row " + (index + 2));
+                    eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                            List.of(testScriptFile, "Locator does not exist in object repository at row " + (index + 2),
+                                    "Skipped"));
+                    throw new IllegalArgumentException(
+                            "Locator does not exist in object repository at row " + (index + 2));
+                }
+            }
+        }
+
+        if (List.of("upload_file", "select_file").contains(keyword)) {
+            String fileName = rowData.get(3).trim();
+            Path baseDir = Paths.get(System.getProperty("user.dir")).toAbsolutePath();
+            Path testFilePath = Paths.get(baseDir.toString(), "test_files", fileName);
+            if (!utils.checkIfFileExists(testFilePath.toString())) {
+                logger.error("Test File given at row " + (index + 2) + " does not exit at " + testScriptFile);
                 eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC", List.of(testScriptFile,
-                        "Locator does not exist in object repository at row " + (index + 2), "Skipped"));
-                throw new IllegalArgumentException("Locator does not exist in object repository at row " + (index + 2));
+                        "Test File given at row " + (index + 2) + " does not exit.", "Skipped"));
+                throw new IllegalArgumentException(
+                        "Test File given at row " + (index + 2) + " does not exit at " + testScriptFile);
             }
         }
 
@@ -1074,7 +1130,7 @@ public class ExecutionManager {
         }
 
         if (keyword.equals("choose_date_from_datepicker")) {
-            validateChooseDateFromDatepicker(index, rowData, testScriptFile, eReport, objectRepo, null);
+            validateChooseDateFromDatepicker(index, rowData, testScriptFile, eReport, objectRepo, utils);
         }
 
         if (keyword.equals("drag_drop")) {

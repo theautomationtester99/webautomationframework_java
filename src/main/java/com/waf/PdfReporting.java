@@ -116,159 +116,171 @@ public class PdfReporting {
     }
 
     // public static void main(String[] args) throws IOException {
-    //     // Creating sub-steps for retry data
-    //     SubStep subStep1 = new SubStep();
-    //     subStep1.setSubStep("Navigate to URL");
-    //     subStep1.setSubStepMessage("Navigated to https://example.com");
-    //     subStep1.setImageSrc(
-    //             "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
-    //     subStep1.setImageAlt("Step Image");
-    //     subStep1.setSubStepStatus("Pass");
+    // // Creating sub-steps for retry data
+    // SubStep subStep1 = new SubStep();
+    // subStep1.setSubStep("Navigate to URL");
+    // subStep1.setSubStepMessage("Navigated to https://example.com");
+    // subStep1.setImageSrc(
+    // "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
+    // subStep1.setImageAlt("Step Image");
+    // subStep1.setSubStepStatus("Pass");
 
-    //     SubStep subStep2 = new SubStep();
-    //     subStep2.setSubStep("Verify page title");
-    //     subStep2.setSubStepMessage("Expected title: 'Example Domain', Actual title: 'Example Domain'");
-    //     subStep2.setSubStepStatus("Pass");
+    // SubStep subStep2 = new SubStep();
+    // subStep2.setSubStep("Verify page title");
+    // subStep2.setSubStepMessage("Expected title: 'Example Domain', Actual title:
+    // 'Example Domain'");
+    // subStep2.setSubStepStatus("Pass");
 
-    //     Map<String, SubStep> subSteps1 = new HashMap<>();
-    //     subSteps1.put("1", subStep1);
-    //     subSteps1.put("2", subStep2);
+    // Map<String, SubStep> subSteps1 = new HashMap<>();
+    // subSteps1.put("1", subStep1);
+    // subSteps1.put("2", subStep2);
 
-    //     // Creating test steps
-    //     TestStep step1 = new TestStep();
-    //     step1.setSno("1");
-    //     step1.setRowspan("3");
-    //     step1.setStep("Open Browser");
-    //     step1.setResult("Browser opened successfully");
-    //     step1.setOverallStepStatus("Pass");
-    //     step1.setSubSteps(subSteps1);
+    // // Creating test steps
+    // TestStep step1 = new TestStep();
+    // step1.setSno("1");
+    // step1.setRowspan("3");
+    // step1.setStep("Open Browser");
+    // step1.setResult("Browser opened successfully");
+    // step1.setOverallStepStatus("Pass");
+    // step1.setSubSteps(subSteps1);
 
-    //     TestStep step2 = new TestStep();
-    //     step2.setSno("2");
-    //     step2.setRowspan("2");
-    //     step2.setStep("Login to Application");
-    //     step2.setResult("Failed to login");
-    //     step2.setOverallStepStatus("Fail");
+    // TestStep step2 = new TestStep();
+    // step2.setSno("2");
+    // step2.setRowspan("2");
+    // step2.setStep("Login to Application");
+    // step2.setResult("Failed to login");
+    // step2.setOverallStepStatus("Fail");
 
-    //     Map<String, SubStep> subSteps2 = new HashMap<>();
-    //     SubStep loginSubStep = new SubStep();
-    //     loginSubStep.setSubStep("Enter username and password");
-    //     loginSubStep.setSubStepMessage("Invalid credentials provided");
-    //     // loginSubStep.setImageSrc("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
-    //     // loginSubStep.setImageAlt("Step Image");
-    //     loginSubStep.setSubStepStatus("Fail");
-    //     subSteps2.put("1", loginSubStep);
+    // Map<String, SubStep> subSteps2 = new HashMap<>();
+    // SubStep loginSubStep = new SubStep();
+    // loginSubStep.setSubStep("Enter username and password");
+    // loginSubStep.setSubStepMessage("Invalid credentials provided");
+    // //
+    // loginSubStep.setImageSrc("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
+    // // loginSubStep.setImageAlt("Step Image");
+    // loginSubStep.setSubStepStatus("Fail");
+    // subSteps2.put("1", loginSubStep);
 
-    //     step2.setSubSteps(subSteps2);
+    // step2.setSubSteps(subSteps2);
 
-    //     Map<String, TestStep> retry1Steps = new HashMap<>();
-    //     retry1Steps.put("1", step1);
-    //     retry1Steps.put("2", step2);
+    // Map<String, TestStep> retry1Steps = new HashMap<>();
+    // retry1Steps.put("1", step1);
+    // retry1Steps.put("2", step2);
 
-    //     // Creating retry data
-    //     RetryData retry1 = new RetryData();
-    //     retry1.setRstatus("Fail");
-    //     retry1.setRerror("Error Occurred: Message: no such element: Unable to locate element.");
-    //     retry1.setSteps(retry1Steps);
+    // // Creating retry data
+    // RetryData retry1 = new RetryData();
+    // retry1.setRstatus("Fail");
+    // retry1.setRerror("Error Occurred: Message: no such element: Unable to locate
+    // element.");
+    // retry1.setSteps(retry1Steps);
 
-    //     //////////////////////////////
-    //     ///
-    //     ///
-    //     SubStep subStepr21 = new SubStep();
-    //     subStepr21.setSubStep("Navigate to URL");
-    //     subStepr21.setSubStepMessage("Navigated to https://example.com");
-    //     subStepr21.setImageSrc(
-    //             "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
-    //     subStepr21.setImageAlt("Step Image");
-    //     subStepr21.setSubStepStatus("Pass");
+    // //////////////////////////////
+    // ///
+    // ///
+    // SubStep subStepr21 = new SubStep();
+    // subStepr21.setSubStep("Navigate to URL");
+    // subStepr21.setSubStepMessage("Navigated to https://example.com");
+    // subStepr21.setImageSrc(
+    // "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
+    // subStepr21.setImageAlt("Step Image");
+    // subStepr21.setSubStepStatus("Pass");
 
-    //     SubStep subStepr22 = new SubStep();
-    //     subStepr22.setSubStep("Verify page title");
-    //     subStepr22.setSubStepMessage("Expected title: 'Example Domain', Actual title: 'Example Domain'");
-    //     subStepr22.setSubStepStatus("Pass");
+    // SubStep subStepr22 = new SubStep();
+    // subStepr22.setSubStep("Verify page title");
+    // subStepr22.setSubStepMessage("Expected title: 'Example Domain', Actual title:
+    // 'Example Domain'");
+    // subStepr22.setSubStepStatus("Pass");
 
-    //     Map<String, SubStep> subStepsr21 = new HashMap<>();
-    //     subStepsr21.put("1", subStepr21);
-    //     subStepsr21.put("2", subStepr22);
+    // Map<String, SubStep> subStepsr21 = new HashMap<>();
+    // subStepsr21.put("1", subStepr21);
+    // subStepsr21.put("2", subStepr22);
 
-    //     // Creating test steps
-    //     TestStep stepr21 = new TestStep();
-    //     stepr21.setSno("1");
-    //     stepr21.setRowspan("3");
-    //     stepr21.setStep("Open Browser");
-    //     stepr21.setResult("Browser opened successfully");
-    //     stepr21.setOverallStepStatus("Pass");
-    //     stepr21.setSubSteps(subStepsr21);
+    // // Creating test steps
+    // TestStep stepr21 = new TestStep();
+    // stepr21.setSno("1");
+    // stepr21.setRowspan("3");
+    // stepr21.setStep("Open Browser");
+    // stepr21.setResult("Browser opened successfully");
+    // stepr21.setOverallStepStatus("Pass");
+    // stepr21.setSubSteps(subStepsr21);
 
-    //     TestStep stepr22 = new TestStep();
-    //     stepr22.setSno("2");
-    //     stepr22.setRowspan("2");
-    //     stepr22.setStep("Login to Application");
-    //     stepr22.setResult("Failed to login");
-    //     stepr22.setOverallStepStatus("Fail");
+    // TestStep stepr22 = new TestStep();
+    // stepr22.setSno("2");
+    // stepr22.setRowspan("2");
+    // stepr22.setStep("Login to Application");
+    // stepr22.setResult("Failed to login");
+    // stepr22.setOverallStepStatus("Fail");
 
-    //     Map<String, SubStep> subStepsr22 = new HashMap<>();
-    //     SubStep loginSubStepr2 = new SubStep();
-    //     loginSubStepr2.setSubStep("Enter username and password");
-    //     loginSubStepr2.setSubStepMessage("Invalid credentials provided");
-    //     // loginSubStep.setImageSrc("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
-    //     // loginSubStep.setImageAlt("Step Image");
-    //     loginSubStepr2.setSubStepStatus("Fail");
-    //     subStepsr22.put("1", loginSubStepr2);
+    // Map<String, SubStep> subStepsr22 = new HashMap<>();
+    // SubStep loginSubStepr2 = new SubStep();
+    // loginSubStepr2.setSubStep("Enter username and password");
+    // loginSubStepr2.setSubStepMessage("Invalid credentials provided");
+    // //
+    // loginSubStep.setImageSrc("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVR4nO2XQQrAMAgEfUb3ofGhPqP3ni0l9J4QKQ3MgFdBNLsbMwCAXyKPXK2319Hiquo1DAM4G0hOSDziDirkyGhgZMKJJyFKOFEiiRIqUg61OB83XimD3VDhl7Ky1zAM4GwgOSHxiDuokCOjgZEJJ56EKOFEiSRKaOcoAQBgX3AD2Km4gQP8in4AAAAASUVORK5CYII=");
+    // // loginSubStep.setImageAlt("Step Image");
+    // loginSubStepr2.setSubStepStatus("Fail");
+    // subStepsr22.put("1", loginSubStepr2);
 
-    //     stepr22.setSubSteps(subStepsr22);
+    // stepr22.setSubSteps(subStepsr22);
 
-    //     Map<String, TestStep> retry1Stepsr2 = new HashMap<>();
-    //     retry1Stepsr2.put("1", stepr21);
-    //     retry1Stepsr2.put("2", stepr22);
+    // Map<String, TestStep> retry1Stepsr2 = new HashMap<>();
+    // retry1Stepsr2.put("1", stepr21);
+    // retry1Stepsr2.put("2", stepr22);
 
-    //     // Creating retry data
-    //     RetryData retry1r2 = new RetryData();
-    //     retry1r2.setRstatus("Fail");
-    //     retry1r2.setRerror("Error Occurred: Message: no such element: Unable to locate element.");
-    //     retry1r2.setSteps(retry1Stepsr2);
+    // // Creating retry data
+    // RetryData retry1r2 = new RetryData();
+    // retry1r2.setRstatus("Fail");
+    // retry1r2.setRerror("Error Occurred: Message: no such element: Unable to
+    // locate element.");
+    // retry1r2.setSteps(retry1Stepsr2);
 
-    //     Map<String, RetryData> tableData = new HashMap<>();
-    //     tableData.put("retry_1", retry1);
-    //     tableData.put("retry_2", retry1r2);
+    // Map<String, RetryData> tableData = new HashMap<>();
+    // tableData.put("retry_1", retry1);
+    // tableData.put("retry_2", retry1r2);
 
-    //     // Creating the root object
-    //     TestReport testReport = new TestReport();
-    //     testReport.setPageTitle("Test Report");
-    //     testReport.setTestDescription("Sample test description goes here.");
-    //     testReport.setBrowserImgSrc(Constants.CHROME_LOGO_SRC_B64);
-    //     testReport.setOsImgSrc(Constants.LINUX_LOGO_SRC_B64);
-    //     testReport.setOsImgAlt("linux");
-    //     testReport.setBrowserImgAlt("Browser Logo");
-    //     testReport.setBrowserVersion("Version 110.0.1.1.1122");
-    //     testReport.setExecutedDate("25MAR2025");
-    //     testReport.setOverallStatusText("FAILED");
-    //     testReport.setTableData(tableData);
+    // // Creating the root object
+    // TestReport testReport = new TestReport();
+    // testReport.setPageTitle("Test Report");
+    // testReport.setTestDescription("Sample test description goes here.");
+    // testReport.setBrowserImgSrc(Constants.CHROME_LOGO_SRC_B64);
+    // testReport.setOsImgSrc(Constants.LINUX_LOGO_SRC_B64);
+    // testReport.setOsImgAlt("linux");
+    // testReport.setBrowserImgAlt("Browser Logo");
+    // testReport.setBrowserVersion("Version 110.0.1.1.1122");
+    // testReport.setExecutedDate("25MAR2025");
+    // testReport.setOverallStatusText("FAILED");
+    // testReport.setTableData(tableData);
 
-    //     // Print a message
-    //     System.out.println("TestReport object created successfully!");
+    // // Print a message
+    // //System.out.println("TestReport object created successfully!");
 
-    //     // System.out.println(testReport);
-    //     // Convert TestReport to JSON and print
-    //     ObjectMapper objectMapper = new ObjectMapper();
-    //     // objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
-    //     // false);
-    //     // try {
-    //     // String json =
-    //     // objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(testReport);
-    //     // System.out.println(json);
-    //     // } catch (JsonProcessingException e) {
-    //     // e.printStackTrace();
-    //     // }
+    // // //System.out.println(testReport);
+    // // Convert TestReport to JSON and print
+    // ObjectMapper objectMapper = new ObjectMapper();
+    // // objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
+    // // false);
+    // // try {
+    // // String json =
+    // //
+    // objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(testReport);
+    // // //System.out.println(json);
+    // // } catch (JsonProcessingException e) {
+    // // e.printStackTrace();
+    // // }
 
-    //     // Convert to Map<String, Object>
-    //     Map<String, Object> testReportMap = objectMapper.convertValue(testReport, Map.class);
-    //     System.out.println(testReportMap);
+    // // Convert to Map<String, Object>
+    // Map<String, Object> testReportMap = objectMapper.convertValue(testReport,
+    // Map.class);
+    // //System.out.println(testReportMap);
 
-    //     String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(testReport);
+    // String json =
+    // objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(testReport);
 
-    //     PdfReporting pdfReport = new PdfReporting("D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\logo.png", "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\encrypted_jinjava_file.jinjav",testReportMap, "String tcId", "documentName");
+    // PdfReporting pdfReport = new
+    // PdfReporting("D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\logo.png",
+    // "D:\\allprojects\\java-projects\\webautomationframework\\src\\main\\resources\\encrypted_jinjava_file.jinjav",testReportMap,
+    // "String tcId", "documentName");
 
-    //     pdfReport.generatePdf();
+    // pdfReport.generatePdf();
     // }
 }

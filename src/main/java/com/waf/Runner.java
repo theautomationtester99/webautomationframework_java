@@ -81,7 +81,7 @@ public class Runner {
 
             if (cmd.hasOption("version")) {
                 logger.info("Version: 3.0");
-                System.out.println("Version: 3.0");
+                // System.out.println("Version: 3.0");
                 System.exit(0);
             }
 

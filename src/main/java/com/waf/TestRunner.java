@@ -32,16 +32,16 @@ public class TestRunner {
 
         // Print the result
         if (result) {
-            System.out.println("The file " + filePath + " is an Excel document.");
+            // System.out.println("The file " + filePath + " is an Excel document.");
         } else {
-            System.out.println("The file " + filePath + " is NOT an Excel document.");
+            // System.out.println("The file " + filePath + " is NOT an Excel document.");
         }
 
         // Print the result
         if (dv) {
-            System.out.println("Valid date");
+            // System.out.println("Valid date");
         } else {
-            System.out.println("Invalid date");
+            // System.out.println("Invalid date");
         }
     }
 }

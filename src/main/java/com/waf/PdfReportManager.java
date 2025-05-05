@@ -54,7 +54,7 @@ public class PdfReportManager {
         this.subStepNo = 0;
         this.rowSpan = 0;
         this.reportData = new TestReport();
-        this.tableData = new HashMap<>();
+        this.tableData = new LinkedHashMap<>();
         this.currentRetry = 1;
         this.pageTitle = "";
         this.testDescription = "";
@@ -78,7 +78,7 @@ public class PdfReportManager {
             retryData = new RetryData();
             retryData.setRstatus("Pass");
             tableData.put(retryKey, retryData);
-            //stepNo = 0;
+            // stepNo = 0;
             overallStatusText = "PASSED";
 
             TestStep testStep = null;
@@ -87,9 +87,9 @@ public class PdfReportManager {
 
             if (data.containsKey("step")) {
                 testStep = new TestStep();
-                retryStep = new HashMap<>();
+                retryStep = new LinkedHashMap<>();
                 logger.info("Step is captured to be added to PDF report.");
-                stepNo = stepNo+1;
+                stepNo = stepNo + 1;
                 rowSpan = 1;
 
                 testStep.setSno(String.valueOf(stepNo));
@@ -105,13 +105,13 @@ public class PdfReportManager {
                 testStep = tableData.get(retryKey).getSteps().get(String.valueOf(stepNo));
                 SubStep subStep = new SubStep();
                 if (testStep.getSubSteps() != null && !testStep.getSubSteps().isEmpty()) {
-                    allSubSteps = new HashMap<>();
+                    allSubSteps = new LinkedHashMap<>();
                 } else {
                     allSubSteps = testStep.getSubSteps();
                 }
                 logger.info("Sub Step is captured to be added to PDF report.");
-                subStepNo=subStepNo+1;
-                rowSpan=rowSpan+1;
+                subStepNo = subStepNo + 1;
+                rowSpan = rowSpan + 1;
 
                 subStep.setSubStep(data.get("subStep").toString());
                 subStep.setSubStepMessage(data.get("subStepMessage").toString());
@@ -130,10 +130,10 @@ public class PdfReportManager {
                 }
             }
         } else {
-            //logger.warn("Getting retry data for key " + retryKey);
+            // logger.warn("Getting retry data for key " + retryKey);
             retryData = tableData.get(retryKey);
-            //logger.warn("Getting retry data " + retryData);
-            //stepNo = 0;
+            // logger.warn("Getting retry data " + retryData);
+            // stepNo = 0;
 
             TestStep testStep = null;
             Map<String, TestStep> retryStep = null;
@@ -143,7 +143,7 @@ public class PdfReportManager {
                 testStep = new TestStep();
                 retryStep = tableData.get(retryKey).getSteps();
                 logger.info("Step is captured to be added to PDF report.");
-                stepNo = stepNo+1;
+                stepNo = stepNo + 1;
                 rowSpan = 1;
 
                 testStep.setSno(String.valueOf(stepNo));
@@ -154,18 +154,18 @@ public class PdfReportManager {
 
                 retryStep.put(String.valueOf(stepNo), testStep);
                 retryData.setSteps(retryStep);
-                //tableData.put(retryKey, retryData);
+                // tableData.put(retryKey, retryData);
             } else {
                 testStep = tableData.get(retryKey).getSteps().get(String.valueOf(stepNo));
                 SubStep subStep = new SubStep();
                 if (testStep.getSubSteps() != null) {
                     allSubSteps = testStep.getSubSteps();
                 } else {
-                    allSubSteps = new HashMap<>();
+                    allSubSteps = new LinkedHashMap<>();
                 }
                 logger.info("Sub Step is captured to be added to PDF report.");
-                subStepNo=subStepNo+1;
-                rowSpan=rowSpan+1;
+                subStepNo = subStepNo + 1;
+                rowSpan = rowSpan + 1;
 
                 subStep.setSubStep(data.get("subStep").toString());
                 subStep.setSubStepMessage(data.get("subStepMessage").toString());
@@ -175,9 +175,9 @@ public class PdfReportManager {
                     subStep.setImageSrc(data.get("imageSrc").toString());
                     subStep.setImageAlt(data.get("imageAlt").toString());
                 }
-                //System.out.println(allSubSteps);
+                ////System.out.println(allSubSteps);
                 allSubSteps.put(String.valueOf(subStepNo), subStep);
-                //System.out.println(allSubSteps);
+                ////System.out.println(allSubSteps);
                 testStep.setRowspan(String.valueOf(rowSpan));
                 testStep.setSubSteps(allSubSteps);
 
@@ -212,7 +212,8 @@ public class PdfReportManager {
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> testReportMap = objectMapper.convertValue(reportData, Map.class);
 
-        //System.out.println(testReportMap);
+        ////System.out.println(reportData);
+        ////System.out.println(testReportMap);
 
         String resourcesFolder = System.getProperty("user.dir") + File.separator + "resources";
 
@@ -238,12 +239,12 @@ public class PdfReportManager {
 
             try {
                 Table table = Table.read().usingOptions(XlsxReadOptions.builder(summaryResultsFile.toFile()).build());
-                Map<String, Object> tableData = new HashMap<>();
+                Map<String, Object> tableData = new LinkedHashMap<>();
 
                 List<String> columnNames = table.columnNames(); // Get all column headers
 
                 List<Map<String, Object>> rows = table.stream().map(row -> {
-                    Map<String, Object> rowMap = new HashMap<>();
+                    Map<String, Object> rowMap = new LinkedHashMap<>();
                     for (String column : columnNames) {
                         rowMap.put(column, row.getObject(column)); // Extract values for each column
                     }
@@ -254,10 +255,10 @@ public class PdfReportManager {
                     tableData.put(String.valueOf(i + 1), rows.get(i)); // Use row index as the key
                 }
 
-                Map<String, Object> finalTableData = new HashMap<>();
+                Map<String, Object> finalTableData = new LinkedHashMap<>();
                 finalTableData.put("data", tableData);
 
-                System.out.println(tableData);
+                // System.out.println(tableData);
 
                 PdfTsReporting tsPdf = new PdfTsReporting(
                         baseDir.resolve("resources/logo.png").toString(),
@@ -283,12 +284,12 @@ public class PdfReportManager {
 
             try {
                 Table table = Table.read().usingOptions(XlsxReadOptions.builder(summaryResultsFile.toFile()).build());
-                Map<String, Object> tableData = new HashMap<>();
+                Map<String, Object> tableData = new LinkedHashMap<>();
 
                 List<String> columnNames = table.columnNames(); // Get all column headers
 
                 List<Map<String, Object>> rows = table.stream().map(row -> {
-                    Map<String, Object> rowMap = new HashMap<>();
+                    Map<String, Object> rowMap = new LinkedHashMap<>();
                     for (String column : columnNames) {
                         rowMap.put(column, row.getObject(column)); // Extract values for each column
                     }
@@ -299,10 +300,10 @@ public class PdfReportManager {
                     tableData.put(String.valueOf(i + 1), rows.get(i)); // Use row index as the key
                 }
 
-                Map<String, Object> finalTableData = new HashMap<>();
+                Map<String, Object> finalTableData = new LinkedHashMap<>();
                 finalTableData.put("data", tableData);
 
-                System.out.println(tableData);
+                // System.out.println(tableData);
 
                 PdfTsReporting tsPdf = new PdfTsReporting(
                         baseDir.resolve("resources/logo.png").toString(),

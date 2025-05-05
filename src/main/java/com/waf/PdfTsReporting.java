@@ -78,9 +78,7 @@ public class PdfTsReporting {
         try {
             String decryptedTemplate = utils.decryptFile(encryptedTemplateFilePath);
             Jinjava jinjava = new Jinjava();
-            System.out.println("====================================");
-            System.out.println(data);
-
+            
             return jinjava.render(decryptedTemplate, data);
         } catch (Exception e) {
             logger.error(e.toString());
@@ -132,7 +130,6 @@ public class PdfTsReporting {
                 .get("D:\\allprojects\\java-projects\\webautomationframework\\test_results\\output.xlsx");
 
         if (utils.checkIfFileExists(summaryResultsFile.toString())) {
-            
 
             try {
                 Table table = Table.read().usingOptions(XlsxReadOptions.builder(summaryResultsFile.toFile()).build());
@@ -155,7 +152,7 @@ public class PdfTsReporting {
                 Map<String, Object> finalTableData = new HashMap<>();
                 finalTableData.put("data", tableData);
 
-                System.out.println(tableData);
+                // System.out.println(tableData);
 
                 PdfTsReporting tsPdf = new PdfTsReporting(
                         baseDir.resolve("src/main/resources/logo.png").toString(),
@@ -165,9 +162,9 @@ public class PdfTsReporting {
 
                 tsPdf.generatePdf();
             } catch (Exception e) {
-                
+
             }
         }
-        System.out.println("PDF report generated successfully!");
+        // System.out.println("PDF report generated successfully!");
     }
 }
