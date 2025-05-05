@@ -12,6 +12,7 @@ import com.waf.report.SubStep;
 import com.waf.report.TestReport;
 import com.waf.report.TestStep;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import tech.tablesaw.api.Table;
@@ -77,7 +78,7 @@ public class PdfReportManager {
             retryData = new RetryData();
             retryData.setRstatus("Pass");
             tableData.put(retryKey, retryData);
-            stepNo = 0;
+            //stepNo = 0;
             overallStatusText = "PASSED";
 
             TestStep testStep = null;
@@ -88,7 +89,7 @@ public class PdfReportManager {
                 testStep = new TestStep();
                 retryStep = new HashMap<>();
                 logger.info("Step is captured to be added to PDF report.");
-                stepNo++;
+                stepNo = stepNo+1;
                 rowSpan = 1;
 
                 testStep.setSno(String.valueOf(stepNo));
@@ -109,8 +110,8 @@ public class PdfReportManager {
                     allSubSteps = testStep.getSubSteps();
                 }
                 logger.info("Sub Step is captured to be added to PDF report.");
-                subStepNo++;
-                rowSpan++;
+                subStepNo=subStepNo+1;
+                rowSpan=rowSpan+1;
 
                 subStep.setSubStep(data.get("subStep").toString());
                 subStep.setSubStepMessage(data.get("subStepMessage").toString());
@@ -129,8 +130,10 @@ public class PdfReportManager {
                 }
             }
         } else {
+            //logger.warn("Getting retry data for key " + retryKey);
             retryData = tableData.get(retryKey);
-            stepNo = 0;
+            //logger.warn("Getting retry data " + retryData);
+            //stepNo = 0;
 
             TestStep testStep = null;
             Map<String, TestStep> retryStep = null;
@@ -138,9 +141,9 @@ public class PdfReportManager {
 
             if (data.containsKey("step")) {
                 testStep = new TestStep();
-                retryStep = new HashMap<>();
+                retryStep = tableData.get(retryKey).getSteps();
                 logger.info("Step is captured to be added to PDF report.");
-                stepNo++;
+                stepNo = stepNo+1;
                 rowSpan = 1;
 
                 testStep.setSno(String.valueOf(stepNo));
@@ -151,18 +154,18 @@ public class PdfReportManager {
 
                 retryStep.put(String.valueOf(stepNo), testStep);
                 retryData.setSteps(retryStep);
-                tableData.put(retryKey, retryData);
+                //tableData.put(retryKey, retryData);
             } else {
                 testStep = tableData.get(retryKey).getSteps().get(String.valueOf(stepNo));
                 SubStep subStep = new SubStep();
-                if (testStep.getSubSteps() != null && !testStep.getSubSteps().isEmpty()) {
-                    allSubSteps = new HashMap<>();
-                } else {
+                if (testStep.getSubSteps() != null) {
                     allSubSteps = testStep.getSubSteps();
+                } else {
+                    allSubSteps = new HashMap<>();
                 }
                 logger.info("Sub Step is captured to be added to PDF report.");
-                subStepNo++;
-                rowSpan++;
+                subStepNo=subStepNo+1;
+                rowSpan=rowSpan+1;
 
                 subStep.setSubStep(data.get("subStep").toString());
                 subStep.setSubStepMessage(data.get("subStepMessage").toString());
@@ -172,8 +175,11 @@ public class PdfReportManager {
                     subStep.setImageSrc(data.get("imageSrc").toString());
                     subStep.setImageAlt(data.get("imageAlt").toString());
                 }
+                //System.out.println(allSubSteps);
                 allSubSteps.put(String.valueOf(subStepNo), subStep);
+                //System.out.println(allSubSteps);
                 testStep.setRowspan(String.valueOf(rowSpan));
+                testStep.setSubSteps(allSubSteps);
 
                 if (data.get("subStepStatus").toString().equalsIgnoreCase("Fail")) {
                     overallStatusText = "FAILED";
@@ -206,8 +212,12 @@ public class PdfReportManager {
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> testReportMap = objectMapper.convertValue(reportData, Map.class);
 
-        String logoPath = "resources/logo.png";
-        String templatePath = "resources/encrypted_file.jinja2";
+        //System.out.println(testReportMap);
+
+        String resourcesFolder = System.getProperty("user.dir") + File.separator + "resources";
+
+        String logoPath = resourcesFolder + File.separator + "logo.png";
+        String templatePath = resourcesFolder + File.separator + "encrypted_jinjava_file.jinjav";
 
         String testId = tcId + "-" + runningOnHostName + "-" + browserImgAlt + "-" + osImgAlt;
         String fileName = tcId + "_" + browserImgAlt + "_" + overallStatusText + "_" + utils.getDateString();
@@ -250,14 +260,59 @@ public class PdfReportManager {
                 System.out.println(tableData);
 
                 PdfTsReporting tsPdf = new PdfTsReporting(
-                        baseDir.resolve("src/main/resources/logo.png").toString(),
-                        baseDir.resolve("src/main/resources/encrypted_jinjava_ts_file.jinjav").toString(),
+                        baseDir.resolve("resources/logo.png").toString(),
+                        baseDir.resolve("resources/encrypted_jinjava_ts_file.jinjav").toString(),
                         finalTableData,
                         "Test_Summary_Results_" + utils.getDateString());
 
                 tsPdf.generatePdf();
             } catch (Exception e) {
                 logger.error("Error generating test summary PDF: " + e.getMessage());
+            }
+        }
+    }
+
+    public void generateSkipTestSummaryPdf() {
+        logger.info("Checking if output.xlsx file exists before creating the test summary PDF report.");
+        Path baseDir = Paths.get(System.getProperty("user.dir"));
+        String trFolder = utils.getTestResultsFolder();
+        Path summaryResultsFile = Paths.get(trFolder, "Skipped_tc_report.xlsx");
+
+        if (utils.checkIfFileExists(summaryResultsFile.toString())) {
+            logger.info("skipped_tc_report.xlsx exists and starting to create skipped test summary PDF report.");
+
+            try {
+                Table table = Table.read().usingOptions(XlsxReadOptions.builder(summaryResultsFile.toFile()).build());
+                Map<String, Object> tableData = new HashMap<>();
+
+                List<String> columnNames = table.columnNames(); // Get all column headers
+
+                List<Map<String, Object>> rows = table.stream().map(row -> {
+                    Map<String, Object> rowMap = new HashMap<>();
+                    for (String column : columnNames) {
+                        rowMap.put(column, row.getObject(column)); // Extract values for each column
+                    }
+                    return rowMap;
+                }).collect(Collectors.toList());
+
+                for (int i = 0; i < rows.size(); i++) {
+                    tableData.put(String.valueOf(i + 1), rows.get(i)); // Use row index as the key
+                }
+
+                Map<String, Object> finalTableData = new HashMap<>();
+                finalTableData.put("data", tableData);
+
+                System.out.println(tableData);
+
+                PdfTsReporting tsPdf = new PdfTsReporting(
+                        baseDir.resolve("resources/logo.png").toString(),
+                        baseDir.resolve("resources/encrypted_jinjava_sts_file.jinjav").toString(),
+                        finalTableData,
+                        "Skipped_Test_Results_" + utils.getDateString());
+
+                tsPdf.generatePdf();
+            } catch (Exception e) {
+                logger.error("Error generating skipped test summary PDF: " + e.getMessage());
             }
         }
     }

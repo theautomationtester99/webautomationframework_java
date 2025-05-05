@@ -45,6 +45,8 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.util.Base64;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -910,39 +912,49 @@ public class Utils {
 
     public void convertCsvToXlsx(String csvFilePath, String xlsxFilePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath));
-                FileOutputStream fileOut = new FileOutputStream(xlsxFilePath)) {
-
-            // Use WorkbookFactory to create a workbook dynamically
-            Workbook workbook = WorkbookFactory.create(true); // 'true' forces .xlsx format
+             FileOutputStream fileOut = new FileOutputStream(xlsxFilePath)) {
+    
+            Workbook workbook = WorkbookFactory.create(true); // Create .xlsx format
             Sheet sheet = workbook.createSheet("Data");
-
+    
             String line;
             int rowIndex = 0;
-
             while ((line = br.readLine()) != null) {
                 Row row = sheet.createRow(rowIndex++);
-                String[] values = line.split(",");
-
+                
+                // Properly handle quoted fields using regex
+                String[] values = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+    
                 for (int colIndex = 0; colIndex < values.length; colIndex++) {
-                    row.createCell(colIndex).setCellValue(values[colIndex].trim());
+                    Cell cell = row.createCell(colIndex);
+                    
+                    // Preserve actual new lines inside Excel cells
+                    String cellValue = values[colIndex].trim().replace("\\n", "\n");
+                    cell.setCellValue(cellValue);
+    
+                    // **Set cell style to preserve multi-line text formatting**
+                    CellStyle style = workbook.createCellStyle();
+                    style.setWrapText(true); // Enables word wrap in Excel cells
+                    cell.setCellStyle(style);
                 }
             }
-
-            // Auto-size columns
+    
+            // Auto-size columns for better visibility
             for (int i = 0; i < sheet.getRow(0).getLastCellNum(); i++) {
                 sheet.autoSizeColumn(i);
             }
-
+    
+            // Write to Excel file
             workbook.write(fileOut);
             workbook.close();
             System.out.println("Converted: " + xlsxFilePath);
-
+    
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+    
         try {
-            // Delete the CSV file after conversion
+            // Delete CSV after conversion
             Files.deleteIfExists(Paths.get(csvFilePath));
             System.out.println("Deleted: " + csvFilePath);
         } catch (Exception e) {

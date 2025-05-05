@@ -27,7 +27,10 @@ import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.format.CellFormatType;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -278,7 +281,7 @@ public class ExecutionManager {
         logger.warn(utils.formatElapsedTime(elapsedTime));
 
         prm.generateTestSummaryPdf();
-        // prm.generateSkippedTestSummaryPdf();
+        prm.generateSkipTestSummaryPdf();
         utils.mergePdfsInParts();
         // utils.sendEmailWithAttachment();
         if (uploadTr) {
@@ -379,7 +382,7 @@ public class ExecutionManager {
                     testResult.add(km.repoM.executedDate);
 
                     logger.info("Adding row to test summary results.");
-                    eReport.addRow(testResult);
+                    eReport.addRowToExcel("output.xlsx", "Test_Results", testResult);
 
                     logger.info("Closing test and generating test result PDF.");
                     km.geClose();
@@ -952,28 +955,46 @@ public class ExecutionManager {
 
         if (!utils.isExcelDoc(testScriptFileObj)) {
             logger.error("The test script Excel file is not in the correct format.");
-            exReport.addRowSkippedTC(
+            exReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
                     List.of(testScriptFile, "The test script Excel file is not in the correct format.", "Skipped"));
             throw new IllegalArgumentException("The test script Excel file is not in the correct format.");
         }
 
         List<List<String>> rows = new ArrayList<>();
+        DataFormatter dataFormatter = new DataFormatter();
         try (FileInputStream fileInputStream = new FileInputStream(new File(testScriptFile));
                 Workbook workbook = WorkbookFactory.create(fileInputStream)) {
             Sheet sheet = workbook.getSheetAt(0);
             logger.info("Reading test script data from Excel.");
 
+            boolean hasHeader = true;
+
             for (Row row : sheet) {
-                List<String> rowData = new ArrayList<>();
-                for (Cell cell : row) {
-                    rowData.add(cell.toString().trim());
+                if (hasHeader) {
+                    hasHeader = false; // Set flag to false after skipping the first row
+                    continue;
                 }
-                rows.add(rowData);
+                List<String> rowData = new ArrayList<>();
+                int columnCount = 4; // Ensure each row has exactly 4 columns
+                boolean isEmptyRow = true;
+
+                for (int i = 0; i < columnCount; i++) {
+                    Cell cell = row.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK); // Handle empty cells
+                    String cellValue = dataFormatter.formatCellValue(cell);
+                    rowData.add(cellValue); // Preserve multi-line content
+
+                    if (!cellValue.trim().isEmpty()) {
+                        isEmptyRow = false; // Row has some data
+                    }
+                }
+                if (!isEmptyRow) {
+                    rows.add(rowData); // Add only non-empty rows
+                }
             }
 
             if (rows.isEmpty() || rows.get(0).isEmpty()) {
                 logger.error("The 'Keyword' column contains empty values.");
-                exReport.addRowSkippedTC(
+                exReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
                         List.of(testScriptFile, "The 'Keyword' column contains empty values.", "Skipped"));
                 throw new IllegalArgumentException("The 'Keyword' column contains empty values.");
             }
@@ -988,7 +1009,7 @@ public class ExecutionManager {
 
                 if (!Constants.VALID_KEYWORDS.contains(keyword)) {
                     logger.error("Invalid keyword '" + keyword + "' at row " + (index + 2));
-                    exReport.addRowSkippedTC(List.of(testScriptFile,
+                    exReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC", List.of(testScriptFile,
                             "Invalid keyword '" + keyword + "' at row " + (index + 2), "Skipped"));
                     throw new IllegalArgumentException("Invalid keyword '" + keyword + "' in the test script.");
                 }
@@ -1008,9 +1029,9 @@ public class ExecutionManager {
             ExcelReportManager eReport, Logger logger) {
         String[] requiredKeywords = { "tc_id", "tc_desc", "step", "open_browser", "enter_url" };
         for (int i = 0; i < requiredKeywords.length; i++) {
-            if (!rows.get(i).get(0).trim().equals(requiredKeywords[i])) {
+            if (!rows.get(i).get(0).trim().equalsIgnoreCase(requiredKeywords[i])) {
                 logger.error("Mandatory keyword missing: " + requiredKeywords[i]);
-                eReport.addRowSkippedTC(List.of(testScriptFile,
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC", List.of(testScriptFile,
                         "The " + (i + 1) + "th keyword must be '" + requiredKeywords[i] + "'", "Skipped"));
                 throw new IllegalArgumentException(
                         "The " + (i + 1) + "th keyword must be '" + requiredKeywords[i] + "'");
@@ -1022,19 +1043,22 @@ public class ExecutionManager {
             ExcelReportManager eReport, ConfigReader objectRepo, Logger logger) {
         String keyword = rowData.get(0).trim();
 
+        logger.info("Validating keyword specific rules for " + keyword);
+        logger.info("Validating keyword specific rules for " + rowData);
+
         if (List.of("upload_file", "select_file", "type", "click", "verify_displayed_text",
                 "choose_date_from_datepicker").contains(keyword)) {
             String locatorId = rowData.get(2).trim();
             if (locatorId.isEmpty()) {
                 logger.error("Locator ID missing at row " + (index + 2));
-                eReport.addRowSkippedTC(
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
                         List.of(testScriptFile, "Locator ID missing at row " + (index + 2), "Skipped"));
                 throw new IllegalArgumentException("Locator ID missing at row " + (index + 2));
             }
 
             if (objectRepo.getPropertyFromAnySection(locatorId, "No").equalsIgnoreCase("No")) {
                 logger.error("Locator does not exist in object repository at row " + (index + 2));
-                eReport.addRowSkippedTC(List.of(testScriptFile,
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC", List.of(testScriptFile,
                         "Locator does not exist in object repository at row " + (index + 2), "Skipped"));
                 throw new IllegalArgumentException("Locator does not exist in object repository at row " + (index + 2));
             }
@@ -1043,7 +1067,8 @@ public class ExecutionManager {
         if (keyword.equals("enter_url")) {
             if (rowData.get(3).trim().isEmpty()) {
                 logger.error("Empty URL at row " + (index + 2));
-                eReport.addRowSkippedTC(List.of(testScriptFile, "Empty URL at row " + (index + 2), "Skipped"));
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                        List.of(testScriptFile, "Empty URL at row " + (index + 2), "Skipped"));
                 throw new IllegalArgumentException("Empty URL at row " + (index + 2));
             }
         }
@@ -1057,14 +1082,16 @@ public class ExecutionManager {
         }
 
         if (keyword.equals("wait_for_seconds") && !rowData.get(3).trim().matches("\\d+")) {
+            logger.error(rowData.get(3).trim());
             logger.error("Invalid wait time at row " + (index + 2));
-            eReport.addRowSkippedTC(List.of(testScriptFile, "Invalid wait time at row " + (index + 2), "Skipped"));
+            eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                    List.of(testScriptFile, "Invalid wait time at row " + (index + 2), "Skipped"));
             throw new IllegalArgumentException("Invalid wait time at row " + (index + 2));
         }
     }
 
     private static void validateDragDrop(int index, List<String> rowData, String testScriptFile,
-            ExcelReportManager skipEReport, Logger logger) {
+            ExcelReportManager eReport, Logger logger) {
         logger.info("Validating 'drag_drop' inputs at row " + (index + 2) + ".");
 
         String ddElementNameData = rowData.get(1).trim();
@@ -1082,7 +1109,7 @@ public class ExecutionManager {
 
         if (ddElementNames.size() != 2) {
             logger.error("Invalid 'Input1' data '" + ddElementNameData + "' for 'drag_drop' at row " + (index + 2));
-            skipEReport.addRowSkippedTC(List.of(testScriptFile,
+            eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC", List.of(testScriptFile,
                     "'Input1' for 'drag_drop' must contain exactly 2 values separated by a semicolon (';').",
                     "Skipped"));
             throw new IllegalArgumentException(
@@ -1091,7 +1118,7 @@ public class ExecutionManager {
 
         if (ddElementLocators.size() != 2) {
             logger.error("Invalid 'Input2' data '" + ddElementLocatorData + "' for 'drag_drop' at row " + (index + 2));
-            skipEReport.addRowSkippedTC(List.of(testScriptFile,
+            eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC", List.of(testScriptFile,
                     "'Input2' for 'drag_drop' must contain exactly 2 values separated by a semicolon (';').",
                     "Skipped"));
             throw new IllegalArgumentException(
@@ -1112,7 +1139,7 @@ public class ExecutionManager {
 
         if (cdLids.isEmpty()) {
             logger.error("No valid locator IDs provided at row " + (index + 2));
-            eReport.addRowSkippedTC(
+            eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
                     List.of(testScriptFile, "No valid locator IDs provided at row " + (index + 2), "Skipped"));
             throw new IllegalArgumentException("No valid locator IDs provided at row " + (index + 2));
         }
@@ -1123,14 +1150,16 @@ public class ExecutionManager {
             if (cdLids.size() != 4) {
                 logger.error("Number of locator IDs at row " + (index + 2)
                         + " is not 4. Expected: 'date_mon_txt_xpath;date_pre_button_xpath;date_nxt_button_xpath;date_date_list_xpath'.");
-                eReport.addRowSkippedTC(List.of(testScriptFile, "Number of locator IDs is not 4.", "Skipped"));
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                        List.of(testScriptFile, "Number of locator IDs is not 4.", "Skipped"));
                 throw new IllegalArgumentException("Number of locator IDs is not 4.");
             }
 
             if (!utils.isDateFormatValid(rowData.get(3).trim())) {
                 logger.error("Invalid date format '" + rowData.get(3) + "' for calendar type 'a' at row " + (index + 2)
                         + ". Expected format: '01 December 2022'.");
-                eReport.addRowSkippedTC(List.of(testScriptFile, "Invalid date format.", "Skipped"));
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                        List.of(testScriptFile, "Invalid date format.", "Skipped"));
                 throw new IllegalArgumentException("Invalid date format.");
             }
 
@@ -1139,14 +1168,16 @@ public class ExecutionManager {
             if (cdLids.size() != 3) {
                 logger.error("Number of locator IDs at row " + (index + 2)
                         + " is not 3. Expected: 'date_mon_select_xpath;date_yr_select_xpath;date_date_list_xpath'.");
-                eReport.addRowSkippedTC(List.of(testScriptFile, "Number of locator IDs is not 3.", "Skipped"));
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                        List.of(testScriptFile, "Number of locator IDs is not 3.", "Skipped"));
                 throw new IllegalArgumentException("Number of locator IDs is not 3.");
             }
 
             if (!utils.isDateFormatValid(rowData.get(3).trim())) {
                 logger.error("Invalid date format '" + rowData.get(3) + "' for calendar type 'b' at row " + (index + 2)
                         + ". Expected format: '01 December 2022'.");
-                eReport.addRowSkippedTC(List.of(testScriptFile, "Invalid date format.", "Skipped"));
+                eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                        List.of(testScriptFile, "Invalid date format.", "Skipped"));
                 throw new IllegalArgumentException("Invalid date format.");
             }
 
@@ -1162,7 +1193,8 @@ public class ExecutionManager {
             logger.info("All locators at row " + (index + 2) + " end with valid suffixes.");
         } else {
             logger.error("Not all locators at row " + (index + 2) + " have valid suffixes.");
-            eReport.addRowSkippedTC(List.of(testScriptFile, "Invalid locator suffixes.", "Skipped"));
+            eReport.addRowToExcel("Skipped_tc_report.xlsx", "Skipped_TC",
+                    List.of(testScriptFile, "Invalid locator suffixes.", "Skipped"));
             throw new IllegalArgumentException("Invalid locator suffixes.");
         }
     }
@@ -1184,9 +1216,10 @@ public class ExecutionManager {
                 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                 int width = screenSize.width;
                 int height = screenSize.height;
-                // int fourcc = VideoWriter.fourcc('m', 'p', '4', 'v');
-                int fourcc = VideoWriter.fourcc('X', 'V', 'I', 'D'); // Commonly supported codec
-                int fps = 60;
+                int fourcc = VideoWriter.fourcc('m', 'p', '4', 'v');
+                // int fourcc = VideoWriter.fourcc('X', 'V', 'I', 'D'); // Commonly supported
+                // codec
+                int fps = 6;
 
                 String outputPath = Paths.get(utils.getTestRecordingsFolder(),
                         recordName + "_" + utils.getDatetimeString() + ".mp4").toString();
@@ -1200,10 +1233,11 @@ public class ExecutionManager {
                 }
 
                 while (executionThread.isAlive()) {
+                    // logger.warn("recording ..................");
                     BufferedImage screenshot = new Robot().createScreenCapture(new Rectangle(screenSize));
                     Mat frame = bufferedImageToMat(screenshot);
                     videoWriter.write(frame);
-                    TimeUnit.MILLISECONDS.sleep(16); // Approximate delay for ~60 FPS
+                    // TimeUnit.MILLISECONDS.sleep(100); // Approximate delay for ~60 FPS
                 }
 
                 videoWriter.release();
@@ -1222,9 +1256,9 @@ public class ExecutionManager {
             for (int x = 0; x < image.getWidth(); x++) {
                 int rgb = image.getRGB(x, y);
                 byte[] data = new byte[] {
-                        (byte) ((rgb >> 16) & 0xFF), // Red
+                        (byte) (rgb & 0xFF), // Blue
                         (byte) ((rgb >> 8) & 0xFF), // Green
-                        (byte) (rgb & 0xFF) // Blue
+                        (byte) ((rgb >> 16) & 0xFF) // Red
                 };
                 mat.put(y, x, data);
             }

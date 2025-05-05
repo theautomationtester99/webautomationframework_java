@@ -304,7 +304,7 @@ public class DriverFunctions extends DriverManager {
         try {
             // Convert locatorType to lowercase
             locatorType = locatorType.toLowerCase();
-            By byType = getByType(locatorType); // Determine the locator type
+            By byType = getByType(locatorType, locator); // Determine the locator type
 
             // Retrieve a list of web elements using the locator and locatorType
             List<WebElement> elements = driver.findElements(byType);
@@ -659,7 +659,7 @@ public class DriverFunctions extends DriverManager {
     public boolean elementPresenceCheck(String locator, String locatorType) {
         try {
             // Convert locatorType to lowercase and retrieve By object
-            By byType = getByType(locatorType.toLowerCase());
+            By byType = getByType(locatorType, locator);
 
             // Find elements matching the locator
             List<WebElement> elementList = driver.findElements(byType);
@@ -690,7 +690,7 @@ public class DriverFunctions extends DriverManager {
                     .ignoring(ElementNotInteractableException.class);
 
             // Retrieve the By object for the locator
-            By byType = getByType(locatorType.toLowerCase());
+            By byType = getByType(locatorType, locator);
 
             // Wait until the element is clickable
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(byType));
@@ -842,7 +842,7 @@ public class DriverFunctions extends DriverManager {
             locatorType = locatorType.toLowerCase();
 
             // Use the getByType function to determine the locator type
-            By byType = getByType(locatorType);
+            By byType = getByType(locatorType, locator);
 
             // Find the WebElement using the locator and its type
             element = driver.findElement(byType);
@@ -856,24 +856,24 @@ public class DriverFunctions extends DriverManager {
         return element; // Return the located WebElement
     }
 
-    public By getByType(String locatorType) {
-        locatorType = locatorType.toLowerCase();
+    public By getByType(String locatorType, String locatorValue) {
+        //locatorValue = locatorValue.toLowerCase();
 
-        switch (locatorType) {
+        switch (locatorType.toLowerCase()) {
             case "id":
-                return By.id(locatorType);
+                return By.id(locatorValue);
             case "name":
-                return By.name(locatorType);
+                return By.name(locatorValue);
             case "xpath":
-                return By.xpath(locatorType);
+                return By.xpath(locatorValue);
             case "css":
-                return By.cssSelector(locatorType);
+                return By.cssSelector(locatorValue);
             case "class":
-                return By.className(locatorType);
+                return By.className(locatorValue);
             case "link":
-                return By.linkText(locatorType);
+                return By.linkText(locatorValue);
             default:
-                logger.info("Locator type " + locatorType + " not correct/supported");
+                logger.info("Locator type " + locatorValue + " not correct/supported");
                 return null; // Returning null instead of false, following Java conventions
         }
     }
