@@ -103,6 +103,17 @@
     </dependency>
 
     <dependency>
+      <groupId>ch.randelshofer</groupId>
+      <artifactId>org.monte.media</artifactId>
+      <version>17.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.randelshofer</groupId>
+      <artifactId>org.monte.media.screenrecorder</artifactId>
+      <version>17.2.1</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
       <version>5.2.3</version> <!-- Latest stable version -->
@@ -192,13 +203,13 @@
           <source>24</source>
           <target>24</target>
           <annotationProcessorPaths>
-              <path>
-                  <groupId>org.projectlombok</groupId>
-                  <artifactId>lombok</artifactId>
-                  <version>1.18.38</version>
-              </path>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.38</version>
+            </path>
           </annotationProcessorPaths>
-      </configuration>
+        </configuration>
       </plugin>
 
       <plugin>
@@ -253,7 +264,8 @@
             <configuration>
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/> 
+                <transformer
+                  implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                 <transformer
                   implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.waf.Runner</mainClass>
@@ -261,14 +273,14 @@
               </transformers>
               <filters>
                 <filter>
-                    <artifact>*:*</artifact>
-                    <excludes>
-                        <exclude>META-INF/*.SF</exclude>
-                        <exclude>META-INF/*.DSA</exclude>
-                        <exclude>META-INF/*.RSA</exclude>
-                    </excludes>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
                 </filter>
-            </filters>
+              </filters>
             </configuration>
           </execution>
         </executions>

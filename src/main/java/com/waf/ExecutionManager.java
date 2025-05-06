@@ -1,6 +1,8 @@
 package com.waf;
 
 import java.awt.Dimension;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -35,15 +37,30 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.monte.media.math.Rational;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoWriter;
 
+import org.monte.media.math.Rational;
+import org.monte.media.screenrecorder.*;
+import org.monte.media.av.Format;
+import org.monte.media.av.FormatKeys.MediaType;
+
+import static org.monte.media.av.FormatKeys.EncodingKey;
+import static org.monte.media.av.FormatKeys.FrameRateKey;
+import static org.monte.media.av.FormatKeys.KeyFrameIntervalKey;
+import static org.monte.media.av.FormatKeys.MIME_AVI;
+import static org.monte.media.av.FormatKeys.MediaTypeKey;
+import static org.monte.media.av.FormatKeys.MimeTypeKey;
+import static org.monte.media.av.codec.video.VideoFormatKeys.*;
+
 import com.waf.config.Config;
 
 public class ExecutionManager {
     private static final String DEFAULT_PID_FILE = "processes.txt";
+    private static ScreenRecorder screenRecorder;
 
     private static final Logger logger = LogManager.getLogger(ExecutionManager.class);
 
@@ -68,7 +85,7 @@ public class ExecutionManager {
             if (isParallel) {
                 logger.warn("Parallel execution is enabled. Initializing parallel execution.");
                 checkBeforeStart(utils);
-                startExecutionMultiThreaded(lock,utils,objectRepoReader,prm);
+                startExecutionMultiThreaded(lock, utils, objectRepoReader, prm);
             } else {
                 logger.info("Starting standard execution.");
                 checkBeforeStart(utils);
@@ -1327,7 +1344,7 @@ public class ExecutionManager {
     //////////////////////////////////////// Recording functions
     //////////////////////////////////////// /////////////////////////////////////
 
-    public static Thread startRecordingThread(Thread executionThread, String recordName, Utils utils) {
+    public static Thread startRecordingThreadOpenCV(Thread executionThread, String recordName, Utils utils) {
         Thread recordingThread = new Thread(() -> {
             try {
                 logger.info("Starting screen recording...");
@@ -1370,6 +1387,46 @@ public class ExecutionManager {
         });
 
         return recordingThread; // Now returning the actual Thread object
+    }
+
+    public static Thread startRecordingThread(Thread executionThread, String recordName, Utils utils) {
+        Thread recordingThread = new Thread(() -> {
+            try {
+                GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment()
+                        .getDefaultScreenDevice().getDefaultConfiguration();
+
+                String outputFileName = recordName + "_" + utils.getDatetimeString() + ".avi";
+                File outputFile = new File(utils.getTestRecordingsFolder(), outputFileName);
+
+                // Setup recording format
+                Format fileFormat = new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI);
+                Format screenFormat = new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+                        CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, 24, FrameRateKey, Rational.valueOf(15),
+                        QualityKey, 1.0f, KeyFrameIntervalKey, (15 * 60));
+
+                // Disable mouse capture to fix NullPointerException
+                //Format mouseFormat = null;
+                Format mouseFormat = new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, FrameRateKey, Rational.valueOf(30));
+
+
+                // screenRecorder = new ScreenRecorder(gc, null, fileFormat, screenFormat, mouseFormat, null, outputFile);
+                screenRecorder = new ScreenRecorder(gc, null, fileFormat, screenFormat, mouseFormat, null, outputFile);
+                screenRecorder.start();
+
+                System.out.println("Recording started...");
+
+                while (executionThread.isAlive()) {
+                    Thread.sleep(100); // Approximate delay for frame capture
+                }
+
+                screenRecorder.stop();
+                System.out.println("Finished recording. Video saved at: " + outputFile.getAbsolutePath());
+            } catch (Exception e) {
+                System.err.println("Error during recording: " + e.getMessage());
+            }
+        });
+
+        return recordingThread;
     }
 
     private static Mat bufferedImageToMat(BufferedImage image) {

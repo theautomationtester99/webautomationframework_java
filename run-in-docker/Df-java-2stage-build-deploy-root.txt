@@ -1,0 +1,122 @@
+# First Minimal Image (Build Environment)
+FROM debian:bookworm-slim as build-stage
+
+# Install required dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    git \
+    unzip \
+    curl
+
+# Install JDK 24
+RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz && \
+    mkdir /opt/jdk && tar -xzf jdk.tar.gz -C /opt/jdk --strip-components=1 && \
+    rm jdk.tar.gz
+
+ENV JAVA_HOME=/opt/jdk
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
+# Install Apache Maven (latest)
+RUN wget -O maven.tar.gz https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz && \
+    mkdir /opt/maven && tar -xzf maven.tar.gz -C /opt/maven --strip-components=1 && \
+    rm maven.tar.gz
+
+ENV MAVEN_HOME=/opt/maven
+ENV PATH="$MAVEN_HOME/bin:$PATH"
+ENV JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
+
+# Install Git and clone repository
+ARG CACHEBUST=0
+RUN echo $CACHEBUST && git clone https://github.com/theautomationtester99/webautomationframework_java.git /workspace
+WORKDIR /workspace
+
+# Build and package application
+RUN mvn compile && mvn package -Dmaven.compiler.forceAnnotationProcessor=true -Dmaven.clean.failOnError=false
+
+# Second Minimal Image (Runtime Environment)
+FROM debian:bookworm-slim
+
+# Copy required files from build phase
+COPY --from=build-stage /workspace/target/webautomationframework_java-1.0.jar /workspace/
+COPY --from=build-stage /workspace/resources /workspace/resources/
+COPY --from=build-stage /workspace/test_files /workspace/test_files/
+COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
+
+# Install TightVNC and Cron
+RUN apt-get update && apt-get install -y \
+    tightvncserver \
+    cron \
+    xvfb \
+    x11-apps \
+    dbus-x11 \
+    cmake \
+    wget \
+    unzip \
+    build-essential \
+    pkg-config \
+    libopencv-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev \
+    libgtk-3-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev
+
+# Install JDK 24
+RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz && \
+    mkdir /opt/jdk && tar -xzf jdk.tar.gz -C /opt/jdk --strip-components=1 && \
+    rm jdk.tar.gz
+
+ENV JAVA_HOME=/opt/jdk
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
+# Set environment variables
+ENV DELETE_TEST_RESULTS_IMAGES_RECORDINGS_FOLDERS_BEFORE_START=yes
+ENV SCREENSHOT_STRATEGY=always
+ENV HIGHLIGHT_ELEMENTS=no
+ENV MAX_RETRIES=0
+ENV UPLOAD_TEST_RESULTS=no
+ENV SEND_TEST_RESULTS_EMAIL=no
+ENV SENDER_EMAIL=theautomationtester99@gmail.com
+ENV SENDER_EMAIL_PASSWORD=gAAAAABoAjriMu91TSpf6VycE89O8wv2gpUMx4MkmxAtvFn-Auz4g5RhnPUZJ13FRHkvoM_JnpWau3GoHgcumOmp14Aecg7AKKVORICG87IPFKFX4I6r2xY=
+ENV RECIPIENT_EMAILS=theautomationtester@hotmail.com,theautomationtester99@gmail.com
+ENV RUN_IN_SELENIUM_GRID=no
+ENV GRID_URL=http://localhost
+ENV RUN_IN_APPIUM_GRID=no
+ENV APPIUM_URL=http://localhost
+ENV LOG_LEVEL=DEBUG
+ENV INPRIVATE=no
+ENV HEADLESS=yes
+ENV NO_THREADS=4
+ENV FTP_UPLOAD=yes
+ENV FTP_HOST=ffcae376c26f
+ENV FTP_USER=user1
+ENV FTP_PASSWORD=password1
+ENV FTP_USER_HOME=/home/user1
+
+# Configure VNC Server
+RUN mkdir -p ~/.vnc && \
+    echo "#!/bin/sh\nunset SESSION_MANAGER\nexport \$(dbus-launch)\nexec startlxde &" > ~/.vnc/xstartup && \
+    chmod +x ~/.vnc/xstartup && \
+    echo "password" | vncpasswd -f > ~/.vnc/passwd && \
+    chmod 600 ~/.vnc/passwd
+
+EXPOSE 5901
+ENV USER=root
+ENV DISPLAY=:0
+
+# Set up and start Xvfb for the virtual display
+RUN Xvfb :0 -screen 0 1024x768x24 &
+
+COPY entrypoint_root.sh /root/entrypoint.sh
+RUN dos2unix /root/entrypoint.sh && \
+    chmod +x /root/entrypoint.sh
+
+# Start Xvfb and cron service
+# RUN echo '*/15 * * * * DISPLAY=:0 . /root/env_vars.sh; /workspace/runner --start >> /proc/1/fd/1 2>> /proc/1/fd/2' | crontab 
+RUN echo '*/15 * * * * cd /workspace && DISPLAY=:0 . /root/env_vars.sh; java -jar webautomationframework_java-1.0.jar --start >> /proc/1/fd/1 2>> /proc/1/fd/2' | crontab -
+RUN service cron restart
+
+# Entrypoint for runtime container
+CMD ["bash", "-c", "Xvfb :0 -screen 0 1024x768x24 & tightvncserver :1 -geometry 1024x768 -depth 24 && service cron restart && /root/entrypoint.sh && tail -f /dev/null"]
