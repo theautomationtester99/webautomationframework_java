@@ -701,10 +701,13 @@ public class Utils {
     public boolean isExcelDoc(File inputFile) {
         try (FileInputStream fis = new FileInputStream(inputFile)) {
             // Attempt to create a Workbook (handles both .xls and .xlsx files)
+           // logger.warn("checking if file is an Excel document: " + inputFile.getName());
             Workbook workbook = WorkbookFactory.create(fis);
+           //logger.warn("File is a valid Excel document: " + inputFile.getName());
             workbook.close();
             return true; // If no exception, it's a valid Excel file
         } catch (Exception e) {
+            logger.warn(e.getMessage());
             return false; // Not a valid Excel file
         }
     }

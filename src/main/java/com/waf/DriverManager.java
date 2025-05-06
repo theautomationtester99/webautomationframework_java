@@ -18,6 +18,7 @@ import java.util.Map;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -123,7 +124,7 @@ public class DriverManager {
                 if (isHeadless)
                     options.addArguments("--headless");
                 try {
-                    driver = new RemoteWebDriver(new URL(gridUrl), options);
+                    driver = new RemoteWebDriver(new URI(gridUrl).toURL(), options);
                 } catch (Exception e) {
                     e.printStackTrace(); // Handle the exception here
                 }
@@ -141,7 +142,7 @@ public class DriverManager {
 
                 try {
                     // Initializing Remote WebDriver for Edge
-                    driver = new RemoteWebDriver(new URL(gridUrl), options);
+                    driver = new RemoteWebDriver(new URI(gridUrl).toURL(), options);
                 } catch (Exception e) {
                     e.printStackTrace(); // Handle exceptions related to driver initialization
                 }
@@ -192,7 +193,8 @@ public class DriverManager {
     public String fetchSeleniumGridStatus(Logger logger) {
         try {
             // Create a connection to the Selenium Grid status URL
-            URL url = new URL(Config.GRID_URL + "/status");
+            URI uri = URI.create(Config.GRID_URL + "/status");
+            URL url = uri.toURL();
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 

@@ -420,7 +420,7 @@ public class ExecutionManager {
                     int retryCount = 1;
                     logger.info("Instantiating Keyword Manager...");
 
-                    long processId = Thread.currentThread().getId(); // Using thread ID instead
+                    long processId = Thread.currentThread().threadId(); // Using thread ID instead
                     long timestamp = System.currentTimeMillis();
                     String uniqueId = "thread_" + processId + "_time_" + timestamp;
                     String baseDir = Paths.get(System.getProperty("user.dir")).toAbsolutePath().toString();
@@ -1027,7 +1027,7 @@ public class ExecutionManager {
     public static List<List<String>> validateTestScript(String testScriptFile, Lock lock, ConfigReader objectRepo,
             Utils utils, String launchBrowser) {
         ExcelReportManager exReport = new ExcelReportManager(lock);
-        logger.info("Validating the test script: " + testScriptFile);
+        logger.warn("Validating the test script: " + testScriptFile);
 
         File testScriptFileObj = new File(testScriptFile);
 
