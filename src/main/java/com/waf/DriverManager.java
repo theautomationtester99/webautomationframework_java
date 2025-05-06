@@ -161,6 +161,7 @@ public class DriverManager {
                         chromeOptions.addArguments("--incognito");
                     if (isHeadless)
                         chromeOptions.addArguments("--headless");
+                    chromeOptions.addArguments("--no-sandbox");
                     driver = new ChromeDriver(chromeOptions);
                     driver.manage().window().setSize(new Dimension(1920, 1080));
                     break;
@@ -172,6 +173,7 @@ public class DriverManager {
                         edgeOptions.addArguments("--inprivate");
                     if (isHeadless)
                         edgeOptions.addArguments("--headless");
+                    edgeOptions.addArguments("--no-sandbox");
                     driver = new EdgeDriver(edgeOptions);
                     driver.manage().window().setSize(new Dimension(1920, 1080));
                     break;

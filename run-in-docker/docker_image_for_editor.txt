@@ -1,0 +1,67 @@
+# Use a basic Linux image as the base
+FROM debian:latest
+
+# Update package lists and install necessary dependencies
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    wget \
+    gnupg \
+    curl \
+    xvfb \
+    x11-apps \
+    tightvncserver \
+    lxde \
+    lxtask \
+    net-tools \
+    dbus-x11 \
+    xfonts-base \
+    xfonts-100dpi \
+    xfonts-75dpi \
+    patchelf \
+    libopencv-dev
+
+# Install OpenJDK 24 manually
+WORKDIR /usr/lib/jvm
+
+RUN wget https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz && \
+    tar -xvf openjdk-24.0.1_linux-x64_bin.tar.gz && \
+    rm openjdk-24.0.1_linux-x64_bin.tar.gz
+
+# Set up environment variables for Java
+ENV JAVA_HOME=/usr/lib/jvm/jdk-24.0.1
+ENV PATH="$JAVA_HOME/bin:$PATH"
+RUN echo $JAVA_HOME && echo $PATH && ls -l $JAVA_HOME && java -version
+
+# Install Maven manually
+WORKDIR /opt
+
+RUN wget https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz && \
+    tar -xvf apache-maven-3.9.6-bin.tar.gz && \
+    rm apache-maven-3.9.6-bin.tar.gz
+
+# Set up environment variables for Maven
+ENV MAVEN_HOME=/opt/apache-maven-3.9.6
+ENV PATH="$MAVEN_HOME/bin:$PATH"
+
+# Verify Maven installation
+RUN mvn -version
+
+# Configure TightVNC server and update ~/.vnc/xstartup
+RUN mkdir -p ~/.vnc && \
+    echo "#!/bin/sh\nunset SESSION_MANAGER\nexport \$(dbus-launch)\nexec startlxde &" > ~/.vnc/xstartup && \
+    chmod +x ~/.vnc/xstartup && \
+    echo "password" | vncpasswd -f > ~/.vnc/passwd && \
+    chmod 600 ~/.vnc/passwd
+
+# Set up X11 forwarding for GUI applications
+ENV DISPLAY=:99
+ENV USER=root
+
+# Expose VNC ports
+EXPOSE 5901
+
+# Create workspace directory
+WORKDIR /workspace
+
+# Start TightVNC server on container startup
+CMD ["bash", "-c", "tightvncserver :1 -geometry 1024x768 -depth 24 && bash"]
