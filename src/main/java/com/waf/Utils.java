@@ -242,6 +242,8 @@ public class Utils {
                 }
             }
         } catch (Exception e) {
+            int replyCode = ftp.getReplyCode();
+            logger.warn("FTP Server Reply Code: " + replyCode);
             logger.error("Error uploading file: " + e.getMessage());
         }
     }
