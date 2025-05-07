@@ -248,7 +248,7 @@ public class Utils {
      * Main function to upload a folder to the FTP server.
      */
     public void uploadFolderToFTP() {
-        boolean uploadTr = "yes".equalsIgnoreCase(Config.UPLOAD_TEST_RESULTS);
+        boolean uploadTr = "yes".equalsIgnoreCase(Config.FTP_UPLOAD);
         if (uploadTr) {
             String host = Config.FTP_HOST;
             int port = Integer.parseInt(Config.FTP_PORT);
