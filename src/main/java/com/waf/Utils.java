@@ -33,7 +33,6 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.imageio.ImageIO;
 
-import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -213,7 +212,6 @@ public class Utils {
                 return;
             }
             logger.warn("Local file exists: " + localFile);
-            ftp.enterLocalPassiveMode();
             if (ftp.listFiles(remoteFile).length > 0) {
                 logger.warn("File exists on server, skipping upload: " + remoteFile);
             } else {
