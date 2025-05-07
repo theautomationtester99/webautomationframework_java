@@ -202,14 +202,16 @@ public class Utils {
     public void uploadFile(FTPClient ftp, String localFile, String remoteFile) {
         try {
             File file = new File(localFile);
+            logger.warn("Uploading file: " + localFile + " to " + remoteFile);
             if (!file.exists()) {
                 logger.error("Local file does not exist: " + localFile);
                 return;
             }
-
+            logger.warn("Local file exists: " + localFile);
             if (ftp.listFiles(remoteFile).length > 0) {
                 logger.warn("File exists on server, skipping upload: " + remoteFile);
             } else {
+                logger.warn("File does not exist on server, uploading: " + remoteFile);
                 FileInputStream inputStream = new FileInputStream(file);
                 ftp.setFileType(FTP.BINARY_FILE_TYPE);
                 if (ftp.storeFile(remoteFile, inputStream)) {
@@ -219,7 +221,7 @@ public class Utils {
                 }
                 inputStream.close();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             logger.error("Error uploading file: " + e.getMessage());
         }
     }
@@ -231,18 +233,25 @@ public class Utils {
         try {
             ensureRemoteDirExists(ftp, remoteDir);
             File localDirectory = new File(localDir);
-            for (File item : localDirectory.listFiles()) {
-                String remotePath = remoteDir + "/" + item.getName();
+    
+            File[] items = localDirectory.listFiles();
+            if (items == null) {
+                logger.error("Error accessing local directory: " + localDir);
+                return;
+            }
+    
+            for (File item : items) {
+                String remotePath = Paths.get(remoteDir, item.getName()).toString();
+    
                 if (item.isDirectory()) {
                     uploadDirectory(ftp, item.getAbsolutePath(), remotePath); // Recursively upload subdirectories
                 } else {
                     uploadFile(ftp, item.getAbsolutePath(), remotePath); // Upload files
                 }
             }
-        } catch (Exception e) {
-            logger.error("Error uploading directory: " + e.getMessage());
+        } catch (IOException e) {
+            logger.error("Error uploading directory: " + e.getMessage(), e);
         }
-    }
 
     /**
      * Main function to upload a folder to the FTP server.

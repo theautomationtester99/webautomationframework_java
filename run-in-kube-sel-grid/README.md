@@ -42,10 +42,10 @@
 	## use tag name as waf2st as this is the same referenced in waf-deployment.yml, if different name is used ensure same in yml file.
 	## If using powershell
 		$CACHEBUST = (Get-Date -UFormat %s)
-		docker build -t <tag-name> --build-arg CACHEBUST=$CACHEBUST -f Df-waf-2stage-build-deploy-root.txt .
+		docker build -t <tag-name> --build-arg CACHEBUST=$CACHEBUST -f Df-java-2stage-build-deploy-root.txt .
 	## If using command prompt
 		for /f %i in ('powershell -Command "(Get-Date -UFormat %s)"') do set CACHEBUST=%i
-		docker build -t <tag-name> --build-arg CACHEBUST=%CACHEBUST% -f Df-waf-2stage-build-deploy-root.txt .
+		docker build -t <tag-name> --build-arg CACHEBUST=%CACHEBUST% -f Df-java-2stage-build-deploy-root.txt .
 
 # Second deploy to kubernetes
 	kubectl apply -f waf-deployment.yml
