@@ -213,7 +213,7 @@ public class Utils {
                 FileInputStream inputStream = new FileInputStream(file);
                 ftp.setFileType(FTP.BINARY_FILE_TYPE);
                 if (ftp.storeFile(remoteFile, inputStream)) {
-                    // System.out.println("Uploaded file: " + remoteFile);
+                    logger.warn("Uploaded file: " + remoteFile);
                 } else {
                     logger.error("Failed to upload file: " + remoteFile);
                 }
