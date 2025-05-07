@@ -36,12 +36,6 @@ RUN mvn compile && mvn package -Dmaven.compiler.forceAnnotationProcessor=true -D
 # Second Minimal Image (Runtime Environment)
 FROM debian:bookworm-slim
 
-# Copy required files from build phase
-COPY --from=build-stage /workspace/target/webautomationframework_java-1.0.jar /workspace/
-COPY --from=build-stage /workspace/resources /workspace/resources/
-COPY --from=build-stage /workspace/test_files /workspace/test_files/
-COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
-
 # Install TightVNC and Cron
 RUN apt-get update && apt-get install -y \
     xvfb \
@@ -60,6 +54,12 @@ RUN apt-get update && apt-get install -y \
     bison \
     make \
     ftp
+
+# Copy required files from build phase
+COPY --from=build-stage /workspace/target/webautomationframework_java-1.0.jar /workspace/
+COPY --from=build-stage /workspace/resources /workspace/resources/
+COPY --from=build-stage /workspace/test_files /workspace/test_files/
+COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
 
 # Install JDK 24
 RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz && \

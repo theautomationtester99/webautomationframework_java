@@ -172,26 +172,31 @@ public class Utils {
      */
     public void ensureRemoteDirExists(FTPClient ftp, String remoteDir) {
         try {
-            if (!ftp.changeWorkingDirectory(remoteDir)) { // Check if directory exists
-                String[] parts = remoteDir.split("/");
-                String currentPath = "";
-                for (String part : parts) {
-                    if (!part.isEmpty()) { // Skip empty parts
-                        currentPath += "/" + part;
-                        if (!ftp.changeWorkingDirectory(currentPath)) { // Explicit check
-                            if (ftp.makeDirectory(currentPath)) { // Create directory
-                                logger.warn("Created remote directory: " + currentPath);
-                            } else {
-                                logger.error("Failed to create remote directory: " + currentPath);
-                                return; // Exit if directory creation fails
-                            }
+            String normalizedPath = remoteDir.replace("\\", "/"); // Normalize path separators
+            String[] parts = normalizedPath.split("/");
+            String currentPath = ""; // Start with an empty base path
+    
+            for (String part : parts) {
+                if (!part.isEmpty()) { // Avoid empty parts
+                    if (currentPath.isEmpty()) {
+                        currentPath = "/" + part; // Start correctly with /
+                    } else {
+                        currentPath += "/" + part; // Properly append next folder
+                    }
+    
+                    if (!ftp.changeWorkingDirectory(currentPath)) { // Check if directory exists
+                        if (ftp.makeDirectory(currentPath)) { // Create directory if needed
+                            logger.warn("Created remote directory: " + currentPath);
+                        } else {
+                            logger.error("Failed to create remote directory: " + currentPath);
+                            return; // Exit if directory creation fails
                         }
                     }
                 }
-                ftp.changeWorkingDirectory(remoteDir); // Final change to target directory
             }
+            ftp.changeWorkingDirectory(normalizedPath); // Finally change to target directory
             logger.warn("Changed to remote directory: " + remoteDir);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             logger.error("Failed to ensure remote directory exists: " + ex.getMessage());
         }
     }
@@ -213,14 +218,28 @@ public class Utils {
                 logger.warn("File exists on server, skipping upload: " + remoteFile);
             } else {
                 logger.warn("File does not exist on server, uploading: " + remoteFile);
-                FileInputStream inputStream = new FileInputStream(file);
-                ftp.setFileType(FTP.BINARY_FILE_TYPE);
-                if (ftp.storeFile(remoteFile, inputStream)) {
-                    logger.warn("Uploaded file: " + remoteFile);
-                } else {
-                    logger.error("Failed to upload file: " + remoteFile);
+                FileInputStream inputStream = null;
+                try {
+                    inputStream = new FileInputStream(file);
+                    //ftp.setFileType(FTP.BINARY_FILE_TYPE);
+                    if (ftp.storeFile(remoteFile, inputStream)) {
+                        logger.warn("Uploaded file: " + remoteFile);
+                    } else {
+                        logger.error("Failed to upload file: " + remoteFile);
+                    }
+                    // int replyCode = ftp.getReplyCode();
+                    // logger.warn("FTP Server Reply Code: " + replyCode);
+                } catch (Exception e) {
+                    logger.error("Input stream failed: " + e.getMessage());
+                } finally {
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (IOException ex) {
+                            logger.error("Failed to close file stream: " + ex.getMessage());
+                        }
+                    }
                 }
-                inputStream.close();
             }
         } catch (Exception e) {
             logger.error("Error uploading file: " + e.getMessage());
@@ -232,6 +251,9 @@ public class Utils {
      */
     public void uploadDirectory(FTPClient ftp, String localDir, String remoteDir) {
         try {
+            // Normalize remoteDir to use UNIX-style paths
+            remoteDir = remoteDir.replace("\\", "/");
+    
             ensureRemoteDirExists(ftp, remoteDir);
             File localDirectory = new File(localDir);
     
@@ -242,7 +264,8 @@ public class Utils {
             }
     
             for (File item : items) {
-                String remotePath = Paths.get(remoteDir, item.getName()).toString();
+                // Ensure proper Linux-style paths for remote directory
+                String remotePath = remoteDir + "/" + item.getName();
     
                 if (item.isDirectory()) {
                     uploadDirectory(ftp, item.getAbsolutePath(), remotePath); // Recursively upload subdirectories
@@ -254,6 +277,7 @@ public class Utils {
             logger.error("Error uploading directory: " + e.getMessage(), e);
         }
     }
+    
 
     /**
      * Main function to upload a folder to the FTP server.
