@@ -208,6 +208,7 @@ public class Utils {
                 return;
             }
             logger.warn("Local file exists: " + localFile);
+            ftp.enterLocalPassiveMode();
             if (ftp.listFiles(remoteFile).length > 0) {
                 logger.warn("File exists on server, skipping upload: " + remoteFile);
             } else {
