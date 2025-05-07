@@ -44,24 +44,22 @@ COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
 
 # Install TightVNC and Cron
 RUN apt-get update && apt-get install -y \
-    tightvncserver \
-    cron \
     xvfb \
     x11-apps \
+    tightvncserver \
+    lxde \
     dbus-x11 \
-    cmake \
+    xfonts-base \
+    net-tools \
+    cron \
+    dos2unix \
     wget \
-    unzip \
+    libc6 \
     build-essential \
-    pkg-config \
-    libopencv-dev \
-    libavcodec-dev \
-    libavformat-dev \
-    libswscale-dev \
-    libgtk-3-dev \
-    libjpeg-dev \
-    libpng-dev \
-    libtiff-dev
+    gawk \
+    bison \
+    make \
+    ftp
 
 # Install JDK 24
 RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz && \
@@ -85,12 +83,14 @@ ENV RUN_IN_SELENIUM_GRID=no
 ENV GRID_URL=http://localhost
 ENV RUN_IN_APPIUM_GRID=no
 ENV APPIUM_URL=http://localhost
-ENV LOG_LEVEL=DEBUG
+ENV LOG_LEVEL=WARN
 ENV INPRIVATE=no
 ENV HEADLESS=yes
 ENV NO_THREADS=4
+ENV PARALLEL_EXECUTION=no
 ENV FTP_UPLOAD=yes
 ENV FTP_HOST=ffcae376c26f
+ENV FTP_PORT=21
 ENV FTP_USER=user1
 ENV FTP_PASSWORD=password1
 ENV FTP_USER_HOME=/home/user1
@@ -115,7 +115,7 @@ RUN dos2unix /root/entrypoint.sh && \
 
 # Start Xvfb and cron service
 # RUN echo '*/15 * * * * DISPLAY=:0 . /root/env_vars.sh; /workspace/runner --start >> /proc/1/fd/1 2>> /proc/1/fd/2' | crontab 
-RUN echo '*/15 * * * * cd /workspace && DISPLAY=:0 . /root/env_vars.sh; java -jar webautomationframework_java-1.0.jar --start >> /proc/1/fd/1 2>> /proc/1/fd/2' | crontab -
+RUN echo '*/10 * * * * cd /workspace && DISPLAY=:0 . /root/env_vars.sh; java -jar webautomationframework_java-1.0.jar --start >> /proc/1/fd/1 2>> /proc/1/fd/2' | crontab -
 RUN service cron restart
 
 # Entrypoint for runtime container
