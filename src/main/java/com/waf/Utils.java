@@ -249,9 +249,10 @@ public class Utils {
                     uploadFile(ftp, item.getAbsolutePath(), remotePath); // Upload files
                 }
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             logger.error("Error uploading directory: " + e.getMessage(), e);
         }
+    }
 
     /**
      * Main function to upload a folder to the FTP server.
