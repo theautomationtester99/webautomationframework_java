@@ -564,9 +564,9 @@ public class Utils {
      * already exist.
      */
     public void createImageAndTestResultsFolders() {
+        createFolderIfNotExists(this.testResultsFolder);
         createFolderIfNotExists(this.imagesFolder);
         createFolderIfNotExists(this.recordingsFolder);
-        createFolderIfNotExists(this.testResultsFolder);
     }
 
     /**
