@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -y \
     xfonts-100dpi \
     xfonts-75dpi \
     patchelf \
-    libopencv-dev
+    libopencv-dev \
+	ftp
 
 # Install OpenJDK 24 manually
 WORKDIR /usr/lib/jvm

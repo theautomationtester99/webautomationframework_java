@@ -8,6 +8,11 @@ set JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
 mvn exec:java -D"exec.mainClass"="com.waf.Runner" -D"exec.args"="--start" -D"file.encoding"="UTF-8"
 
 on linux
-set JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
+export PARALLEL_EXECUTION=no
+export JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
 
 mvn exec:java -Dexec.mainClass="com.waf.Runner" -Dexec.args="--version" -Dfile.encoding=UTF-8
+
+
+
+mvn package -Dmaven.compiler.forceAnnotationProcessor=true -Dmaven.clean.failOnError=false

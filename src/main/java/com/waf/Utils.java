@@ -211,7 +211,17 @@ public class Utils {
                 logger.error("Local file does not exist: " + localFile);
                 return;
             }
-            logger.warn("Local file exists: " + localFile);
+            
+            /*
+
+             * If your FTP server uses Passive Mode, your Linux client might not handle it properly. Try enabling Active Mode explicitly in your Java code:
+             * 
+             */
+            if (detectOS().equalsIgnoreCase("Windows")) {
+                ftp.enterLocalPassiveMode();
+            } else {
+                ftp.enterLocalActiveMode();
+            }
             if (ftp.listFiles(remoteFile).length > 0) {
                 logger.warn("File exists on server, skipping upload: " + remoteFile);
             } else {
@@ -545,7 +555,7 @@ public class Utils {
             // System.out.println("Folder and its contents have been removed: " +
             // folderPath);
         } else {
-            logger.error("Folder " + folderPath + " does not exist or is not a directory.");
+            logger.error("Trying to delete the folder " + folderPath + " and this folder does not exist or is not a directory.");
         }
     }
 
