@@ -1,12 +1,7 @@
 package com.waf;
 
-import java.awt.Dimension;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -38,12 +33,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.monte.media.math.Rational;
-import org.opencv.core.Core;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import org.opencv.videoio.VideoWriter;
 
-import org.monte.media.math.Rational;
 import org.monte.media.screenrecorder.*;
 import org.monte.media.av.Format;
 import org.monte.media.av.FormatKeys.MediaType;
@@ -1344,51 +1334,6 @@ public class ExecutionManager {
     //////////////////////////////////////// Recording functions
     //////////////////////////////////////// /////////////////////////////////////
 
-    public static Thread startRecordingThreadOpenCV(Thread executionThread, String recordName, Utils utils) {
-        Thread recordingThread = new Thread(() -> {
-            try {
-                logger.info("Starting screen recording...");
-                System.setProperty("java.library.path",
-                        "C:\\Users\\vinay\\Desktop\\opencv\\opencv\\build\\java\\x64\\");
-                System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-
-                Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-                int width = screenSize.width;
-                int height = screenSize.height;
-                int fourcc = VideoWriter.fourcc('m', 'p', '4', 'v');
-                // int fourcc = VideoWriter.fourcc('X', 'V', 'I', 'D'); // Commonly supported
-                // codec
-                int fps = 6;
-
-                String outputPath = Paths.get(utils.getTestRecordingsFolder(),
-                        recordName + "_" + utils.getDatetimeString() + ".mp4").toString();
-
-                VideoWriter videoWriter = new VideoWriter(outputPath, fourcc, fps,
-                        new org.opencv.core.Size(width, height), true);
-
-                if (!videoWriter.isOpened()) {
-                    logger.error("Failed to initialize video writer.");
-                    return;
-                }
-
-                while (executionThread.isAlive()) {
-                    // logger.warn("recording ..................");
-                    BufferedImage screenshot = new Robot().createScreenCapture(new Rectangle(screenSize));
-                    Mat frame = bufferedImageToMat(screenshot);
-                    videoWriter.write(frame);
-                    // TimeUnit.MILLISECONDS.sleep(100); // Approximate delay for ~60 FPS
-                }
-
-                videoWriter.release();
-                logger.info("Finished recording.");
-            } catch (Exception e) {
-                logger.error("Error during recording: " + e.getMessage());
-            }
-        });
-
-        return recordingThread; // Now returning the actual Thread object
-    }
-
     public static Thread startRecordingThread(Thread executionThread, String recordName, Utils utils) {
         Thread recordingThread = new Thread(() -> {
             try {
@@ -1427,22 +1372,6 @@ public class ExecutionManager {
         });
 
         return recordingThread;
-    }
-
-    private static Mat bufferedImageToMat(BufferedImage image) {
-        Mat mat = new Mat(image.getHeight(), image.getWidth(), CvType.CV_8UC3);
-        for (int y = 0; y < image.getHeight(); y++) {
-            for (int x = 0; x < image.getWidth(); x++) {
-                int rgb = image.getRGB(x, y);
-                byte[] data = new byte[] {
-                        (byte) (rgb & 0xFF), // Blue
-                        (byte) ((rgb >> 8) & 0xFF), // Green
-                        (byte) ((rgb >> 16) & 0xFF) // Red
-                };
-                mat.put(y, x, data);
-            }
-        }
-        return mat;
     }
 
     //////////////////////////////////////// End Recording functions

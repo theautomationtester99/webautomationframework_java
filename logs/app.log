@@ -12745,3 +12745,1057 @@ Session ID: a546cdc6f599f5aab38e9f9d18dcb0c3
 2025-05-08 16:05:53,806 [22140] [com.waf.Runner.main()] WARN  Utils.(Utils.java:210) | Uploading file: D:\allprojects\java-projects\webautomationframework_java\test_results\vinaybabu-pc\08May2025\10-34-07\Test_Summary_Results_08May2025.pdf to /home/user1/vinaybabu-pc/08May2025/10-34-07/Test_Summary_Results_08May2025.pdf
 2025-05-08 16:05:53,809 [22140] [com.waf.Runner.main()] WARN  Utils.(Utils.java:229) | File does not exist on server, uploading: /home/user1/vinaybabu-pc/08May2025/10-34-07/Test_Summary_Results_08May2025.pdf
 2025-05-08 16:05:53,823 [22140] [com.waf.Runner.main()] WARN  Utils.(Utils.java:235) | Uploaded file: /home/user1/vinaybabu-pc/08May2025/10-34-07/Test_Summary_Results_08May2025.pdf
+2025-05-08 20:36:13,465 [576] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-08 20:36:13,469 [576] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-08 20:36:13,473 [576] [com.waf.Runner.main()] INFO  Runner.(Runner.java:80) | Starting test execution...
+2025-05-08 20:36:13,519 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:59) | Setting up test execution...
+2025-05-08 20:36:13,678 [576] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-08 20:36:13,678 [576] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: 
+2025-05-08 20:36:18,492 [576] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:219) | ChromeDriver is ready!
+2025-05-08 20:36:18,573 [576] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:36:18,788 [576] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:36:18,788 [576] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-08 20:36:18,788 [576] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: 
+2025-05-08 20:36:20,399 [576] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:229) | EdgeDriver is ready!
+2025-05-08 20:36:20,399 [576] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:36:21,708 [576] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:36:32,433 [576] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-08 20:36:32,503 [576] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-08 20:36:32,603 [576] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | No process found with PID: 22140
+2025-05-08 20:36:32,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:166) | PID file cleared successfully.
+2025-05-08 20:36:32,606 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:151) | Saved PID: 576
+2025-05-08 20:36:32,606 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:80) | Starting standard execution.
+2025-05-08 20:36:32,606 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:92) | Loading 'start.properties' file.
+2025-05-08 20:36:32,606 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:101) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-08 20:36:32,607 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:105) | Deleting the test_results and recordings folders.
+2025-05-08 20:36:32,921 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:110) | Creating the test_results and recordings folders.
+2025-05-08 20:36:32,923 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:113) | Starting analysis of the contents of the test_scripts folders.
+2025-05-08 20:36:32,940 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:319) | Gathering all files present in the test_scripts folder.
+2025-05-08 20:36:32,942 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-08 20:36:32,943 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:36:32,944 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-08 20:36:32,946 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:405) | Starting test script execution...
+2025-05-08 20:36:32,947 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:406) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:36:32,947 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:407) | Launch browser parameter: chrome
+2025-05-08 20:36:32,947 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:419) | Initializing Excel Report Manager...
+2025-05-08 20:36:32,976 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:423) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:36:32,977 [576] [Thread-14] WARN  ExecutionManager.(ExecutionManager.java:1037) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:36:33,728 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1053) | Reading test script data from Excel.
+2025-05-08 20:36:33,743 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 2: Keyword='tc_id'
+2025-05-08 20:36:33,771 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_id
+2025-05-08 20:36:33,772 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_id, , , QS004]
+2025-05-08 20:36:33,772 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 3: Keyword='tc_desc'
+2025-05-08 20:36:33,772 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_desc
+2025-05-08 20:36:33,772 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_desc, , , To verify if the below in Demo QA web site:
+1. Upload of file is successful.]
+2025-05-08 20:36:33,772 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 4: Keyword='step'
+2025-05-08 20:36:33,772 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 5: Keyword='open_browser'
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for open_browser
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [open_browser, Chrome, , Chrome]
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 6: Keyword='enter_url'
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for enter_url
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [enter_url, , , https://demoqa.com/]
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 7: Keyword='step'
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the home page, The homepage is opened successfully, ]
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 8: Keyword='check_element_displayed'
+2025-05-08 20:36:33,773 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_element_displayed
+2025-05-08 20:36:33,774 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_element_displayed, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:36:33,774 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 9: Keyword='step'
+2025-05-08 20:36:33,774 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on Elements Link, The elements page is opened successfully, ]
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 10: Keyword='js_click'
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for js_click
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [js_click, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 11: Keyword='step'
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on Upload and Download link., The upload and download page opened successfully, ]
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 12: Keyword='click'
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, Upload and Download Link, demoqa_home_ele_up_css, ]
+2025-05-08 20:36:33,775 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 13: Keyword='step'
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Upload a test file and check it is successful., The upload of test file is successful, ]
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 14: Keyword='upload_file'
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for upload_file
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [upload_file, Upload button, demoqa_home_ele_up_up_css, chromedgerunonlinux.txt]
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 15: Keyword='verify_displayed_text'
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for verify_displayed_text
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [verify_displayed_text, Uploaded file, demoqa_home_ele_up_up_fl_css, C:\fakepath\chromedgerunonlinux.txt]
+2025-05-08 20:36:33,776 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1110) | Validation of test script file is successful.
+2025-05-08 20:36:33,777 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:428) | Instantiating Keyword Manager...
+2025-05-08 20:36:33,807 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:55) | Retry count updated to 1
+2025-05-08 20:36:33,807 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:508) | Starting test script execution.
+2025-05-08 20:36:33,817 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 2: Keyword='tc_id'
+2025-05-08 20:36:33,817 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:669) | Executing 'tc_id' at row [tc_id, , , QS004]
+2025-05-08 20:36:33,818 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:144) | Setting the test report of the PDF report
+2025-05-08 20:36:33,818 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 3: Keyword='tc_desc'
+2025-05-08 20:36:33,818 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:674) | Executing 'tc_desc' at row [tc_desc, , , To verify if the below in Demo QA web site:
+1. Upload of file is successful.]
+2025-05-08 20:36:33,818 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:150) | Setting the test description in the PDF report
+2025-05-08 20:36:33,819 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 4: Keyword='step'
+2025-05-08 20:36:33,819 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:36:33,819 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:36:33,829 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:91) | Step is captured to be added to PDF report.
+2025-05-08 20:36:33,829 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 5: Keyword='open_browser'
+2025-05-08 20:36:33,830 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:636) | Executing 'open_browser' at row [open_browser, Chrome, , Chrome]. Launching browser: chrome
+2025-05-08 20:36:33,830 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:180) | Launching chrome...
+2025-05-08 20:36:33,830 [576] [Thread-14] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: D:\allprojects\java-projects\webautomationframework_java\test_files\thread_85_time_1746716793777
+2025-05-08 20:36:35,277 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:183) | Capturing the OS where the browser is running.
+2025-05-08 20:36:35,277 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:195) | Capturing OS details for local execution.
+2025-05-08 20:36:35,278 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:207) | Setting OS details in PDF report as Windows
+2025-05-08 20:36:35,278 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:213) | Setting browser details in PDF report as Chrome
+2025-05-08 20:36:35,278 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:285) | Returning Browser Version.
+2025-05-08 20:36:35,278 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:56) | Capturing Browser Version
+2025-05-08 20:36:35,279 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:224) | Populating step result in PDF report.
+2025-05-08 20:36:35,366 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:36:35,366 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 6: Keyword='enter_url'
+2025-05-08 20:36:35,366 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:692) | Executing 'enter_url' at row [enter_url, , , https://demoqa.com/]. URL: https://demoqa.com/
+2025-05-08 20:36:35,367 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:616) | Opening URL: https://demoqa.com/
+2025-05-08 20:36:35,367 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:68) | Opening URL https://demoqa.com/
+2025-05-08 20:36:59,563 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:01,564 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:620) | Populating the step result details in the PDF report.
+2025-05-08 20:37:03,896 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:03,896 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 7: Keyword='step'
+2025-05-08 20:37:03,896 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the home page, The homepage is opened successfully, ]
+2025-05-08 20:37:03,896 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:03,897 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:03,897 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 8: Keyword='check_element_displayed'
+2025-05-08 20:37:03,897 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:766) | Executing 'check_element_displayed' at row [check_element_displayed, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:37:03,897 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:585) | Checking if element 'Elements Link' is displayed.
+2025-05-08 20:37:03,924 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:37:03,925 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:503) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:37:04,805 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:04,805 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 9: Keyword='step'
+2025-05-08 20:37:04,806 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on Elements Link, The elements page is opened successfully, ]
+2025-05-08 20:37:04,806 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:04,806 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:04,807 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 10: Keyword='js_click'
+2025-05-08 20:37:04,807 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:878) | Executing 'js_click' at row [js_click, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:37:04,821 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:37:04,837 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 locatorType: css
+2025-05-08 20:37:04,855 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:37:05,037 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:350) | Clicked on element using JavaScript with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:37:05,037 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:07,039 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:815) | Populating the step result details in the PDF report.
+2025-05-08 20:37:08,635 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:08,635 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 11: Keyword='step'
+2025-05-08 20:37:08,636 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on Upload and Download link., The upload and download page opened successfully, ]
+2025-05-08 20:37:08,636 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:08,637 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:08,637 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 12: Keyword='click'
+2025-05-08 20:37:08,637 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, Upload and Download Link, demoqa_home_ele_up_css, ]
+2025-05-08 20:37:08,679 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #item-7 > span and locatorType: css
+2025-05-08 20:37:08,698 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #item-7 > span locatorType: css
+2025-05-08 20:37:08,774 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #item-7 > span and locatorType: css
+2025-05-08 20:37:09,637 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: #item-7 > span and locatorType: css
+2025-05-08 20:37:09,637 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:11,639 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:12,961 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:12,961 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 13: Keyword='step'
+2025-05-08 20:37:12,961 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Upload a test file and check it is successful., The upload of test file is successful, ]
+2025-05-08 20:37:12,961 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:12,962 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:12,962 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 14: Keyword='upload_file'
+2025-05-08 20:37:12,962 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:895) | Executing 'upload_file' at row [upload_file, Upload button, demoqa_home_ele_up_up_css, chromedgerunonlinux.txt]
+2025-05-08 20:37:12,982 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #uploadFile and locatorType: css
+2025-05-08 20:37:12,996 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #uploadFile locatorType: css
+2025-05-08 20:37:13,010 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #uploadFile and locatorType: css
+2025-05-08 20:37:13,073 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:828) | File uploaded with locator: #uploadFile and locatorType: css
+2025-05-08 20:37:13,073 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 1 seconds
+2025-05-08 20:37:14,074 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:1115) | Populating the step result details in the PDF report.
+2025-05-08 20:37:15,290 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:15,290 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 15: Keyword='verify_displayed_text'
+2025-05-08 20:37:15,291 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:784) | Executing 'verify_displayed_text' at row [verify_displayed_text, Uploaded file, demoqa_home_ele_up_up_fl_css, C:\fakepath\chromedgerunonlinux.txt]
+2025-05-08 20:37:15,292 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:684) | Waiting for maximum of 2 seconds for the element to be clickable.
+2025-05-08 20:37:15,368 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:698) | Element appeared on the web page.
+2025-05-08 20:37:15,383 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #uploadedFilePath and locatorType: css
+2025-05-08 20:37:15,384 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:438) | Before retrieving text from the element.
+2025-05-08 20:37:15,406 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:440) | After retrieving text, size is: 35
+2025-05-08 20:37:15,407 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:449) | Retrieved text on element :: Uploaded file
+2025-05-08 20:37:15,407 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:450) | The text is :: 'C:\fakepath\chromedgerunonlinux.txt'
+2025-05-08 20:37:16,623 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:16,624 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:566) | Test script execution completed successfully.
+2025-05-08 20:37:16,624 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:446) | Test script executed successfully: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:37:16,625 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:469) | Adding row to test summary results.
+2025-05-08 20:37:17,360 [576] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:472) | Closing test and generating test result PDF.
+2025-05-08 20:37:17,360 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:132) | Started creating PDF report
+2025-05-08 20:37:17,360 [576] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:194) | Finalizing the data to be added to PDF report.
+2025-05-08 20:37:17,671 [576] [Thread-14] INFO  PdfReporting.(PdfReporting.java:43) | Encoding the logo png file
+2025-05-08 20:37:17,690 [576] [Thread-14] INFO  PdfReporting.(PdfReporting.java:75) | Decrypting the PDF report template
+2025-05-08 20:37:18,595 [576] [Thread-14] INFO  PdfReporting.(PdfReporting.java:54) | Creating the PDF report header template
+2025-05-08 20:37:18,596 [576] [Thread-14] INFO  PdfReporting.(PdfReporting.java:68) | Creating the PDF report footer template
+2025-05-08 20:37:18,597 [576] [Thread-14] INFO  PdfReporting.(PdfReporting.java:87) | Starting creation of PDF report from template with populated data
+2025-05-08 20:37:23,090 [576] [Thread-14] INFO  PdfReporting.(PdfReporting.java:111) | Completed creation of PDF report from template with populated data
+2025-05-08 20:37:23,224 [576] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:134) | Closing the browser
+2025-05-08 20:37:23,225 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:37:23,587 [576] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:37:23,589 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:394) | Execution and recording completed successfully.
+2025-05-08 20:37:23,589 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\tc003_testscript1 (2).xlsx
+2025-05-08 20:37:23,589 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\tc003_testscript1.xlsx
+2025-05-08 20:37:23,589 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:37:23,590 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS001_testscript.xlsx
+2025-05-08 20:37:23,591 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:405) | Starting test script execution...
+2025-05-08 20:37:23,591 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:406) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:37:23,592 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:407) | Launch browser parameter: edge
+2025-05-08 20:37:23,592 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:419) | Initializing Excel Report Manager...
+2025-05-08 20:37:23,592 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:423) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:37:23,593 [576] [Thread-22] WARN  ExecutionManager.(ExecutionManager.java:1037) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:37:23,731 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1053) | Reading test script data from Excel.
+2025-05-08 20:37:23,740 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 2: Keyword='tc_id'
+2025-05-08 20:37:23,741 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_id
+2025-05-08 20:37:23,741 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_id, , , QS001]
+2025-05-08 20:37:23,741 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 3: Keyword='tc_desc'
+2025-05-08 20:37:23,741 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_desc
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_desc, , , To verify if the below:
+1. All checkboxes able to check.]
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 4: Keyword='step'
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 5: Keyword='open_browser'
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for open_browser
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [open_browser, Chrome, , Chrome]
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 6: Keyword='enter_url'
+2025-05-08 20:37:23,742 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for enter_url
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [enter_url, , , https://jqueryui.com/]
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 7: Keyword='step'
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the checkbox radio page, The checkbox radio page opens successfully, ]
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 8: Keyword='click'
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, Checkboxradio link, checkbox_page_css, ]
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 9: Keyword='step'
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on no icons link, The no icons page opens successfully, ]
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 10: Keyword='click'
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, checkboxnoicons link, checkbox_no_icons_link_css, ]
+2025-05-08 20:37:23,743 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 11: Keyword='step'
+2025-05-08 20:37:23,745 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:37:23,745 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on all radio buttons anc check, Should be able to click on each radio button and that button is selected, ]
+2025-05-08 20:37:23,745 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 12: Keyword='switch_to_iframe'
+2025-05-08 20:37:23,745 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for switch_to_iframe
+2025-05-08 20:37:23,745 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [switch_to_iframe, iframe, checkbox_iframe_css, ]
+2025-05-08 20:37:23,745 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 13: Keyword='click'
+2025-05-08 20:37:23,746 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,746 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 1radio, ny_radio_css, ]
+2025-05-08 20:37:23,746 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 14: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:23,746 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:37:23,746 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 1radio, ny_radio1_css, ]
+2025-05-08 20:37:23,746 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 15: Keyword='click'
+2025-05-08 20:37:23,747 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,747 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 2radio, paris_radio_css, ]
+2025-05-08 20:37:23,747 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 16: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:23,747 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:37:23,747 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 2radio, paris_radio1_css, ]
+2025-05-08 20:37:23,747 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 17: Keyword='click'
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 3radio, london_radio_css, ]
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 18: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 3radio, london_radio1_css, ]
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 19: Keyword='step'
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:37:23,748 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on all check boxes anc check, Should be able to click on all check boxes and all should be checked., ]
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 20: Keyword='click'
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 1check, 2star_check_css, ]
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 21: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 1check, 2star_check1_css, ]
+2025-05-08 20:37:23,749 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 22: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_not_selected
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_not_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 23: Keyword='click'
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 2check, 3star_check_css, ]
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 24: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:37:23,750 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 25: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_not_selected
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_not_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 26: Keyword='click'
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 3check, 4star_check_css, ]
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 27: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:37:23,751 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:37:23,752 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 28: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:37:23,752 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_not_selected
+2025-05-08 20:37:23,752 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_not_selected, 4check, 5star_check1_css, ]
+2025-05-08 20:37:23,752 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 29: Keyword='click'
+2025-05-08 20:37:23,752 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:37:23,753 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 4check, 5star_check_css, ]
+2025-05-08 20:37:23,753 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1110) | Validation of test script file is successful.
+2025-05-08 20:37:23,753 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:428) | Instantiating Keyword Manager...
+2025-05-08 20:37:23,755 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:55) | Retry count updated to 1
+2025-05-08 20:37:23,755 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:508) | Starting test script execution.
+2025-05-08 20:37:23,755 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 2: Keyword='tc_id'
+2025-05-08 20:37:23,755 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:669) | Executing 'tc_id' at row [tc_id, , , QS001]
+2025-05-08 20:37:23,756 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:144) | Setting the test report of the PDF report
+2025-05-08 20:37:23,756 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 3: Keyword='tc_desc'
+2025-05-08 20:37:23,756 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:674) | Executing 'tc_desc' at row [tc_desc, , , To verify if the below:
+1. All checkboxes able to check.]
+2025-05-08 20:37:23,756 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:150) | Setting the test description in the PDF report
+2025-05-08 20:37:23,757 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 4: Keyword='step'
+2025-05-08 20:37:23,757 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:37:23,757 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:23,757 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:91) | Step is captured to be added to PDF report.
+2025-05-08 20:37:23,757 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 5: Keyword='open_browser'
+2025-05-08 20:37:23,757 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:636) | Executing 'open_browser' at row [open_browser, Chrome, , Chrome]. Launching browser: edge
+2025-05-08 20:37:23,758 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:180) | Launching edge...
+2025-05-08 20:37:23,758 [576] [Thread-22] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: D:\allprojects\java-projects\webautomationframework_java\test_files\thread_110_time_1746716843753
+2025-05-08 20:37:25,510 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:183) | Capturing the OS where the browser is running.
+2025-05-08 20:37:25,511 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:195) | Capturing OS details for local execution.
+2025-05-08 20:37:25,513 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:207) | Setting OS details in PDF report as Windows
+2025-05-08 20:37:25,514 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:218) | Setting browser details in PDF report as Edge
+2025-05-08 20:37:25,515 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:285) | Returning Browser Version.
+2025-05-08 20:37:25,515 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:56) | Capturing Browser Version
+2025-05-08 20:37:25,515 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:224) | Populating step result in PDF report.
+2025-05-08 20:37:25,515 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:25,516 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 6: Keyword='enter_url'
+2025-05-08 20:37:25,516 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:692) | Executing 'enter_url' at row [enter_url, , , https://jqueryui.com/]. URL: https://jqueryui.com/
+2025-05-08 20:37:25,516 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:616) | Opening URL: https://jqueryui.com/
+2025-05-08 20:37:25,516 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:68) | Opening URL https://jqueryui.com/
+2025-05-08 20:37:27,661 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:29,662 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:620) | Populating the step result details in the PDF report.
+2025-05-08 20:37:30,319 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:30,319 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 7: Keyword='step'
+2025-05-08 20:37:30,319 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the checkbox radio page, The checkbox radio page opens successfully, ]
+2025-05-08 20:37:30,319 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:30,320 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:30,320 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 8: Keyword='click'
+2025-05-08 20:37:30,320 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, Checkboxradio link, checkbox_page_css, ]
+2025-05-08 20:37:30,355 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a and locatorType: css
+2025-05-08 20:37:30,375 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a locatorType: css
+2025-05-08 20:37:30,419 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a and locatorType: css
+2025-05-08 20:37:34,876 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a and locatorType: css
+2025-05-08 20:37:34,878 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:36,880 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 9: Keyword='step'
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on no icons link, The no icons page opens successfully, ]
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 10: Keyword='click'
+2025-05-08 20:37:37,496 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, checkboxnoicons link, checkbox_no_icons_link_css, ]
+2025-05-08 20:37:37,523 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > div.demo-list > ul > li:nth-child(2)> a and locatorType: css
+2025-05-08 20:37:37,534 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #content > div.demo-list > ul > li:nth-child(2)> a locatorType: css
+2025-05-08 20:37:37,548 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > div.demo-list > ul > li:nth-child(2)> a and locatorType: css
+2025-05-08 20:37:37,653 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: #content > div.demo-list > ul > li:nth-child(2)> a and locatorType: css
+2025-05-08 20:37:37,654 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:39,654 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:40,185 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:40,186 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 11: Keyword='step'
+2025-05-08 20:37:40,186 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on all radio buttons anc check, Should be able to click on each radio button and that button is selected, ]
+2025-05-08 20:37:40,186 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:40,186 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:40,186 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 12: Keyword='switch_to_iframe'
+2025-05-08 20:37:40,188 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:662) | Executing 'switch_to_iframe' at row [switch_to_iframe, iframe, checkbox_iframe_css, ]
+2025-05-08 20:37:40,188 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:88) | Attempting to switch to iframe 'iframe' using traditional locators.
+2025-05-08 20:37:40,189 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:684) | Waiting for maximum of 2 seconds for the element to be clickable.
+2025-05-08 20:37:40,260 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:698) | Element appeared on the web page.
+2025-05-08 20:37:40,273 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > iframe and locatorType: css
+2025-05-08 20:37:40,284 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #content > iframe locatorType: css
+2025-05-08 20:37:40,299 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > iframe and locatorType: css
+2025-05-08 20:37:40,340 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:473) | Switched to iframe with locator: #content > iframe and locatorType: css
+2025-05-08 20:37:40,893 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:40,893 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 13: Keyword='click'
+2025-05-08 20:37:40,894 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 1radio, ny_radio_css, ]
+2025-05-08 20:37:40,910 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] and locatorType: css
+2025-05-08 20:37:40,922 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] locatorType: css
+2025-05-08 20:37:40,955 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] and locatorType: css
+2025-05-08 20:37:41,157 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] and locatorType: css
+2025-05-08 20:37:41,158 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:43,160 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:43,827 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:43,827 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 14: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:43,828 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 1radio, ny_radio1_css, ]
+2025-05-08 20:37:43,828 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '1radio' is selected.
+2025-05-08 20:37:43,846 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > input#radio-1 and locatorType: css
+2025-05-08 20:37:43,866 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: body > div > fieldset:nth-child(3) > input#radio-1 and locatorType: css is selected.
+2025-05-08 20:37:44,442 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:44,443 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 15: Keyword='click'
+2025-05-08 20:37:44,443 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 2radio, paris_radio_css, ]
+2025-05-08 20:37:44,464 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] and locatorType: css
+2025-05-08 20:37:44,478 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] locatorType: css
+2025-05-08 20:37:44,495 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] and locatorType: css
+2025-05-08 20:37:44,684 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] and locatorType: css
+2025-05-08 20:37:44,684 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:46,685 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:47,057 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:47,057 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 16: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:47,057 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 2radio, paris_radio1_css, ]
+2025-05-08 20:37:47,057 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '2radio' is selected.
+2025-05-08 20:37:47,071 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > input#radio-2 and locatorType: css
+2025-05-08 20:37:47,082 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: body > div > fieldset:nth-child(3) > input#radio-2 and locatorType: css is selected.
+2025-05-08 20:37:47,460 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:47,460 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 17: Keyword='click'
+2025-05-08 20:37:47,461 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 3radio, london_radio_css, ]
+2025-05-08 20:37:47,477 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] and locatorType: css
+2025-05-08 20:37:47,488 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] locatorType: css
+2025-05-08 20:37:47,501 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] and locatorType: css
+2025-05-08 20:37:47,644 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] and locatorType: css
+2025-05-08 20:37:47,644 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:49,644 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:49,994 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:49,995 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 18: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:49,995 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 3radio, london_radio1_css, ]
+2025-05-08 20:37:49,995 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '3radio' is selected.
+2025-05-08 20:37:50,012 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > input#radio-3 and locatorType: css
+2025-05-08 20:37:50,025 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: body > div > fieldset:nth-child(3) > input#radio-3 and locatorType: css is selected.
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 19: Keyword='step'
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on all check boxes anc check, Should be able to click on all check boxes and all should be checked., ]
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 20: Keyword='click'
+2025-05-08 20:37:50,298 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 1check, 2star_check_css, ]
+2025-05-08 20:37:50,315 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] and locatorType: css
+2025-05-08 20:37:50,324 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] locatorType: css
+2025-05-08 20:37:50,332 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] and locatorType: css
+2025-05-08 20:37:50,436 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] and locatorType: css
+2025-05-08 20:37:50,436 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:52,438 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:52,801 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:52,801 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 21: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:52,801 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 1check, 2star_check1_css, ]
+2025-05-08 20:37:52,802 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '1check' is selected.
+2025-05-08 20:37:52,818 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-1 and locatorType: css
+2025-05-08 20:37:52,832 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: #checkbox-1 and locatorType: css is selected.
+2025-05-08 20:37:53,185 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:53,186 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 22: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:37:53,186 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1015) | Executing 'check_radio_chk_not_selected' at row [check_radio_chk_not_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:37:53,187 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:517) | Checking if element '2check' is NOT selected.
+2025-05-08 20:37:53,205 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-2 and locatorType: css
+2025-05-08 20:37:53,220 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:644) | Element with locator: #checkbox-2 and locatorType: css is NOT selected.
+2025-05-08 20:37:53,578 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:53,578 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 23: Keyword='click'
+2025-05-08 20:37:53,578 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 2check, 3star_check_css, ]
+2025-05-08 20:37:53,590 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] and locatorType: css
+2025-05-08 20:37:53,597 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] locatorType: css
+2025-05-08 20:37:53,612 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] and locatorType: css
+2025-05-08 20:37:53,749 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] and locatorType: css
+2025-05-08 20:37:53,750 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:55,752 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:56,162 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:56,162 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 24: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:56,162 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:37:56,162 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '2check' is selected.
+2025-05-08 20:37:56,178 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-2 and locatorType: css
+2025-05-08 20:37:56,191 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: #checkbox-2 and locatorType: css is selected.
+2025-05-08 20:37:56,487 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:56,488 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 25: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:37:56,488 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1015) | Executing 'check_radio_chk_not_selected' at row [check_radio_chk_not_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:37:56,488 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:517) | Checking if element '3check' is NOT selected.
+2025-05-08 20:37:56,499 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-3 and locatorType: css
+2025-05-08 20:37:56,506 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:644) | Element with locator: #checkbox-3 and locatorType: css is NOT selected.
+2025-05-08 20:37:56,787 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:56,788 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 26: Keyword='click'
+2025-05-08 20:37:56,788 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 3check, 4star_check_css, ]
+2025-05-08 20:37:56,800 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] and locatorType: css
+2025-05-08 20:37:56,806 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] locatorType: css
+2025-05-08 20:37:56,814 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] and locatorType: css
+2025-05-08 20:37:56,936 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] and locatorType: css
+2025-05-08 20:37:56,936 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:37:58,938 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:37:59,273 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:59,273 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 27: Keyword='check_radio_chk_selected'
+2025-05-08 20:37:59,274 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:37:59,274 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '3check' is selected.
+2025-05-08 20:37:59,282 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-3 and locatorType: css
+2025-05-08 20:37:59,288 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: #checkbox-3 and locatorType: css is selected.
+2025-05-08 20:37:59,567 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:59,568 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 28: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:37:59,568 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:1015) | Executing 'check_radio_chk_not_selected' at row [check_radio_chk_not_selected, 4check, 5star_check1_css, ]
+2025-05-08 20:37:59,568 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:517) | Checking if element '4check' is NOT selected.
+2025-05-08 20:37:59,581 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-4 and locatorType: css
+2025-05-08 20:37:59,593 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:644) | Element with locator: #checkbox-4 and locatorType: css is NOT selected.
+2025-05-08 20:37:59,883 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:37:59,883 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 29: Keyword='click'
+2025-05-08 20:37:59,883 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 4check, 5star_check_css, ]
+2025-05-08 20:37:59,899 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] and locatorType: css
+2025-05-08 20:37:59,911 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] locatorType: css
+2025-05-08 20:37:59,923 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] and locatorType: css
+2025-05-08 20:38:00,025 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] and locatorType: css
+2025-05-08 20:38:00,025 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:38:02,026 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:38:02,364 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:38:02,365 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:566) | Test script execution completed successfully.
+2025-05-08 20:38:02,365 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:446) | Test script executed successfully: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:38:02,365 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:469) | Adding row to test summary results.
+2025-05-08 20:38:02,454 [576] [Thread-22] INFO  ExecutionManager.(ExecutionManager.java:472) | Closing test and generating test result PDF.
+2025-05-08 20:38:02,454 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:132) | Started creating PDF report
+2025-05-08 20:38:02,454 [576] [Thread-22] INFO  PdfReportManager.(PdfReportManager.java:194) | Finalizing the data to be added to PDF report.
+2025-05-08 20:38:02,460 [576] [Thread-22] INFO  PdfReporting.(PdfReporting.java:43) | Encoding the logo png file
+2025-05-08 20:38:02,461 [576] [Thread-22] INFO  PdfReporting.(PdfReporting.java:75) | Decrypting the PDF report template
+2025-05-08 20:38:02,540 [576] [Thread-22] INFO  PdfReporting.(PdfReporting.java:54) | Creating the PDF report header template
+2025-05-08 20:38:02,541 [576] [Thread-22] INFO  PdfReporting.(PdfReporting.java:68) | Creating the PDF report footer template
+2025-05-08 20:38:02,541 [576] [Thread-22] INFO  PdfReporting.(PdfReporting.java:87) | Starting creation of PDF report from template with populated data
+2025-05-08 20:38:05,092 [576] [Thread-22] INFO  PdfReporting.(PdfReporting.java:111) | Completed creation of PDF report from template with populated data
+2025-05-08 20:38:05,174 [576] [Thread-22] INFO  KeywordsManager.(KeywordsManager.java:134) | Closing the browser
+2025-05-08 20:38:05,174 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:38:06,602 [576] [Thread-22] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:38:06,603 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:394) | Execution and recording completed successfully.
+2025-05-08 20:38:06,603 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-08 20:38:06,603 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS001_testscript.xlsx
+2025-05-08 20:38:06,603 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-08 20:38:06,603 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS002_testscript.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS003_testscript.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS001_testscript.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-08 20:38:06,604 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS002_testscript.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS003_testscript.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-08 20:38:06,605 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-08 20:38:06,606 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-08 20:38:06,606 [576] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-08 20:38:06,610 [576] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:353) | 0hrs:1min:33sec:666ms
+2025-05-08 20:38:06,612 [576] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:232) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-08 20:38:06,612 [576] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:238) | Output.xlsx exists and starting to create test summary PDF report.
+2025-05-08 20:38:07,343 [576] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:45) | Encoding the logo PNG file
+2025-05-08 20:38:07,345 [576] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:77) | Decrypting the PDF report template
+2025-05-08 20:38:07,411 [576] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:56) | Creating the PDF report header template
+2025-05-08 20:38:07,412 [576] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:70) | Creating the PDF report footer template
+2025-05-08 20:38:07,412 [576] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:90) | Starting creation of PDF report from template with populated data
+2025-05-08 20:38:08,517 [576] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:112) | Completed creation of PDF report from template with populated data
+2025-05-08 20:38:08,621 [576] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:277) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-08 20:38:08,949 [576] [com.waf.Runner.main()] ERROR Utils.(Utils.java:165) | Failed to connect to FTP server: Connection refused: connect
+2025-05-08 20:38:54,907 [11200] [com.waf.Runner.main()] INFO  Runner.(Runner.java:23) | Execution Started ----------------.
+2025-05-08 20:38:54,911 [11200] [com.waf.Runner.main()] INFO  Runner.(Runner.java:24) | Parsing the input arguments.
+2025-05-08 20:38:54,916 [11200] [com.waf.Runner.main()] INFO  Runner.(Runner.java:80) | Starting test execution...
+2025-05-08 20:38:55,009 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:59) | Setting up test execution...
+2025-05-08 20:38:55,052 [11200] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching chrome .......
+2025-05-08 20:38:55,053 [11200] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: 
+2025-05-08 20:38:57,290 [11200] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:219) | ChromeDriver is ready!
+2025-05-08 20:38:57,292 [11200] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:38:57,497 [11200] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:38:57,498 [11200] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:42) | Launching edge .......
+2025-05-08 20:38:57,498 [11200] [com.waf.Runner.main()] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: 
+2025-05-08 20:38:58,918 [11200] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:229) | EdgeDriver is ready!
+2025-05-08 20:38:58,918 [11200] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:39:00,179 [11200] [com.waf.Runner.main()] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:39:06,925 [11200] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:72) | Playwright browser launched successfully!
+2025-05-08 20:39:06,995 [11200] [com.waf.Runner.main()] INFO  SMBrowserDownloader.(SMBrowserDownloader.java:74) | Playwright browser closed successfully!
+2025-05-08 20:39:07,091 [11200] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:208) | No process found with PID: 576
+2025-05-08 20:39:07,092 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:166) | PID file cleared successfully.
+2025-05-08 20:39:07,094 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:151) | Saved PID: 11200
+2025-05-08 20:39:07,095 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:80) | Starting standard execution.
+2025-05-08 20:39:07,095 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:92) | Loading 'start.properties' file.
+2025-05-08 20:39:07,095 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:101) | Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.
+2025-05-08 20:39:07,095 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:105) | Deleting the test_results and recordings folders.
+2025-05-08 20:39:07,109 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:110) | Creating the test_results and recordings folders.
+2025-05-08 20:39:07,111 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:113) | Starting analysis of the contents of the test_scripts folders.
+2025-05-08 20:39:07,113 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:319) | Gathering all files present in the test_scripts folder.
+2025-05-08 20:39:07,113 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\1t.xls
+2025-05-08 20:39:07,114 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:39:07,114 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS004_demoqa_testscript.xlsx
+2025-05-08 20:39:07,116 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:405) | Starting test script execution...
+2025-05-08 20:39:07,117 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:406) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:39:07,117 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:407) | Launch browser parameter: chrome
+2025-05-08 20:39:07,117 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:419) | Initializing Excel Report Manager...
+2025-05-08 20:39:07,124 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:423) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:39:07,125 [11200] [Thread-14] WARN  ExecutionManager.(ExecutionManager.java:1037) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:39:08,024 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1053) | Reading test script data from Excel.
+2025-05-08 20:39:08,046 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 2: Keyword='tc_id'
+2025-05-08 20:39:08,049 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_id
+2025-05-08 20:39:08,050 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_id, , , QS004]
+2025-05-08 20:39:08,050 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 3: Keyword='tc_desc'
+2025-05-08 20:39:08,050 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_desc
+2025-05-08 20:39:08,050 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_desc, , , To verify if the below in Demo QA web site:
+1. Upload of file is successful.]
+2025-05-08 20:39:08,051 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 4: Keyword='step'
+2025-05-08 20:39:08,051 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:08,051 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:39:08,051 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 5: Keyword='open_browser'
+2025-05-08 20:39:08,051 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for open_browser
+2025-05-08 20:39:08,051 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [open_browser, Chrome, , Chrome]
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 6: Keyword='enter_url'
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for enter_url
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [enter_url, , , https://demoqa.com/]
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 7: Keyword='step'
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the home page, The homepage is opened successfully, ]
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 8: Keyword='check_element_displayed'
+2025-05-08 20:39:08,052 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_element_displayed
+2025-05-08 20:39:08,053 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_element_displayed, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:39:08,055 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 9: Keyword='step'
+2025-05-08 20:39:08,055 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:08,055 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on Elements Link, The elements page is opened successfully, ]
+2025-05-08 20:39:08,056 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 10: Keyword='js_click'
+2025-05-08 20:39:08,056 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for js_click
+2025-05-08 20:39:08,056 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [js_click, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:39:08,056 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 11: Keyword='step'
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on Upload and Download link., The upload and download page opened successfully, ]
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 12: Keyword='click'
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, Upload and Download Link, demoqa_home_ele_up_css, ]
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 13: Keyword='step'
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Upload a test file and check it is successful., The upload of test file is successful, ]
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 14: Keyword='upload_file'
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for upload_file
+2025-05-08 20:39:08,057 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [upload_file, Upload button, demoqa_home_ele_up_up_css, chromedgerunonlinux.txt]
+2025-05-08 20:39:08,058 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 15: Keyword='verify_displayed_text'
+2025-05-08 20:39:08,058 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for verify_displayed_text
+2025-05-08 20:39:08,058 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [verify_displayed_text, Uploaded file, demoqa_home_ele_up_up_fl_css, C:\fakepath\chromedgerunonlinux.txt]
+2025-05-08 20:39:08,058 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:1110) | Validation of test script file is successful.
+2025-05-08 20:39:08,058 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:428) | Instantiating Keyword Manager...
+2025-05-08 20:39:08,063 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:55) | Retry count updated to 1
+2025-05-08 20:39:08,063 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:508) | Starting test script execution.
+2025-05-08 20:39:08,070 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 2: Keyword='tc_id'
+2025-05-08 20:39:08,070 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:669) | Executing 'tc_id' at row [tc_id, , , QS004]
+2025-05-08 20:39:08,070 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:144) | Setting the test report of the PDF report
+2025-05-08 20:39:08,070 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 3: Keyword='tc_desc'
+2025-05-08 20:39:08,071 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:674) | Executing 'tc_desc' at row [tc_desc, , , To verify if the below in Demo QA web site:
+1. Upload of file is successful.]
+2025-05-08 20:39:08,071 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:150) | Setting the test description in the PDF report
+2025-05-08 20:39:08,071 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 4: Keyword='step'
+2025-05-08 20:39:08,071 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:39:08,071 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:08,074 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:91) | Step is captured to be added to PDF report.
+2025-05-08 20:39:08,074 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 5: Keyword='open_browser'
+2025-05-08 20:39:08,074 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:636) | Executing 'open_browser' at row [open_browser, Chrome, , Chrome]. Launching browser: chrome
+2025-05-08 20:39:08,075 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:180) | Launching chrome...
+2025-05-08 20:39:08,075 [11200] [Thread-14] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: D:\allprojects\java-projects\webautomationframework_java\test_files\thread_84_time_1746716948058
+2025-05-08 20:39:09,531 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:183) | Capturing the OS where the browser is running.
+2025-05-08 20:39:09,531 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:195) | Capturing OS details for local execution.
+2025-05-08 20:39:09,532 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:207) | Setting OS details in PDF report as Windows
+2025-05-08 20:39:09,533 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:213) | Setting browser details in PDF report as Chrome
+2025-05-08 20:39:09,533 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:285) | Returning Browser Version.
+2025-05-08 20:39:09,533 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:56) | Capturing Browser Version
+2025-05-08 20:39:09,533 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:224) | Populating step result in PDF report.
+2025-05-08 20:39:10,052 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:10,053 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 6: Keyword='enter_url'
+2025-05-08 20:39:10,053 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:692) | Executing 'enter_url' at row [enter_url, , , https://demoqa.com/]. URL: https://demoqa.com/
+2025-05-08 20:39:10,053 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:616) | Opening URL: https://demoqa.com/
+2025-05-08 20:39:10,054 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:68) | Opening URL https://demoqa.com/
+2025-05-08 20:39:16,582 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:39:18,583 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:620) | Populating the step result details in the PDF report.
+2025-05-08 20:39:19,001 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:19,002 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 7: Keyword='step'
+2025-05-08 20:39:19,003 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the home page, The homepage is opened successfully, ]
+2025-05-08 20:39:19,003 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:19,005 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:19,005 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 8: Keyword='check_element_displayed'
+2025-05-08 20:39:19,005 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:766) | Executing 'check_element_displayed' at row [check_element_displayed, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:39:19,006 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:585) | Checking if element 'Elements Link' is displayed.
+2025-05-08 20:39:19,043 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:39:19,044 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:503) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:39:19,432 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:19,433 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 9: Keyword='step'
+2025-05-08 20:39:19,433 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on Elements Link, The elements page is opened successfully, ]
+2025-05-08 20:39:19,433 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:19,434 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:19,434 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 10: Keyword='js_click'
+2025-05-08 20:39:19,434 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:878) | Executing 'js_click' at row [js_click, Elements Link, demoqa_home_ele_css, ]
+2025-05-08 20:39:19,453 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:39:19,475 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 locatorType: css
+2025-05-08 20:39:19,492 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:39:19,644 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:350) | Clicked on element using JavaScript with locator: #app > div > div > div.home-body > div > div:nth-child(1) > div > div.card-body > h5 and locatorType: css
+2025-05-08 20:39:19,646 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:39:21,651 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:815) | Populating the step result details in the PDF report.
+2025-05-08 20:39:22,420 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:22,421 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 11: Keyword='step'
+2025-05-08 20:39:22,421 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on Upload and Download link., The upload and download page opened successfully, ]
+2025-05-08 20:39:22,422 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:22,422 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:22,423 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 12: Keyword='click'
+2025-05-08 20:39:22,424 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, Upload and Download Link, demoqa_home_ele_up_css, ]
+2025-05-08 20:39:30,123 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #item-7 > span and locatorType: css
+2025-05-08 20:39:30,161 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #item-7 > span locatorType: css
+2025-05-08 20:39:30,262 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #item-7 > span and locatorType: css
+2025-05-08 20:39:30,794 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: #item-7 > span and locatorType: css
+2025-05-08 20:39:30,795 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:39:32,797 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:39:33,316 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:33,319 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 13: Keyword='step'
+2025-05-08 20:39:33,320 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Upload a test file and check it is successful., The upload of test file is successful, ]
+2025-05-08 20:39:33,320 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:33,320 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:33,321 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 14: Keyword='upload_file'
+2025-05-08 20:39:33,322 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:895) | Executing 'upload_file' at row [upload_file, Upload button, demoqa_home_ele_up_up_css, chromedgerunonlinux.txt]
+2025-05-08 20:39:33,368 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #uploadFile and locatorType: css
+2025-05-08 20:39:33,379 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #uploadFile locatorType: css
+2025-05-08 20:39:33,431 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #uploadFile and locatorType: css
+2025-05-08 20:39:33,595 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:828) | File uploaded with locator: #uploadFile and locatorType: css
+2025-05-08 20:39:33,596 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 1 seconds
+2025-05-08 20:39:34,600 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:1115) | Populating the step result details in the PDF report.
+2025-05-08 20:39:35,090 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:35,091 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 15: Keyword='verify_displayed_text'
+2025-05-08 20:39:35,091 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:784) | Executing 'verify_displayed_text' at row [verify_displayed_text, Uploaded file, demoqa_home_ele_up_up_fl_css, C:\fakepath\chromedgerunonlinux.txt]
+2025-05-08 20:39:35,093 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:684) | Waiting for maximum of 2 seconds for the element to be clickable.
+2025-05-08 20:39:35,213 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:698) | Element appeared on the web page.
+2025-05-08 20:39:35,234 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #uploadedFilePath and locatorType: css
+2025-05-08 20:39:35,235 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:438) | Before retrieving text from the element.
+2025-05-08 20:39:35,276 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:440) | After retrieving text, size is: 35
+2025-05-08 20:39:35,278 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:449) | Retrieved text on element :: Uploaded file
+2025-05-08 20:39:35,279 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:450) | The text is :: 'C:\fakepath\chromedgerunonlinux.txt'
+2025-05-08 20:39:35,707 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:35,707 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:566) | Test script execution completed successfully.
+2025-05-08 20:39:35,707 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:446) | Test script executed successfully: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\QS004_demoqa_testscript.xlsx
+2025-05-08 20:39:35,720 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:469) | Adding row to test summary results.
+2025-05-08 20:39:37,043 [11200] [Thread-14] INFO  ExecutionManager.(ExecutionManager.java:472) | Closing test and generating test result PDF.
+2025-05-08 20:39:37,044 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:132) | Started creating PDF report
+2025-05-08 20:39:37,044 [11200] [Thread-14] INFO  PdfReportManager.(PdfReportManager.java:194) | Finalizing the data to be added to PDF report.
+2025-05-08 20:39:37,527 [11200] [Thread-14] INFO  PdfReporting.(PdfReporting.java:43) | Encoding the logo png file
+2025-05-08 20:39:37,528 [11200] [Thread-14] INFO  PdfReporting.(PdfReporting.java:75) | Decrypting the PDF report template
+2025-05-08 20:39:38,492 [11200] [Thread-14] INFO  PdfReporting.(PdfReporting.java:54) | Creating the PDF report header template
+2025-05-08 20:39:38,494 [11200] [Thread-14] INFO  PdfReporting.(PdfReporting.java:68) | Creating the PDF report footer template
+2025-05-08 20:39:38,495 [11200] [Thread-14] INFO  PdfReporting.(PdfReporting.java:87) | Starting creation of PDF report from template with populated data
+2025-05-08 20:39:43,557 [11200] [Thread-14] INFO  PdfReporting.(PdfReporting.java:111) | Completed creation of PDF report from template with populated data
+2025-05-08 20:39:43,946 [11200] [Thread-14] INFO  KeywordsManager.(KeywordsManager.java:134) | Closing the browser
+2025-05-08 20:39:43,948 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:39:44,557 [11200] [Thread-14] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:39:45,020 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:394) | Execution and recording completed successfully.
+2025-05-08 20:39:45,020 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\tc003_testscript1 (2).xlsx
+2025-05-08 20:39:45,020 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\chrome\tc003_testscript1.xlsx
+2025-05-08 20:39:45,022 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:39:45,022 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS001_testscript.xlsx
+2025-05-08 20:39:45,024 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:405) | Starting test script execution...
+2025-05-08 20:39:45,025 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:406) | Test script file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:39:45,025 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:407) | Launch browser parameter: edge
+2025-05-08 20:39:45,025 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:419) | Initializing Excel Report Manager...
+2025-05-08 20:39:45,025 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:423) | Valid test script found: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:39:45,025 [11200] [Thread-24] WARN  ExecutionManager.(ExecutionManager.java:1037) | Validating the test script: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:39:45,154 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1053) | Reading test script data from Excel.
+2025-05-08 20:39:45,164 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 2: Keyword='tc_id'
+2025-05-08 20:39:45,165 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_id
+2025-05-08 20:39:45,165 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_id, , , QS001]
+2025-05-08 20:39:45,166 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 3: Keyword='tc_desc'
+2025-05-08 20:39:45,166 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for tc_desc
+2025-05-08 20:39:45,166 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [tc_desc, , , To verify if the below:
+1. All checkboxes able to check.]
+2025-05-08 20:39:45,168 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 4: Keyword='step'
+2025-05-08 20:39:45,168 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:45,168 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:39:45,168 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 5: Keyword='open_browser'
+2025-05-08 20:39:45,168 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for open_browser
+2025-05-08 20:39:45,170 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [open_browser, Chrome, , Chrome]
+2025-05-08 20:39:45,176 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 6: Keyword='enter_url'
+2025-05-08 20:39:45,178 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for enter_url
+2025-05-08 20:39:45,178 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [enter_url, , , https://jqueryui.com/]
+2025-05-08 20:39:45,178 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 7: Keyword='step'
+2025-05-08 20:39:45,178 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:45,178 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Open the checkbox radio page, The checkbox radio page opens successfully, ]
+2025-05-08 20:39:45,179 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 8: Keyword='click'
+2025-05-08 20:39:45,179 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,179 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, Checkboxradio link, checkbox_page_css, ]
+2025-05-08 20:39:45,180 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 9: Keyword='step'
+2025-05-08 20:39:45,180 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:45,180 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on no icons link, The no icons page opens successfully, ]
+2025-05-08 20:39:45,180 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 10: Keyword='click'
+2025-05-08 20:39:45,180 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,180 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, checkboxnoicons link, checkbox_no_icons_link_css, ]
+2025-05-08 20:39:45,181 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 11: Keyword='step'
+2025-05-08 20:39:45,181 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:45,181 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on all radio buttons anc check, Should be able to click on each radio button and that button is selected, ]
+2025-05-08 20:39:45,181 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 12: Keyword='switch_to_iframe'
+2025-05-08 20:39:45,181 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for switch_to_iframe
+2025-05-08 20:39:45,181 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [switch_to_iframe, iframe, checkbox_iframe_css, ]
+2025-05-08 20:39:45,182 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 13: Keyword='click'
+2025-05-08 20:39:45,182 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,182 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 1radio, ny_radio_css, ]
+2025-05-08 20:39:45,182 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 14: Keyword='check_radio_chk_selected'
+2025-05-08 20:39:45,183 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:39:45,183 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 1radio, ny_radio1_css, ]
+2025-05-08 20:39:45,183 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 15: Keyword='click'
+2025-05-08 20:39:45,183 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,184 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 2radio, paris_radio_css, ]
+2025-05-08 20:39:45,186 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 16: Keyword='check_radio_chk_selected'
+2025-05-08 20:39:45,186 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:39:45,186 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 2radio, paris_radio1_css, ]
+2025-05-08 20:39:45,187 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 17: Keyword='click'
+2025-05-08 20:39:45,187 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,187 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 3radio, london_radio_css, ]
+2025-05-08 20:39:45,188 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 18: Keyword='check_radio_chk_selected'
+2025-05-08 20:39:45,188 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:39:45,188 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 3radio, london_radio1_css, ]
+2025-05-08 20:39:45,188 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 19: Keyword='step'
+2025-05-08 20:39:45,188 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for step
+2025-05-08 20:39:45,188 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [step, Click on all check boxes anc check, Should be able to click on all check boxes and all should be checked., ]
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 20: Keyword='click'
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 1check, 2star_check_css, ]
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 21: Keyword='check_radio_chk_selected'
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 1check, 2star_check1_css, ]
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 22: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:39:45,189 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_not_selected
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_not_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 23: Keyword='click'
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 2check, 3star_check_css, ]
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 24: Keyword='check_radio_chk_selected'
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 25: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_not_selected
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_not_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 26: Keyword='click'
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 3check, 4star_check_css, ]
+2025-05-08 20:39:45,190 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 27: Keyword='check_radio_chk_selected'
+2025-05-08 20:39:45,192 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_selected
+2025-05-08 20:39:45,192 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:39:45,192 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 28: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:39:45,192 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for check_radio_chk_not_selected
+2025-05-08 20:39:45,192 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [check_radio_chk_not_selected, 4check, 5star_check1_css, ]
+2025-05-08 20:39:45,192 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1093) | Validating row 29: Keyword='click'
+2025-05-08 20:39:45,194 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1132) | Validating keyword specific rules for click
+2025-05-08 20:39:45,194 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1133) | Validating keyword specific rules for [click, 4check, 5star_check_css, ]
+2025-05-08 20:39:45,194 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1110) | Validation of test script file is successful.
+2025-05-08 20:39:45,196 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:428) | Instantiating Keyword Manager...
+2025-05-08 20:39:45,198 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:55) | Retry count updated to 1
+2025-05-08 20:39:45,198 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:508) | Starting test script execution.
+2025-05-08 20:39:45,198 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 2: Keyword='tc_id'
+2025-05-08 20:39:45,198 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:669) | Executing 'tc_id' at row [tc_id, , , QS001]
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:144) | Setting the test report of the PDF report
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 3: Keyword='tc_desc'
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:674) | Executing 'tc_desc' at row [tc_desc, , , To verify if the below:
+1. All checkboxes able to check.]
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:150) | Setting the test description in the PDF report
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 4: Keyword='step'
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the browser, The browser opens successfully, ]
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:91) | Step is captured to be added to PDF report.
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 5: Keyword='open_browser'
+2025-05-08 20:39:45,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:636) | Executing 'open_browser' at row [open_browser, Chrome, , Chrome]. Launching browser: edge
+2025-05-08 20:39:45,200 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:180) | Launching edge...
+2025-05-08 20:39:45,200 [11200] [Thread-24] INFO  DriverManager.(DriverManager.java:108) | Temporary download directory: D:\allprojects\java-projects\webautomationframework_java\test_files\thread_116_time_1746716985196
+2025-05-08 20:39:47,414 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:183) | Capturing the OS where the browser is running.
+2025-05-08 20:39:47,415 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:195) | Capturing OS details for local execution.
+2025-05-08 20:39:47,419 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:207) | Setting OS details in PDF report as Windows
+2025-05-08 20:39:47,419 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:218) | Setting browser details in PDF report as Edge
+2025-05-08 20:39:47,419 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:285) | Returning Browser Version.
+2025-05-08 20:39:47,420 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:56) | Capturing Browser Version
+2025-05-08 20:39:47,420 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:224) | Populating step result in PDF report.
+2025-05-08 20:39:48,156 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:48,156 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 6: Keyword='enter_url'
+2025-05-08 20:39:48,156 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:692) | Executing 'enter_url' at row [enter_url, , , https://jqueryui.com/]. URL: https://jqueryui.com/
+2025-05-08 20:39:48,156 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:616) | Opening URL: https://jqueryui.com/
+2025-05-08 20:39:48,156 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:68) | Opening URL https://jqueryui.com/
+2025-05-08 20:39:49,506 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:39:51,508 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:620) | Populating the step result details in the PDF report.
+2025-05-08 20:39:51,852 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:51,854 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 7: Keyword='step'
+2025-05-08 20:39:51,854 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Open the checkbox radio page, The checkbox radio page opens successfully, ]
+2025-05-08 20:39:51,854 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:51,854 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:51,854 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 8: Keyword='click'
+2025-05-08 20:39:51,854 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, Checkboxradio link, checkbox_page_css, ]
+2025-05-08 20:39:51,881 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a and locatorType: css
+2025-05-08 20:39:51,900 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a locatorType: css
+2025-05-08 20:39:51,935 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a and locatorType: css
+2025-05-08 20:39:53,163 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: #sidebar > aside:nth-child(2) > ul > li:nth-child(4) > a and locatorType: css
+2025-05-08 20:39:53,165 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:39:55,166 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:39:55,752 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:55,753 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 9: Keyword='step'
+2025-05-08 20:39:55,753 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on no icons link, The no icons page opens successfully, ]
+2025-05-08 20:39:55,753 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:55,753 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:55,753 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 10: Keyword='click'
+2025-05-08 20:39:55,754 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, checkboxnoicons link, checkbox_no_icons_link_css, ]
+2025-05-08 20:39:55,777 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > div.demo-list > ul > li:nth-child(2)> a and locatorType: css
+2025-05-08 20:39:55,789 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #content > div.demo-list > ul > li:nth-child(2)> a locatorType: css
+2025-05-08 20:39:55,816 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > div.demo-list > ul > li:nth-child(2)> a and locatorType: css
+2025-05-08 20:39:55,949 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: #content > div.demo-list > ul > li:nth-child(2)> a and locatorType: css
+2025-05-08 20:39:55,949 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:39:57,951 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:39:58,197 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:58,198 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 11: Keyword='step'
+2025-05-08 20:39:58,198 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on all radio buttons anc check, Should be able to click on each radio button and that button is selected, ]
+2025-05-08 20:39:58,198 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:39:58,199 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:39:58,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 12: Keyword='switch_to_iframe'
+2025-05-08 20:39:58,199 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:662) | Executing 'switch_to_iframe' at row [switch_to_iframe, iframe, checkbox_iframe_css, ]
+2025-05-08 20:39:58,199 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:88) | Attempting to switch to iframe 'iframe' using traditional locators.
+2025-05-08 20:39:58,200 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:684) | Waiting for maximum of 2 seconds for the element to be clickable.
+2025-05-08 20:39:58,248 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:698) | Element appeared on the web page.
+2025-05-08 20:39:58,263 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > iframe and locatorType: css
+2025-05-08 20:39:58,275 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: #content > iframe locatorType: css
+2025-05-08 20:39:58,285 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #content > iframe and locatorType: css
+2025-05-08 20:39:58,320 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:473) | Switched to iframe with locator: #content > iframe and locatorType: css
+2025-05-08 20:39:58,605 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:39:58,605 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 13: Keyword='click'
+2025-05-08 20:39:58,605 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 1radio, ny_radio_css, ]
+2025-05-08 20:39:58,620 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] and locatorType: css
+2025-05-08 20:39:58,628 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] locatorType: css
+2025-05-08 20:39:58,666 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] and locatorType: css
+2025-05-08 20:39:58,830 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(3) > label[for="radio-1"] and locatorType: css
+2025-05-08 20:39:58,831 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:00,832 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:01,120 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:01,121 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 14: Keyword='check_radio_chk_selected'
+2025-05-08 20:40:01,121 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 1radio, ny_radio1_css, ]
+2025-05-08 20:40:01,122 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '1radio' is selected.
+2025-05-08 20:40:01,141 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > input#radio-1 and locatorType: css
+2025-05-08 20:40:01,160 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: body > div > fieldset:nth-child(3) > input#radio-1 and locatorType: css is selected.
+2025-05-08 20:40:01,421 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:01,422 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 15: Keyword='click'
+2025-05-08 20:40:01,422 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 2radio, paris_radio_css, ]
+2025-05-08 20:40:01,441 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] and locatorType: css
+2025-05-08 20:40:01,452 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] locatorType: css
+2025-05-08 20:40:01,466 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] and locatorType: css
+2025-05-08 20:40:01,580 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(3) > label[for="radio-2"] and locatorType: css
+2025-05-08 20:40:01,580 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:03,581 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:04,587 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:04,587 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 16: Keyword='check_radio_chk_selected'
+2025-05-08 20:40:04,587 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 2radio, paris_radio1_css, ]
+2025-05-08 20:40:04,587 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '2radio' is selected.
+2025-05-08 20:40:04,617 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > input#radio-2 and locatorType: css
+2025-05-08 20:40:04,627 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: body > div > fieldset:nth-child(3) > input#radio-2 and locatorType: css is selected.
+2025-05-08 20:40:04,848 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:04,848 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 17: Keyword='click'
+2025-05-08 20:40:04,848 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 3radio, london_radio_css, ]
+2025-05-08 20:40:04,862 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] and locatorType: css
+2025-05-08 20:40:04,870 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] locatorType: css
+2025-05-08 20:40:04,878 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] and locatorType: css
+2025-05-08 20:40:04,994 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(3) > label[for="radio-3"] and locatorType: css
+2025-05-08 20:40:04,995 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:06,995 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:07,218 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:07,219 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 18: Keyword='check_radio_chk_selected'
+2025-05-08 20:40:07,219 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 3radio, london_radio1_css, ]
+2025-05-08 20:40:07,219 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '3radio' is selected.
+2025-05-08 20:40:07,240 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(3) > input#radio-3 and locatorType: css
+2025-05-08 20:40:07,255 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: body > div > fieldset:nth-child(3) > input#radio-3 and locatorType: css is selected.
+2025-05-08 20:40:07,525 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:07,525 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 19: Keyword='step'
+2025-05-08 20:40:07,525 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:679) | Executing 'step' at row [step, Click on all check boxes anc check, Should be able to click on all check boxes and all should be checked., ]
+2025-05-08 20:40:07,526 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:155) | Populating the test details table in the PDF report
+2025-05-08 20:40:07,526 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:145) | Step is captured to be added to PDF report.
+2025-05-08 20:40:07,526 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 20: Keyword='click'
+2025-05-08 20:40:07,526 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 1check, 2star_check_css, ]
+2025-05-08 20:40:07,540 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] and locatorType: css
+2025-05-08 20:40:07,551 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] locatorType: css
+2025-05-08 20:40:07,562 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] and locatorType: css
+2025-05-08 20:40:07,730 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-1"] and locatorType: css
+2025-05-08 20:40:07,730 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:09,732 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:09,978 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:09,979 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 21: Keyword='check_radio_chk_selected'
+2025-05-08 20:40:09,979 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 1check, 2star_check1_css, ]
+2025-05-08 20:40:09,979 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '1check' is selected.
+2025-05-08 20:40:09,997 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-1 and locatorType: css
+2025-05-08 20:40:10,010 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: #checkbox-1 and locatorType: css is selected.
+2025-05-08 20:40:10,265 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:10,265 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 22: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:40:10,265 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1015) | Executing 'check_radio_chk_not_selected' at row [check_radio_chk_not_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:40:10,266 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:517) | Checking if element '2check' is NOT selected.
+2025-05-08 20:40:10,282 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-2 and locatorType: css
+2025-05-08 20:40:10,296 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:644) | Element with locator: #checkbox-2 and locatorType: css is NOT selected.
+2025-05-08 20:40:10,516 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:10,517 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 23: Keyword='click'
+2025-05-08 20:40:10,517 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 2check, 3star_check_css, ]
+2025-05-08 20:40:10,532 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] and locatorType: css
+2025-05-08 20:40:10,539 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] locatorType: css
+2025-05-08 20:40:10,553 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] and locatorType: css
+2025-05-08 20:40:10,723 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-2"] and locatorType: css
+2025-05-08 20:40:10,723 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:12,724 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:13,027 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:13,028 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 24: Keyword='check_radio_chk_selected'
+2025-05-08 20:40:13,028 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 2check, 3star_check1_css, ]
+2025-05-08 20:40:13,028 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '2check' is selected.
+2025-05-08 20:40:13,044 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-2 and locatorType: css
+2025-05-08 20:40:13,056 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: #checkbox-2 and locatorType: css is selected.
+2025-05-08 20:40:13,304 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:13,304 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 25: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:40:13,304 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1015) | Executing 'check_radio_chk_not_selected' at row [check_radio_chk_not_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:40:13,305 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:517) | Checking if element '3check' is NOT selected.
+2025-05-08 20:40:13,320 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-3 and locatorType: css
+2025-05-08 20:40:13,330 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:644) | Element with locator: #checkbox-3 and locatorType: css is NOT selected.
+2025-05-08 20:40:13,558 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:13,558 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 26: Keyword='click'
+2025-05-08 20:40:13,558 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 3check, 4star_check_css, ]
+2025-05-08 20:40:13,573 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] and locatorType: css
+2025-05-08 20:40:13,581 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] locatorType: css
+2025-05-08 20:40:13,593 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] and locatorType: css
+2025-05-08 20:40:13,732 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-3"] and locatorType: css
+2025-05-08 20:40:13,733 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:15,736 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:15,942 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:15,943 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 27: Keyword='check_radio_chk_selected'
+2025-05-08 20:40:15,943 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:997) | Executing 'check_radio_chk_selected' at row [check_radio_chk_selected, 3check, 4star_check1_css, ]
+2025-05-08 20:40:15,943 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:483) | Checking if element '3check' is selected.
+2025-05-08 20:40:15,957 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-3 and locatorType: css
+2025-05-08 20:40:15,975 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:641) | Element with locator: #checkbox-3 and locatorType: css is selected.
+2025-05-08 20:40:16,202 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:16,204 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 28: Keyword='check_radio_chk_not_selected'
+2025-05-08 20:40:16,204 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:1015) | Executing 'check_radio_chk_not_selected' at row [check_radio_chk_not_selected, 4check, 5star_check1_css, ]
+2025-05-08 20:40:16,204 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:517) | Checking if element '4check' is NOT selected.
+2025-05-08 20:40:16,218 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: #checkbox-4 and locatorType: css
+2025-05-08 20:40:16,230 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:644) | Element with locator: #checkbox-4 and locatorType: css is NOT selected.
+2025-05-08 20:40:16,482 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:16,483 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:551) | Processing row 29: Keyword='click'
+2025-05-08 20:40:16,483 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:801) | Executing 'click' at row [click, 4check, 5star_check_css, ]
+2025-05-08 20:40:16,497 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] and locatorType: css
+2025-05-08 20:40:16,507 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:100) | Scrolling to element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] locatorType: css
+2025-05-08 20:40:16,518 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:849) | Element found with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] and locatorType: css
+2025-05-08 20:40:16,658 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:332) | Clicked on element with locator: body > div > fieldset:nth-child(5) > label[for="checkbox-4"] and locatorType: css
+2025-05-08 20:40:16,659 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:160) | Pausing execution for 2 seconds
+2025-05-08 20:40:18,661 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:867) | Populating the step result details in the PDF report.
+2025-05-08 20:40:18,876 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:166) | Sub Step is captured to be added to PDF report.
+2025-05-08 20:40:18,877 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:566) | Test script execution completed successfully.
+2025-05-08 20:40:18,877 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:446) | Test script executed successfully: D:\allprojects\java-projects\webautomationframework_java\test_scripts\edge\QS001_testscript.xlsx
+2025-05-08 20:40:18,877 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:469) | Adding row to test summary results.
+2025-05-08 20:40:18,979 [11200] [Thread-24] INFO  ExecutionManager.(ExecutionManager.java:472) | Closing test and generating test result PDF.
+2025-05-08 20:40:18,980 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:132) | Started creating PDF report
+2025-05-08 20:40:18,980 [11200] [Thread-24] INFO  PdfReportManager.(PdfReportManager.java:194) | Finalizing the data to be added to PDF report.
+2025-05-08 20:40:18,986 [11200] [Thread-24] INFO  PdfReporting.(PdfReporting.java:43) | Encoding the logo png file
+2025-05-08 20:40:18,988 [11200] [Thread-24] INFO  PdfReporting.(PdfReporting.java:75) | Decrypting the PDF report template
+2025-05-08 20:40:19,140 [11200] [Thread-24] INFO  PdfReporting.(PdfReporting.java:54) | Creating the PDF report header template
+2025-05-08 20:40:19,140 [11200] [Thread-24] INFO  PdfReporting.(PdfReporting.java:68) | Creating the PDF report footer template
+2025-05-08 20:40:19,141 [11200] [Thread-24] INFO  PdfReporting.(PdfReporting.java:87) | Starting creation of PDF report from template with populated data
+2025-05-08 20:40:22,353 [11200] [Thread-24] INFO  PdfReporting.(PdfReporting.java:111) | Completed creation of PDF report from template with populated data
+2025-05-08 20:40:22,483 [11200] [Thread-24] INFO  KeywordsManager.(KeywordsManager.java:134) | Closing the browser
+2025-05-08 20:40:22,483 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:47) | Closing Browser
+2025-05-08 20:40:24,099 [11200] [Thread-24] INFO  DriverFunctions.(DriverFunctions.java:49) | Closing Browser SUCCESSFUL
+2025-05-08 20:40:24,250 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:394) | Execution and recording completed successfully.
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS001_testscript.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS001_testscript.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS002_testscript.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS002_testscript.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\QS003_testscript.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS003_testscript.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1 (2).xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_chrome\tc003_testscript1.xlsx
+2025-05-08 20:40:24,251 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS001_testscript.xlsx
+2025-05-08 20:40:24,252 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS001_testscript.xlsx
+2025-05-08 20:40:24,253 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS002_testscript.xlsx
+2025-05-08 20:40:24,253 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS002_testscript.xlsx
+2025-05-08 20:40:24,253 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\QS003_testscript.xlsx
+2025-05-08 20:40:24,253 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:336) | Valid test script found: QS003_testscript.xlsx
+2025-05-08 20:40:24,254 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\grid_edge\~$QS004_demoqa_testscript.xlsx
+2025-05-08 20:40:24,254 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS002_tesQScrip1t.xlsx
+2025-05-08 20:40:24,254 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS003_testscript1.xlsx
+2025-05-08 20:40:24,255 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\QS004_testscript1.xlsx
+2025-05-08 20:40:24,255 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc001_testscript1.xlsx
+2025-05-08 20:40:24,255 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc002_testscript1.xlsx
+2025-05-08 20:40:24,256 [11200] [com.waf.Runner.main()] INFO  ExecutionManager.(ExecutionManager.java:333) | Processing file: D:\allprojects\java-projects\webautomationframework_java\test_scripts\tc003_testscript2.xlsx
+2025-05-08 20:40:24,260 [11200] [com.waf.Runner.main()] WARN  ExecutionManager.(ExecutionManager.java:353) | 0hrs:1min:17sec:144ms
+2025-05-08 20:40:24,261 [11200] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:232) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-08 20:40:24,262 [11200] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:238) | Output.xlsx exists and starting to create test summary PDF report.
+2025-05-08 20:40:25,004 [11200] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:45) | Encoding the logo PNG file
+2025-05-08 20:40:25,006 [11200] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:77) | Decrypting the PDF report template
+2025-05-08 20:40:25,226 [11200] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:56) | Creating the PDF report header template
+2025-05-08 20:40:25,227 [11200] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:70) | Creating the PDF report footer template
+2025-05-08 20:40:25,227 [11200] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:90) | Starting creation of PDF report from template with populated data
+2025-05-08 20:40:26,463 [11200] [com.waf.Runner.main()] INFO  PdfTsReporting.(PdfTsReporting.java:112) | Completed creation of PDF report from template with populated data
+2025-05-08 20:40:26,590 [11200] [com.waf.Runner.main()] INFO  PdfReportManager.(PdfReportManager.java:277) | Checking if output.xlsx file exists before creating the test summary PDF report.
+2025-05-08 20:40:27,270 [11200] [com.waf.Runner.main()] ERROR Utils.(Utils.java:165) | Failed to connect to FTP server: Connection refused: connect

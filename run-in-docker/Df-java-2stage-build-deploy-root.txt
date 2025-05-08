@@ -36,12 +36,6 @@ RUN mvn compile && mvn package -Dmaven.compiler.forceAnnotationProcessor=true -D
 # Second Minimal Image (Runtime Environment)
 FROM debian:bookworm-slim
 
-# Copy required files from build phase
-COPY --from=build-stage /workspace/target/webautomationframework_java-1.0.jar /workspace/
-COPY --from=build-stage /workspace/resources /workspace/resources/
-COPY --from=build-stage /workspace/test_files /workspace/test_files/
-COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
-
 # Install TightVNC and Cron
 RUN apt-get update && apt-get install -y \
     xvfb \
@@ -68,6 +62,12 @@ RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e27694
 
 ENV JAVA_HOME=/opt/jdk
 ENV PATH="$JAVA_HOME/bin:$PATH"
+
+# Copy required files from build phase
+COPY --from=build-stage /workspace/target/webautomationframework_java-1.0.jar /workspace/
+COPY --from=build-stage /workspace/resources /workspace/resources/
+COPY --from=build-stage /workspace/test_files /workspace/test_files/
+COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
 
 # Set environment variables
 ENV DELETE_TEST_RESULTS_IMAGES_RECORDINGS_FOLDERS_BEFORE_START=yes
