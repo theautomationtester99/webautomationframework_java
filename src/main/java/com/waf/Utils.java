@@ -33,6 +33,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.imageio.ImageIO;
 
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -229,7 +230,7 @@ public class Utils {
                 FileInputStream inputStream = null;
                 try {
                     inputStream = new FileInputStream(file);
-                    //ftp.setFileType(FTP.BINARY_FILE_TYPE);
+                    ftp.setFileType(FTP.BINARY_FILE_TYPE);
                     if (ftp.storeFile(remoteFile, inputStream)) {
                         logger.warn("Uploaded file: " + remoteFile);
                     } else {
