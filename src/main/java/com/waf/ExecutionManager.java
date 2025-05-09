@@ -98,7 +98,7 @@ public class ExecutionManager {
 
         String deleteOption = Config.DELETE_TEST_RESULTS.toLowerCase();
 
-        logger.info(
+        logger.warn(
                 "Checking if 'start.properties' file option to delete results and recording folders is set to 'yes'.");
 
         if ("yes".equals(deleteOption)) {

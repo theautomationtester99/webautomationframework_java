@@ -69,8 +69,10 @@ COPY --from=build-stage /workspace/resources /workspace/resources/
 COPY --from=build-stage /workspace/test_files /workspace/test_files/
 COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
 
+RUN chmod -R 777 /workspace
+
 # Set environment variables
-ENV DELETE_TEST_RESULTS_IMAGES_RECORDINGS_FOLDERS_BEFORE_START=yes
+ENV DELETE_TEST_RESULTS=yes
 ENV SCREENSHOT_STRATEGY=always
 ENV HIGHLIGHT_ELEMENTS=no
 ENV MAX_RETRIES=0

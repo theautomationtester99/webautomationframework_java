@@ -38,3 +38,22 @@ spec:
           value: "no"
         - name: GRID_URL
           value: "http://selenium-hub:4444/wd/hub"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: waf-service
+  namespace: selenium
+spec:
+  selector:
+    app: waf2st-app
+  type: NodePort
+  ports:
+    - name: waf-ssh
+      protocol: TCP
+      port: 22
+      targetPort: 22
+    - name: waf-vnc
+      protocol: TCP
+      port: 5901
+      targetPort: 5901

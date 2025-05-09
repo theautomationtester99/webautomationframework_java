@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public class Config {
     // Load environment variables with defaults
-    public static final String DELETE_TEST_RESULTS = Optional.ofNullable(System.getenv("DELETE_TEST_RESULTS_IMAGES_RECORDINGS_FOLDERS_BEFORE_START")).orElse("yes");
+    public static final String DELETE_TEST_RESULTS = Optional.ofNullable(System.getenv("DELETE_TEST_RESULTS")).orElse("yes");
     public static final String SCREENSHOT_STRATEGY = Optional.ofNullable(System.getenv("SCREENSHOT_STRATEGY")).orElse("always");
     public static final String HIGHLIGHT_ELEMENTS = Optional.ofNullable(System.getenv("HIGHLIGHT_ELEMENTS")).orElse("no");
     public static final int MAX_RETRIES = Integer.parseInt(Optional.ofNullable(System.getenv("MAX_RETRIES")).orElse("0"));

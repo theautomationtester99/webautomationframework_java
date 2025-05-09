@@ -53,7 +53,8 @@ RUN apt-get update && apt-get install -y \
     gawk \
     bison \
     make \
-    ftp
+    ftp \
+    openssh-server  # Added SSH server
 
 # Install JDK 24
 RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz && \
@@ -63,37 +64,24 @@ RUN wget -O jdk.tar.gz https://download.java.net/java/GA/jdk24.0.1/24a58e0e27694
 ENV JAVA_HOME=/opt/jdk
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
+# Configure SSH
+RUN mkdir -p /var/run/sshd && \
+    echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
+    echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config && \
+    echo 'root:rootpassword' | chpasswd  # Set root password
+
+EXPOSE 22
+
+# Start SSH service
+RUN service ssh restart
+
 # Copy required files from build phase
 COPY --from=build-stage /workspace/target/webautomationframework_java-1.0.jar /workspace/
 COPY --from=build-stage /workspace/resources /workspace/resources/
 COPY --from=build-stage /workspace/test_files /workspace/test_files/
 COPY --from=build-stage /workspace/test_scripts /workspace/test_scripts/
 
-# Set environment variables
-ENV DELETE_TEST_RESULTS=yes
-ENV SCREENSHOT_STRATEGY=always
-ENV HIGHLIGHT_ELEMENTS=no
-ENV MAX_RETRIES=0
-ENV UPLOAD_TEST_RESULTS=no
-ENV SEND_TEST_RESULTS_EMAIL=no
-ENV SENDER_EMAIL=theautomationtester99@gmail.com
-ENV SENDER_EMAIL_PASSWORD=gAAAAABoAjriMu91TSpf6VycE89O8wv2gpUMx4MkmxAtvFn-Auz4g5RhnPUZJ13FRHkvoM_JnpWau3GoHgcumOmp14Aecg7AKKVORICG87IPFKFX4I6r2xY=
-ENV RECIPIENT_EMAILS=theautomationtester@hotmail.com,theautomationtester99@gmail.com
-ENV RUN_IN_SELENIUM_GRID=no
-ENV GRID_URL=http://localhost
-ENV RUN_IN_APPIUM_GRID=no
-ENV APPIUM_URL=http://localhost
-ENV LOG_LEVEL=WARN
-ENV INPRIVATE=no
-ENV HEADLESS=yes
-ENV NO_THREADS=4
-ENV PARALLEL_EXECUTION=no
-ENV FTP_UPLOAD=yes
-ENV FTP_HOST=658342164bd0
-ENV FTP_PORT=21
-ENV FTP_USER=user1
-ENV FTP_PASSWORD=password1
-ENV FTP_USER_HOME=/home/user1
+RUN chmod -R 777 /workspace
 
 # Configure VNC Server
 RUN mkdir -p ~/.vnc && \
@@ -119,4 +107,4 @@ RUN echo '*/10 * * * * cd /workspace && DISPLAY=:0 . /root/env_vars.sh; java -ja
 RUN service cron restart
 
 # Entrypoint for runtime container
-CMD ["bash", "-c", "Xvfb :0 -screen 0 1024x768x24 & tightvncserver :1 -geometry 1024x768 -depth 24 && service cron restart && /root/entrypoint.sh && tail -f /dev/null"]
+CMD ["bash", "-c", "Xvfb :0 -screen 0 1024x768x24 & tightvncserver :1 -geometry 1024x768 -depth 24 && service cron restart && service ssh start && /root/entrypoint.sh && tail -f /dev/null"]
